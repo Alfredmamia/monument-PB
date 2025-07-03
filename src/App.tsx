@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Histoire from "./pages/Histoire";
 import Glam from "./pages/Glam";
+import AiresCulturelles from "./pages/AiresCulturelles";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/histoire" element={<Histoire />} />
           <Route path="/glam" element={<Glam />} />
+          <Route path="/aires-culturelles" element={<AiresCulturelles />} />
           {/* TODO: Ajouter les autres pages selon les spécifications */}
           <Route path="*" element={<NotFound />} />
         </Routes>

@@ -14,11 +14,13 @@ const Index = () => {
 
       {/* Hero Section - Bannière pleine page avec les 4 aires réunies */}
       <section className="relative h-screen bg-gradient-to-br from-yellow-600 via-red-600 to-green-700 flex items-center justify-center text-white overflow-hidden">
-        {/* Effet de parallaxe avec motifs des 4 aires */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full bg-repeat animate-pulse" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='40' cy='40' r='20'/%3E%3Crect x='20' y='20' width='40' height='40'/%3E%3Cpolygon points='40,10 60,50 20,50'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+        {/* Image des 4 aires culturelles en arrière-plan */}
+        <div className="absolute inset-0 opacity-15">
+          <img 
+            src="/lovable-uploads/a5ac5fed-04d5-4a22-b854-b99492e91b7a.png" 
+            alt="Les 4 Aires Culturelles du Cameroun" 
+            className="w-full h-full object-cover"
+          />
         </div>
         
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4">

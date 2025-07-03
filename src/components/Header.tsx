@@ -16,6 +16,7 @@ const Header = () => {
     { label: 'Galerie', path: '/galerie' },
     { label: 'Événements', path: '/evenements' },
     { label: 'GLAM', path: '/glam' },
+    { label: 'Aires Culturelles', path: '/aires-culturelles' },
     { label: 'Restaurant', path: '/restaurant' },
     { label: 'Hébergement', path: '/hebergement' },
     { label: 'Contact', path: '/contact' }
@@ -27,10 +28,14 @@ const Header = () => {
     <header className="bg-white shadow-lg sticky top-0 z-50 border-b-2 border-yellow-600">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo */}
+          {/* Logo avec le nouveau design */}
           <Link to="/" className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-600 via-red-600 to-green-700 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">MPB</span>
+            <div className="relative">
+              <img 
+                src="/lovable-uploads/0f981698-f7fd-4371-9a21-73ac8361dfc3.png" 
+                alt="Monument Paul Biya - Sangmelima" 
+                className="w-16 h-20 object-contain"
+              />
             </div>
             <div className="hidden md:block">
               <h1 className="text-xl font-bold text-gray-800">Monument Paul Biya</h1>
