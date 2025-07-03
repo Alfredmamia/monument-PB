@@ -11,23 +11,26 @@ const Glam = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Fang-Beti */}
-      <section className="relative h-96 bg-gradient-to-br from-amber-800 via-orange-700 to-red-800 flex items-center justify-center text-white">
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full bg-repeat opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10zm-10-10c0-5.5 4.5-10 10-10s10 4.5 10 10-4.5 10-10 10-10-4.5-10-10z'/%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+      {/* Hero Section avec fond Fang-Beti selon la répartition */}
+      <section className="relative h-96 bg-gradient-to-br from-sky-400 via-cyan-500 to-blue-600 flex items-center justify-center text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
+          <img 
+            src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
+            alt="Aire Culturelle Fang-Beti" 
+            className="w-full h-full object-cover opacity-30"
+          />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-500/60 via-cyan-500/40 to-blue-600/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">GLAM</h1>
-          <p className="text-xl md:text-2xl opacity-90">
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">GLAM</h1>
+          <p className="text-xl md:text-2xl opacity-95 drop-shadow-md">
             Galeries, Bibliothèques, Archives, Musées - Votre portail numérique culturel
           </p>
         </div>
       </section>
 
       {/* Section principale avec QR Code */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-sky-50 via-cyan-50 to-blue-50">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-800 mb-8">
@@ -36,7 +39,7 @@ const Glam = () => {
             
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* QR Code */}
-              <div className="bg-white p-8 rounded-2xl shadow-2xl">
+              <div className="bg-white p-8 rounded-2xl shadow-2xl border border-sky-100">
                 <div className="mb-6">
                   <h3 className="text-2xl font-semibold text-gray-800 mb-4">
                     Scannez pour Accéder
@@ -46,11 +49,11 @@ const Glam = () => {
                   </p>
                 </div>
                 
-                {/* QR Code placeholder - remplacé par l'image fournie */}
-                <div className="w-64 h-64 mx-auto bg-gray-100 border-2 border-dashed border-gray-300 rounded-lg flex items-center justify-center mb-6">
+                {/* QR Code placeholder */}
+                <div className="w-64 h-64 mx-auto bg-gradient-to-br from-sky-100 to-cyan-100 border-2 border-sky-200 rounded-lg flex items-center justify-center mb-6">
                   <div className="text-center">
-                    <QrCode className="w-16 h-16 text-gray-400 mx-auto mb-2" />
-                    <p className="text-sm text-gray-500">QR Code GLAM</p>
+                    <QrCode className="w-16 h-16 text-sky-600 mx-auto mb-2" />
+                    <p className="text-sm text-sky-700 font-medium">QR Code GLAM</p>
                   </div>
                 </div>
                 
@@ -61,10 +64,10 @@ const Glam = () => {
 
               {/* Informations et accès direct */}
               <div className="space-y-6">
-                <Card className="p-6 hover:shadow-lg transition-shadow">
+                <Card className="p-6 hover:shadow-lg transition-shadow border border-sky-100">
                   <CardContent className="p-0">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-sky-500 to-cyan-600 rounded-full flex items-center justify-center">
                         <BookOpen className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -72,7 +75,7 @@ const Glam = () => {
                         <p className="text-gray-600 mb-4">
                           Accédez à une collection complète de documents, livres et archives liés au Monument Paul Biya.
                         </p>
-                        <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                        <Button className="bg-gradient-to-r from-sky-500 to-cyan-600 hover:from-sky-600 hover:to-cyan-700 text-white">
                           <ExternalLink className="w-4 h-4 mr-2" />
                           Accéder en ligne
                         </Button>
@@ -81,10 +84,10 @@ const Glam = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="p-6 hover:shadow-lg transition-shadow">
+                <Card className="p-6 hover:shadow-lg transition-shadow border border-sky-100">
                   <CardContent className="p-0">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full flex items-center justify-center">
                         <Archive className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -92,7 +95,7 @@ const Glam = () => {
                         <p className="text-gray-600 mb-4">
                           Consultez des documents d'archives rares et des témoignages historiques précieux.
                         </p>
-                        <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
+                        <Button variant="outline" className="border-sky-500 text-sky-600 hover:bg-sky-50">
                           Parcourir les Archives
                         </Button>
                       </div>
@@ -100,10 +103,10 @@ const Glam = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="p-6 hover:shadow-lg transition-shadow">
+                <Card className="p-6 hover:shadow-lg transition-shadow border border-sky-100">
                   <CardContent className="p-0">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center">
                         <Image className="w-6 h-6 text-white" />
                       </div>
                       <div>
@@ -111,7 +114,7 @@ const Glam = () => {
                         <p className="text-gray-600 mb-4">
                           Découvrez photos, vidéos et documents interactifs sur l'histoire et la culture camerounaise.
                         </p>
-                        <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50">
+                        <Button variant="outline" className="border-blue-500 text-blue-600 hover:bg-blue-50">
                           Explorer la Galerie
                         </Button>
                       </div>
@@ -138,7 +141,7 @@ const Glam = () => {
             <div className="space-y-4">
               <Button 
                 size="lg" 
-                className="bg-gradient-to-r from-yellow-600 to-red-600 hover:from-yellow-700 hover:to-red-700 text-white px-8 py-3"
+                className="bg-gradient-to-r from-sky-500 via-cyan-500 to-blue-600 hover:from-sky-600 hover:via-cyan-600 hover:to-blue-700 text-white px-8 py-3 shadow-lg hover:shadow-xl transition-all"
                 onClick={() => window.open('http://191.101.80.179:8080/cgi-bin/koha/opac-main.pl', '_blank')}
               >
                 <BookOpen className="w-5 h-5 mr-2" />
@@ -155,17 +158,17 @@ const Glam = () => {
       </section>
 
       {/* Partenaires GLAM */}
-      <section className="py-16 bg-gray-100">
+      <section className="py-16 bg-gradient-to-br from-sky-50 to-cyan-50">
         <div className="container mx-auto px-4">
           <h3 className="text-2xl font-bold text-center text-gray-800 mb-8">
             Institutions Partenaires
           </h3>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border border-sky-100">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <BookOpen className="w-8 h-8 text-blue-600" />
+                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <BookOpen className="w-8 h-8 text-sky-600" />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Bibliothèques Nationales</h4>
                 <p className="text-gray-600 text-sm">
@@ -174,10 +177,10 @@ const Glam = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border border-sky-100">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Archive className="w-8 h-8 text-green-600" />
+                <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Archive className="w-8 h-8 text-cyan-600" />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Archives Nationales</h4>
                 <p className="text-gray-600 text-sm">
@@ -186,10 +189,10 @@ const Glam = () => {
               </CardContent>
             </Card>
 
-            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border border-sky-100">
               <CardContent className="p-0">
-                <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <Image className="w-8 h-8 text-purple-600" />
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <Image className="w-8 h-8 text-blue-600" />
                 </div>
                 <h4 className="text-lg font-semibold mb-2">Musées Partenaires</h4>
                 <p className="text-gray-600 text-sm">

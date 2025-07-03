@@ -12,7 +12,7 @@ const Index = () => {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section - Bannière pleine page avec les 4 aires réunies */}
+      {/* Hero Section - Bannière pleine page avec les 4 aires réunies selon répartition */}
       <section className="relative h-screen bg-gradient-to-br from-yellow-600 via-red-600 to-green-700 flex items-center justify-center text-white overflow-hidden">
         {/* Image des 4 aires culturelles en arrière-plan */}
         <div className="absolute inset-0 opacity-15">
@@ -59,11 +59,15 @@ const Index = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-5xl font-bold text-gray-800 mb-8">Un Patrimoine Vivant</h2>
-            <p className="text-xl text-gray-700 leading-relaxed mb-12 max-w-3xl mx-auto">
-              Le Monument Paul Biya incarne l'essence de notre nation, témoignant de l'héritage exceptionnel 
-              d'un leader visionnaire et de l'unité culturelle du Cameroun moderne. Un lieu où l'histoire 
-              rencontre l'avenir, où la mémoire nourrit l'espoir.
+            <p className="text-xl text-gray-700 leading-relaxed mb-8">
+              Situé au Carrefour MEPHO à Sangmélima, le Monument Paul Biya incarne l'essence de notre nation, 
+              témoignant de l'héritage exceptionnel d'un leader visionnaire et de l'unité culturelle du Cameroun moderne. 
+              Un lieu où l'histoire rencontre l'avenir, où la mémoire nourrit l'espoir.
             </p>
+            <div className="bg-white p-6 rounded-lg shadow-lg mb-8">
+              <p className="text-lg font-semibold text-gray-800 mb-2">Inauguration Officielle</p>
+              <p className="text-2xl font-bold text-yellow-600">18 Juillet 2025</p>
+            </div>
             <Button size="lg" className="bg-gradient-to-r from-yellow-600 to-red-600 hover:from-yellow-700 hover:to-red-700 text-white px-10 py-4 rounded-full text-lg font-semibold">
               En Savoir Plus
               <ArrowRight className="w-5 h-5 ml-2" />
@@ -139,7 +143,7 @@ const Index = () => {
             {[
               {
                 title: "Inauguration Officielle",
-                date: "15 Décembre 2024",
+                date: "18 Juillet 2025",
                 description: "Cérémonie d'inauguration en présence des plus hautes autorités",
                 image: "ceremony"
               },
@@ -209,6 +213,47 @@ const Index = () => {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Section Contact & Informations Pratiques */}
+      <section className="py-24 bg-gradient-to-br from-yellow-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-6">Informations Pratiques</h2>
+            <p className="text-xl text-gray-600">
+              Planifiez votre visite au Monument Paul Biya
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-yellow-600 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Calendar className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Inauguration</h3>
+              <p className="text-gray-600 mb-2">18 Juillet 2025</p>
+              <p className="text-sm text-gray-500">Cérémonie officielle</p>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-red-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Users className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Localisation</h3>
+              <p className="text-gray-600 mb-2">Carrefour MEPHO</p>
+              <p className="text-sm text-gray-500">Sangmélima, Cameroun</p>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow">
+              <div className="w-16 h-16 bg-gradient-to-br from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Star className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3">Contact</h3>
+              <p className="text-gray-600 mb-2">+237 620004018</p>
+              <p className="text-sm text-gray-500">Informations & Réservations</p>
+            </Card>
           </div>
         </div>
       </section>

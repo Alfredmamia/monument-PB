@@ -12,9 +12,9 @@ const AiresCulturelles = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond des 4 Aires réunies */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-600 via-green-600 to-orange-600 flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      {/* Hero Section avec fond Fang-Beti selon la répartition */}
+      <section className="relative h-96 bg-gradient-to-br from-amber-800 via-orange-700 to-red-800 flex items-center justify-center text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
           <img 
             src="/lovable-uploads/a5ac5fed-04d5-4a22-b854-b99492e91b7a.png" 
             alt="Les 4 Aires Culturelles du Cameroun" 
@@ -53,7 +53,7 @@ const AiresCulturelles = () => {
         </div>
       </section>
 
-      {/* Aires Culturelles Détaillées */}
+      {/* Aires Culturelles Détaillées - Grille 2x2 */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
@@ -121,6 +121,76 @@ const AiresCulturelles = () => {
                   <Badge variant="outline">Pêche Traditionnelle</Badge>
                 </div>
                 <Button className="bg-blue-600 hover:bg-blue-700 text-white">
+                  <Camera className="w-4 h-4 mr-2" />
+                  Explorer cette Aire
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Aire Culturelle Fang-Beti */}
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow group">
+              <div className="relative h-80 bg-gradient-to-br from-amber-500 to-orange-600">
+                <img 
+                  src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
+                  alt="Aire Culturelle Fang-Beti" 
+                  className="w-full h-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                <Badge className="absolute top-4 left-4 bg-amber-600 text-white">
+                  Fang-Beti
+                </Badge>
+              </div>
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">Aire Culturelle Fang-Beti</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  L'aire Fang-Beti du centre-sud forestier se distingue par ses <strong>statues ancestrales</strong> 
+                  gardant la mémoire des ancêtres, ses <strong>instruments traditionnels</strong> comme le "Mvet" 
+                  et le xylophone "Balafon", ainsi que ses <strong>objets rituels</strong> finement sculptés. 
+                  Le <strong>tambour "Ndan Mikukuma"</strong> et les <strong>masques cérémoniels</strong> témoignent 
+                  de la richesse spirituelle de cette culture forestière.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Statues Ancestrales</Badge>
+                  <Badge variant="outline">Mvet & Balafon</Badge>
+                  <Badge variant="outline">Objets Rituels</Badge>
+                  <Badge variant="outline">Ndan Mikukuma</Badge>
+                </div>
+                <Button className="bg-amber-600 hover:bg-amber-700 text-white">
+                  <Camera className="w-4 h-4 mr-2" />
+                  Explorer cette Aire
+                </Button>
+              </CardContent>
+            </Card>
+
+            {/* Aire Culturelle Soudano-Sahélienne */}
+            <Card className="overflow-hidden hover:shadow-2xl transition-shadow group">
+              <div className="relative h-80 bg-gradient-to-br from-orange-500 to-red-600">
+                <img 
+                  src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" 
+                  alt="Aire Culturelle Soudano-Sahélienne" 
+                  className="w-full h-full object-cover opacity-90"
+                />
+                <div className="absolute inset-0 bg-black/20"></div>
+                <Badge className="absolute top-4 left-4 bg-orange-600 text-white">
+                  Soudano-Sahélienne
+                </Badge>
+              </div>
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-bold mb-4 text-gray-800">Aire Culturelle Soudano-Sahélienne</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  L'aire Soudano-Sahélienne du Grand Nord se caractérise par ses <strong>vêtements traditionnels brodés</strong>, 
+                  ses <strong>instruments à cordes</strong> et ses <strong>objets d'apparat royal</strong>. 
+                  Les <strong>chapeaux coniques</strong>, les <strong>arcs et carquois</strong> ornementés, 
+                  ainsi que les <strong>sièges d'autorité</strong> reflètent une culture influencée par 
+                  les échanges transsahariens et l'organisation politique traditionnelle des royaumes du Nord.
+                </p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <Badge variant="outline">Broderies Traditionnelles</Badge>
+                  <Badge variant="outline">Instruments à Cordes</Badge>
+                  <Badge variant="outline">Objets Royaux</Badge>
+                  <Badge variant="outline">Art Équestre</Badge>
+                </div>
+                <Button className="bg-orange-600 hover:bg-orange-700 text-white">
                   <Camera className="w-4 h-4 mr-2" />
                   Explorer cette Aire
                 </Button>
