@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,23 +11,23 @@ const Hebergement = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Soudano-Sahélienne selon la répartition */}
-      <section className="relative h-96 bg-gradient-to-br from-orange-500 via-red-500 to-pink-600 flex items-center justify-center text-white overflow-hidden">
+      {/* Hero Section avec bleu pastel et filigrane bungalow/nature */}
+      <section className="relative h-96 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane bungalow et nature */}
         <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" 
-            alt="Aire Culturelle Soudano-Sahélienne" 
-            className="w-full h-full object-cover opacity-30"
-          />
+          <div className="w-full h-full bg-repeat opacity-40" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M10 40h20l10-15 10 15h20v30H10V40z'/%3E%3Ccircle cx='60' cy='20' r='8'/%3E%3Cpath d='M5 70c0-5 5-10 10-10s10 5 10 10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-orange-500/60 via-red-500/40 to-pink-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-200/50 via-blue-300/30 to-blue-400/40"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Hospitalité Camerounaise
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Hébergement</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Séjournez dans nos bungalows tout confort, à deux pas du monument
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl text-blue-900">Hébergement</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg text-blue-800">
+            Séjournez dans nos bungalows tout confort, à deux pas du monument. 
+            Réservez facilement votre hébergement pour profiter pleinement du site.
           </p>
         </div>
       </section>

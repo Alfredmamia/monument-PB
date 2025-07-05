@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,23 +11,23 @@ const Boutique = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Grassfield */}
-      <section className="relative h-96 bg-gradient-to-br from-green-500 via-emerald-500 to-teal-600 flex items-center justify-center text-white overflow-hidden">
+      {/* Hero Section avec bleu profond et filigrane objets d'art */}
+      <section className="relative h-96 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane objets d'art */}
         <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" 
-            alt="Aire Culturelle Grassfield" 
-            className="w-full h-full object-cover opacity-30"
-          />
+          <div className="w-full h-full bg-repeat opacity-30" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Ccircle cx='20' cy='20' r='8'/%3E%3Crect x='45' y='10' width='20' height='15' rx='3'/%3E%3Cpath d='M10 50l15-10 15 10v20H10V50z'/%3E%3Ccircle cx='60' cy='60' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-green-500/60 via-emerald-500/40 to-teal-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-800/60 via-blue-900/40 to-indigo-900/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Souvenirs Authentiques
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Boutique</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Offrez-vous un souvenir unique du Monument Paul Biya
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Boutique</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
+            Offrez-vous un souvenir unique du Monument Paul Biya : livres, objets d'art, textiles et plus encore. 
+            Paiement sécurisé garanti.
           </p>
         </div>
       </section>

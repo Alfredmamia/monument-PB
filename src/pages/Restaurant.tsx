@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,23 +11,23 @@ const Restaurant = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Sawa selon la répartition */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-600 flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" 
-            alt="Aire Culturelle Sawa" 
-            className="w-full h-full object-cover opacity-30"
-          />
+      {/* Hero Section avec bleu doux et filigrane ustensiles */}
+      <section className="relative h-96 bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane ustensiles et plats */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="w-full h-full bg-repeat opacity-30" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='15' r='3'/%3E%3Crect x='28' y='20' width='4' height='20' rx='2'/%3E%3Ccircle cx='15' cy='30' r='8'/%3E%3Ccircle cx='45' cy='45' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/60 via-cyan-500/40 to-teal-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-300/40 via-blue-400/30 to-blue-500/40"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Gastronomie Camerounaise
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Restaurant</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Savourez la gastronomie camerounaise et internationale dans un cadre prestigieux
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl text-blue-900">Restaurant</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg text-blue-800">
+            Savourez la gastronomie camerounaise et internationale dans un cadre prestigieux. 
+            Réservez votre table pour un moment inoubliable.
           </p>
         </div>
       </section>

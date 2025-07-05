@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,23 +11,23 @@ const Education = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Fang-Beti */}
-      <section className="relative h-96 bg-gradient-to-br from-amber-500 via-orange-500 to-red-600 flex items-center justify-center text-white overflow-hidden">
+      {/* Hero Section avec bleu ciel et filigrane livres stylisés */}
+      <section className="relative h-96 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane livres stylisés */}
         <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
-            alt="Aire Culturelle Fang-Beti" 
-            className="w-full h-full object-cover opacity-30"
-          />
+          <div className="w-full h-full bg-repeat opacity-40" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Crect x='10' y='15' width='15' height='20' rx='2'/%3E%3Crect x='30' y='10' width='15' height='25' rx='2'/%3E%3Cpath d='M5 45h20v2H5zm25 0h20v2H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/60 via-orange-500/40 to-red-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/40 via-sky-500/30 to-blue-600/40"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Ressources Pédagogiques
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Éducation</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Des ressources pédagogiques pour tous : élèves, étudiants et enseignants
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Éducation</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
+            Des ressources pédagogiques pour tous : élèves, étudiants, enseignants. 
+            Apprenez et partagez autour de l'histoire et de la culture camerounaise.
           </p>
         </div>
       </section>

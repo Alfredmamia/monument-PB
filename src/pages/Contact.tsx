@@ -3,8 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Input } from '@/components/ui/input';
-import { Phone, Mail, MapPin, Clock, Send, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, Send, Facebook, Instagram, Twitter } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -13,33 +12,33 @@ const Contact = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Fang-Beti selon la répartition */}
-      <section className="relative h-96 bg-gradient-to-br from-amber-500 via-orange-500 to-red-600 flex items-center justify-center text-white overflow-hidden">
+      {/* Hero Section avec bleu dégradé et filigrane carte et icônes réseaux */}
+      <section className="relative h-96 bg-gradient-to-br from-blue-400 via-blue-600 to-blue-800 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane carte et icônes réseaux sociaux */}
         <div className="absolute inset-0 opacity-15">
-          <img 
-            src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
-            alt="Aire Culturelle Fang-Beti" 
-            className="w-full h-full object-cover opacity-30"
-          />
+          <div className="w-full h-full bg-repeat opacity-30" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Crect x='10' y='20' width='30' height='20' rx='3'/%3E%3Ccircle cx='70' cy='30' r='8'/%3E%3Crect x='60' y='60' width='16' height='16' rx='3'/%3E%3Cpath d='M15 70l10-5 10 5 10-3v15H15V70z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-amber-500/60 via-orange-500/40 to-red-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/50 via-blue-600/40 to-blue-800/50"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Nous Contacter
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Contact</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Une question ? Besoin d'aide ? Contactez notre équipe
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Contact</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
+            Une question ? Besoin d'aide ? Contactez notre équipe ou venez nous rendre visite à Sangmélima. 
+            Carte interactive et réseaux sociaux à disposition.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gradient-to-r from-amber-50 via-orange-50 to-red-50">
+      {/* Introduction avec fond bleu dégradé */}
+      <section className="py-20 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Restons connectés</h2>
-            <p className="text-xl text-gray-700 leading-relaxed">
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">Restons connectés</h2>
+            <p className="text-xl text-blue-800 leading-relaxed">
               Une question ? Besoin d'aide ? Contactez notre équipe ou venez nous rendre visite à Sangmélima. 
               Carte interactive et réseaux sociaux à disposition.
             </p>
@@ -47,194 +46,159 @@ const Contact = () => {
         </div>
       </section>
 
-      {/* Coordonnées et Formulaire */}
+      {/* Informations de Contact */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Informations de Contact */}
-            <div className="space-y-8">
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Nos Coordonnées</h2>
-              
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-amber-600 rounded-full flex items-center justify-center">
-                    <MapPin className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Adresse</h3>
-                    <p className="text-gray-600 mb-2">Carrefour MEPHO</p>
-                    <p className="text-gray-600 mb-2">Sangmélima, Région du Sud</p>
-                    <p className="text-gray-600">République du Cameroun</p>
-                    <Button variant="outline" size="sm" className="mt-3 border-amber-600 text-amber-600 hover:bg-amber-50">
-                      Voir sur la carte
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-orange-600 rounded-full flex items-center justify-center">
-                    <Phone className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Téléphone</h3>
-                    <p className="text-gray-600 mb-2">+237 620004018</p>
-                    <p className="text-sm text-gray-500">Disponible 7j/7 de 8h à 20h</p>
-                    <Button variant="outline" size="sm" className="mt-3 border-orange-600 text-orange-600 hover:bg-orange-50">
-                      Appeler maintenant
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                    <Mail className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Email</h3>
-                    <p className="text-gray-600 mb-2">info@monumentpaulbiya.cm</p>
-                    <p className="text-sm text-gray-500">Réponse sous 24h</p>
-                    <Button variant="outline" size="sm" className="mt-3 border-red-600 text-red-600 hover:bg-red-50">
-                      Envoyer un email
-                    </Button>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:shadow-lg transition-shadow">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                    <Clock className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Horaires d'ouverture</h3>
-                    <div className="space-y-1 text-gray-600">
-                      <p>Lundi - Vendredi: 8h - 18h</p>
-                      <p>Samedi: 9h - 19h</p>
-                      <p>Dimanche: 10h - 17h</p>
-                      <p className="text-sm text-green-600 mt-2">Ouvert tous les jours de l'année</p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            {/* Formulaire de Contact */}
-            <div>
-              <h2 className="text-3xl font-bold text-gray-800 mb-8">Écrivez-nous</h2>
-              
-              <Card className="p-6">
-                <form className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Prénom *</label>
-                      <Input placeholder="Votre prénom" className="w-full" />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-gray-700 mb-2">Nom *</label>
-                      <Input placeholder="Votre nom" className="w-full" />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Email *</label>
-                    <Input type="email" placeholder="votre.email@exemple.com" className="w-full" />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
-                    <Input placeholder="+237 6XX XXX XXX" className="w-full" />
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Sujet *</label>
-                    <select className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500">
-                      <option>Sélectionnez un sujet</option>
-                      <option>Réservation visite</option>
-                      <option>Informations générales</option>
-                      <option>Hébergement</option>
-                      <option>Restaurant</option>
-                      <option>Événements</option>
-                      <option>Partenariat</option>
-                      <option>Autre</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-gray-700 mb-2">Message *</label>
-                    <textarea 
-                      rows={5}
-                      placeholder="Votre message..." 
-                      className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-500"
-                    ></textarea>
-                  </div>
-                  
-                  <div className="flex items-center space-x-2">
-                    <input type="checkbox" id="consent" className="w-4 h-4 text-amber-600" />
-                    <label htmlFor="consent" className="text-sm text-gray-600">
-                      J'accepte que mes données soient utilisées pour me recontacter
-                    </label>
-                  </div>
-                  
-                  <Button size="lg" className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white">
-                    <Send className="w-5 h-5 mr-2" />
-                    Envoyer le Message
-                  </Button>
-                </form>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Carte Interactive */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Nous Trouver</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Nos Coordonnées</h2>
           
-          <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden">
-              <div className="aspect-video bg-gradient-to-br from-amber-200 to-orange-200 relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="w-16 h-16 text-amber-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-bold text-gray-800 mb-2">Carte Interactive</h3>
-                    <p className="text-gray-600">Carrefour MEPHO, Sangmélima</p>
-                    <Button className="mt-4 bg-amber-600 hover:bg-amber-700 text-white">
-                      Ouvrir dans Maps
-                    </Button>
-                  </div>
-                </div>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Téléphone</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>+237 620004018</p>
+                <p>+237 656789012</p>
+                <p>Lun-Dim: 8h-19h</p>
+              </div>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Email</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>info@monumentpaulbiya.cm</p>
+                <p>visite@monumentpaulbiya.cm</p>
+                <p>Réponse sous 24h</p>
+              </div>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Adresse</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>Carrefour MEPHO</p>
+                <p>Sangmélima</p>
+                <p>Région du Sud</p>
+              </div>
+            </Card>
+
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-800 to-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Clock className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Horaires</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>Lun-Ven: 8h - 18h</p>
+                <p>Sam-Dim: 9h - 19h</p>
+                <p>Jours fériés: 10h - 16h</p>
               </div>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Réseaux Sociaux */}
-      <section className="py-20 bg-white">
+      {/* Formulaire de Contact */}
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Suivez-nous</h2>
-            <p className="text-xl text-gray-600 mb-12">
-              Restez connecté avec nous sur les réseaux sociaux
-            </p>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Envoyez-nous un Message</h2>
             
-            <div className="flex justify-center space-x-6">
-              {[
-                { name: "Facebook", color: "bg-blue-600", icon: "📘" },
-                { name: "Instagram", color: "bg-pink-600", icon: "📷" },
-                { name: "Twitter", color: "bg-blue-400", icon: "🐦" },
-                { name: "YouTube", color: "bg-red-600", icon: "📹" }
-              ].map((social, index) => (
-                <Button key={index} size="lg" className={`${social.color} hover:opacity-90 text-white`}>
-                  <span className="text-xl mr-2">{social.icon}</span>
-                  {social.name}
-                </Button>
-              ))}
+            <div className="grid lg:grid-cols-2 gap-12">
+              <div>
+                <Card className="p-8 border-blue-200">
+                  <form className="space-y-6">
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">Nom</label>
+                        <input 
+                          type="text" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Votre nom"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-semibold text-gray-700 mb-2">Prénom</label>
+                        <input 
+                          type="text" 
+                          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          placeholder="Votre prénom"
+                        />
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Email</label>
+                      <input 
+                        type="email" 
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="votre.email@exemple.com"
+                      />
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Sujet</label>
+                      <select className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option>Demande d'information</option>
+                        <option>Réservation visite</option>
+                        <option>Événement privé</option>
+                        <option>Partenariat</option>
+                        <option>Autre</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label className="block text-sm font-semibold text-gray-700 mb-2">Message</label>
+                      <textarea 
+                        rows={5}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Votre message..."
+                      ></textarea>
+                    </div>
+                    
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3">
+                      <Send className="w-5 h-5 mr-2" />
+                      Envoyer le Message
+                    </Button>
+                  </form>
+                </Card>
+              </div>
+              
+              <div className="space-y-8">
+                <div className="bg-gradient-to-br from-blue-100 to-blue-200 p-8 rounded-lg">
+                  <h3 className="text-2xl font-bold text-blue-900 mb-4">Localisation</h3>
+                  <div className="aspect-video bg-blue-300 rounded-lg flex items-center justify-center mb-4">
+                    <MapPin className="w-12 h-12 text-blue-600" />
+                  </div>
+                  <p className="text-blue-800">
+                    Situé au cœur de Sangmélima, le Monument Paul Biya est facilement accessible 
+                    par la route et dispose d'un parking gratuit pour les visiteurs.
+                  </p>
+                </div>
+                
+                <div className="bg-white p-8 rounded-lg shadow-lg border border-blue-200">
+                  <h3 className="text-2xl font-bold text-blue-900 mb-4">Suivez-nous</h3>
+                  <div className="flex space-x-4">
+                    <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                      <Facebook className="w-5 h-5" />
+                    </Button>
+                    <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                      <Instagram className="w-5 h-5" />
+                    </Button>
+                    <Button variant="outline" size="lg" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                      <Twitter className="w-5 h-5" />
+                    </Button>
+                  </div>
+                  <p className="text-gray-600 mt-4 text-sm">
+                    Restez connecté pour les dernières actualités et événements
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
