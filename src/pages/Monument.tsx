@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -12,29 +11,31 @@ const Monument = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Sawa selon la répartition */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-600 flex items-center justify-center text-white overflow-hidden">
+      {/* Hero Section avec bleu foncé dominant */}
+      <section className="relative h-96 bg-gradient-to-br from-blue-800 via-blue-900 to-indigo-900 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane architectural en pleine page */}
         <div className="absolute inset-0 opacity-15">
           <img 
             src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" 
             alt="Aire Culturelle Sawa" 
-            className="w-full h-full object-cover opacity-30"
+            className="w-full h-full object-cover opacity-50"
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/60 via-blue-800/40 to-indigo-900/60"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/60 via-cyan-500/40 to-teal-600/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Architecture Monumentale
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Le Monument</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Admirez l'architecture et la symbolique du Monument Paul Biya
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Le Monument</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
+            Admirez l'architecture et la symbolique du Monument Paul Biya. 
+            Un chef-d'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 via-cyan-50 to-teal-50">
+      {/* Introduction avec fond bleu architectural */}
+      <section className="py-20 bg-gradient-to-r from-blue-100 via-indigo-100 to-blue-200">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-800 mb-8">Un Chef-d'œuvre Architectural</h2>
@@ -62,8 +63,8 @@ const Monument = () => {
         </div>
       </section>
 
-      {/* Architecture et Symbolique */}
-      <section className="py-20 bg-white">
+      {/* Architecture et Symbolique avec bleu profond */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-16">
             <div className="space-y-8">
@@ -144,19 +145,19 @@ const Monument = () => {
         </div>
       </section>
 
-      {/* Section Détails Architecturaux */}
-      <section className="py-20 bg-gray-50">
+      {/* Section Détails Architecturaux avec nuances de bleu */}
+      <section className="py-20 bg-gradient-to-br from-slate-100 via-blue-50 to-indigo-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Éléments Architecturaux</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Éléments Architecturaux</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { name: "Façade Grassfield", color: "from-green-500 to-emerald-600", description: "Motifs des hauts plateaux" },
-              { name: "Façade Sawa", color: "from-blue-500 to-cyan-600", description: "Éléments côtiers et fluviaux" },
-              { name: "Façade Fang-Beti", color: "from-amber-500 to-orange-600", description: "Art forestier traditionnel" },
-              { name: "Façade Soudano-Sahélienne", color: "from-orange-500 to-red-600", description: "Influences nordiques" }
+              { name: "Façade Grassfield", color: "from-blue-500 to-blue-600", description: "Motifs des hauts plateaux" },
+              { name: "Façade Sawa", color: "from-blue-600 to-blue-700", description: "Éléments côtiers et fluviaux" },
+              { name: "Façade Fang-Beti", color: "from-blue-700 to-blue-800", description: "Art forestier traditionnel" },
+              { name: "Façade Soudano-Sahélienne", color: "from-blue-800 to-blue-900", description: "Influences nordiques" }
             ].map((facade, index) => (
-              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group">
+              <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow group border-blue-200">
                 <div className={`h-48 bg-gradient-to-br ${facade.color} relative`}>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                   <div className="absolute bottom-4 left-4 text-white">
@@ -165,7 +166,7 @@ const Monument = () => {
                 </div>
                 <CardContent className="p-4">
                   <p className="text-gray-600 text-sm">{facade.description}</p>
-                  <Button variant="outline" size="sm" className="mt-3 w-full">
+                  <Button variant="outline" size="sm" className="mt-3 w-full border-blue-500 text-blue-600 hover:bg-blue-50">
                     <Compass className="w-4 h-4 mr-2" />
                     Explorer
                   </Button>

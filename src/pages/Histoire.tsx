@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -11,23 +10,27 @@ const Histoire = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Fang-Beti */}
-      <section className="relative h-96 bg-gradient-to-br from-amber-800 via-orange-700 to-red-800 flex items-center justify-center text-white">
-        <div className="absolute inset-0 opacity-20">
-          <div className="w-full h-full bg-repeat opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11 9-20 20-20s20 9 20 20-9 20-20 20-20-9-20-20zm0-30c0-11 9-20 20-20s20 9 20 20-9 20-20 20-20-9-20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+      {/* Hero Section avec bleu dilué et touches de bleu nuit */}
+      <section className="relative h-96 bg-gradient-to-br from-blue-200 via-blue-300 to-blue-900 flex items-center justify-center text-white">
+        {/* Filigrane discret en bas */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 opacity-20">
+          <img 
+            src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
+            alt="Aire Culturelle Fang-Beti" 
+            className="w-full h-full object-cover object-bottom opacity-40"
+          />
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Histoire du Monument</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Découvrez l'héritage exceptionnel de Paul Biya et l'histoire de ce monument emblématique
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Histoire du Monument</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-md">
+            Revivez le parcours exceptionnel de Paul Biya, Président du Cameroun. 
+            Explorez les moments clés de sa vie, son héritage et l'histoire du monument qui lui rend hommage.
           </p>
         </div>
       </section>
 
-      {/* Biographie Paul Biya */}
-      <section className="py-20 bg-gray-50">
+      {/* Biographie Paul Biya avec fond bleu dilué */}
+      <section className="py-20" style={{background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)'}}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Biographie de Paul Biya</h2>
@@ -111,8 +114,8 @@ const Histoire = () => {
         </div>
       </section>
 
-      {/* Chronologie */}
-      <section className="py-20 bg-white">
+      {/* Chronologie avec fond bleu nuit */}
+      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Chronologie Historique</h2>
           
@@ -144,8 +147,8 @@ const Histoire = () => {
         </div>
       </section>
 
-      {/* Vidéo documentaire */}
-      <section className="py-20 bg-gray-900 text-white">
+      {/* Vidéo documentaire avec bleu nuit profond */}
+      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold mb-4">Documentaire Historique</h2>

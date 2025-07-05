@@ -3,7 +3,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, MapPin, Camera, Users, Car, Eye, Calendar, Phone } from 'lucide-react';
+import { Clock, MapPin, Camera, Users, Car, Wifi, Phone, Calendar } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -12,209 +12,142 @@ const Visite = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec fond Sawa selon la répartition */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-500 via-cyan-500 to-teal-600 flex items-center justify-center text-white overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
+      {/* Hero Section avec bleu ciel lumineux */}
+      <section className="relative h-96 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane carte ou plan stylisé */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="w-full h-full bg-repeat opacity-30" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M30 30c0-11 9-20 20-20s20 9 20 20-9 20-20 20-20-9-20-20zm0-30c0-11 9-20 20-20s20 9 20 20-9 20-20 20-20-9-20-20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          }}></div>
           <img 
             src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" 
-            alt="Aire Culturelle Sawa" 
-            className="w-full h-full object-cover opacity-30"
+            alt="Plan du monument" 
+            className="w-full h-full object-cover opacity-20"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/60 via-cyan-500/40 to-teal-600/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Informations Pratiques
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4">Visite</h1>
-          <p className="text-xl md:text-2xl opacity-90">
-            Préparez votre visite : horaires, tarifs, accès et visite virtuelle 360°
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Visite</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
+            Préparez votre visite : horaires, tarifs, accès, règles à suivre et visite virtuelle 360°. 
+            Vivez une expérience immersive au cœur du patrimoine camerounais.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 via-cyan-50 to-teal-50">
+      {/* Informations pratiques avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-r from-sky-50 via-blue-50 to-sky-100">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Préparez votre venue !</h2>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Préparez votre visite : horaires, tarifs, accès, règles à suivre et visite virtuelle 360°. 
-              Vivez une expérience immersive au cœur du patrimoine camerounais.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Informations Pratiques */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Informations Pratiques</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Informations Pratiques</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="p-6 hover:shadow-lg transition-shadow text-center">
-              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Clock className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Horaires</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Lundi - Vendredi: 8h - 18h</p>
-                <p>Samedi: 9h - 19h</p>
-                <p>Dimanche: 10h - 17h</p>
-                <p className="text-sm text-blue-600 mt-3">Fermeture les jours fériés</p>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Horaires</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>Lun-Ven: 8h - 18h</p>
+                <p>Sam-Dim: 9h - 19h</p>
+                <p>Fermé les jours fériés</p>
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow text-center">
-              <div className="w-16 h-16 bg-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Localisation</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Carrefour MEPHO</p>
-                <p>Sangmélima, Cameroun</p>
-                <p>Région du Sud</p>
-                <Button variant="outline" size="sm" className="mt-3">
-                  <MapPin className="w-4 h-4 mr-2" />
-                  Voir sur la carte
-                </Button>
-              </div>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-shadow text-center">
-              <div className="w-16 h-16 bg-teal-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Users className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Tarifs</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Adulte: 2000 FCFA</p>
-                <p>Enfant (-12 ans): 1000 FCFA</p>
-                <p>Étudiant: 1500 FCFA</p>
-                <p className="text-sm text-green-600 mt-3">Groupe (+10): -20%</p>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Tarifs</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>Adultes: 2 000 FCFA</p>
+                <p>Étudiants: 1 000 FCFA</p>
+                <p>Enfants: Gratuit</p>
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow text-center">
-              <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Car className="w-8 h-8 text-white" />
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Accès</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Parking gratuit disponible</p>
-                <p>Accès PMR</p>
-                <p>Transport public: Bus 15, 22</p>
-                <p className="text-sm text-blue-600 mt-3">Navette depuis l'aéroport</p>
-              </div>
-            </Card>
-
-            <Card className="p-6 hover:shadow-lg transition-shadow text-center">
-              <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Camera className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3">Visites Guidées</h3>
-              <div className="space-y-2 text-gray-600">
-                <p>Français, Anglais, Ewondo</p>
-                <p>Durée: 1h30</p>
-                <p>Groupes max: 25 personnes</p>
-                <Button variant="outline" size="sm" className="mt-3">
-                  Réserver
-                </Button>
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Accès</h3>
+              <div className="space-y-1 text-sm text-gray-600">
+                <p>Carrefour MEPHO</p>
+                <p>Sangmélima</p>
+                <p>Parking gratuit</p>
               </div>
             </Card>
 
-            <Card className="p-6 hover:shadow-lg transition-shadow text-center">
-              <div className="w-16 h-16 bg-orange-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Card className="p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-bold mb-3">Contact</h3>
-              <div className="space-y-2 text-gray-600">
+              <h3 className="text-lg font-bold mb-3 text-blue-900">Contact</h3>
+              <div className="space-y-1 text-sm text-gray-600">
                 <p>+237 620004018</p>
                 <p>info@monumentpaulbiya.cm</p>
-                <p>Réservations recommandées</p>
-                <Button variant="outline" size="sm" className="mt-3">
-                  Appeler
-                </Button>
+                <p>Réservation conseillée</p>
               </div>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Visite Virtuelle */}
-      <section className="py-20 bg-gray-50">
+      {/* Visite 360° avec bleu lumineux */}
+      <section className="py-20 bg-gradient-to-br from-blue-100 to-sky-200">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Visite Virtuelle 360°</h2>
-            <p className="text-xl text-gray-600 mb-12">
-              Découvrez le monument depuis chez vous avec notre visite immersive
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">Visite Virtuelle 360°</h2>
+            <p className="text-xl text-gray-700 mb-12">
+              Découvrez le monument depuis chez vous avec notre visite virtuelle immersive
             </p>
             
-            <div className="bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg p-8 mb-8">
-              <div className="aspect-video bg-white/80 rounded-lg flex items-center justify-center mb-6">
-                <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                  <Eye className="w-6 h-6 mr-2" />
-                  Lancer la Visite 360°
-                </Button>
-              </div>
-              <p className="text-gray-700">
-                Explorez chaque espace, découvrez les détails architecturaux et plongez dans l'histoire du monument
-              </p>
+            <div className="bg-gradient-to-br from-sky-200 to-blue-300 rounded-lg aspect-video flex items-center justify-center relative overflow-hidden mb-8">
+              <div className="absolute inset-0 bg-gradient-to-br from-sky-500/20 to-blue-600/20"></div>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white relative z-10 shadow-xl">
+                <Camera className="w-6 h-6 mr-2" />
+                Lancer la Visite 360°
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Règles et Conseils */}
+      {/* Services disponibles */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Règles et Conseils</h2>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-green-600">À faire</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Respecter les horaires de visite</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Porter une tenue correcte</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Suivre les indications du guide</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                    <span>Prendre des photos (zones autorisées)</span>
-                  </li>
-                </ul>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Services Disponibles</h2>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Wifi Gratuit",
+                icon: <Wifi className="w-8 h-8" />,
+                color: "from-sky-500 to-blue-600",
+                description: "Connexion internet haut débit dans tout le monument"
+              },
+              {
+                title: "Parking Sécurisé",
+                icon: <Car className="w-8 h-8" />,
+                color: "from-blue-600 to-blue-700",
+                description: "Stationnement gratuit et surveillé"
+              },
+              {
+                title: "Réservation Groupes",
+                icon: <Calendar className="w-8 h-8" />,
+                color: "from-blue-700 to-blue-800",
+                description: "Visites guidées pour groupes sur réservation"
+              }
+            ].map((service, index) => (
+              <Card key={index} className="group text-center p-6 hover:shadow-lg transition-shadow border-blue-200">
+                <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                  <div className="text-white">{service.icon}</div>
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-blue-900">{service.title}</h3>
+                <p className="text-gray-600 text-sm">{service.description}</p>
               </Card>
-
-              <Card className="p-6">
-                <h3 className="text-xl font-bold mb-4 text-red-600">À éviter</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                    <span>Toucher les œuvres d'art</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                    <span>Faire du bruit excessif</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                    <span>Fumer à l'intérieur</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                    <span>Introduire de la nourriture</span>
-                  </li>
-                </ul>
-              </Card>
-            </div>
+            ))}
           </div>
         </div>
       </section>
