@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Calendar, Play, User, Award } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import { Calendar, Award, BookOpen, Users } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -11,163 +11,183 @@ const Histoire = () => {
       <Header />
       
       {/* Hero Section avec bleu dilué et touches de bleu nuit */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-200 via-blue-300 to-blue-900 flex items-center justify-center text-white">
-        {/* Filigrane discret en bas */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 opacity-20">
+      <section className="relative h-96 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-400 flex items-center justify-center text-white overflow-hidden">
+        {/* Photo du Président en fond avec filigrane discret en bas */}
+        <div className="absolute inset-0 opacity-20">
           <img 
-            src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
-            alt="Aire Culturelle Fang-Beti" 
-            className="w-full h-full object-cover object-bottom opacity-40"
+            src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
+            alt="Président Paul Biya" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-400/70 via-blue-300/30 to-blue-200/40"></div>
+        </div>
+        {/* Photo en petit format en bas à droite */}
+        <div className="absolute bottom-4 right-4 opacity-30">
+          <img 
+            src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
+            alt="Président Paul Biya" 
+            className="w-16 h-20 object-cover rounded-lg"
           />
         </div>
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-200/50 via-blue-300/40 to-blue-600/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-lg">Histoire du Monument</h1>
-          <p className="text-xl md:text-2xl opacity-90 drop-shadow-md">
+          <Badge className="mb-4 bg-white/20 text-blue-900 border-white/30">
+            Parcours Présidentiel
+          </Badge>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl text-blue-900">Histoire</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg text-blue-800">
             Revivez le parcours exceptionnel de Paul Biya, Président du Cameroun. 
             Explorez les moments clés de sa vie, son héritage et l'histoire du monument qui lui rend hommage.
           </p>
         </div>
       </section>
 
-      {/* Biographie Paul Biya avec fond bleu dilué */}
-      <section className="py-20" style={{background: 'linear-gradient(135deg, #dbeafe 0%, #bfdbfe 50%, #93c5fd 100%)'}}>
+      {/* rest of the Histoire page content */}
+      <section className="py-20 bg-gradient-to-r from-blue-50 via-sky-50 to-blue-100">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Biographie de Paul Biya</h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Un parcours exceptionnel au service de la nation camerounaise
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">Un parcours exceptionnel</h2>
+            <p className="text-xl text-blue-800 leading-relaxed">
+              Revivez le parcours exceptionnel de Paul Biya, Président du Cameroun. 
+              Explorez les moments clés de sa vie, son héritage et l'histoire du monument qui lui rend hommage.
             </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <Card className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-yellow-600 rounded-full flex items-center justify-center">
-                    <User className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Origines</h3>
-                    <p className="text-gray-600">
-                      Né le 13 février 1933 à Mvomeka'a, dans la région du Sud, Paul Biya incarne les valeurs profondes du Cameroun.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                    <Award className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Formation</h3>
-                    <p className="text-gray-600">
-                      Diplômé en sciences politiques et droit public, il a forgé sa vision du développement national à travers une formation d'excellence.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-
-              <Card className="p-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center">
-                    <Calendar className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">Présidence</h3>
-                    <p className="text-gray-600">
-                      Président de la République depuis 1982, il a guidé le Cameroun vers la modernité et le développement.
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </div>
-
-            <div className="space-y-6">
-              <div className="bg-gradient-to-br from-yellow-100 to-orange-100 p-8 rounded-lg">
-                <blockquote className="text-lg italic text-gray-800 mb-4">
-                  "Le développement d'un pays passe par la préservation de son patrimoine et la valorisation de son histoire."
-                </blockquote>
-                <cite className="text-sm text-gray-600">- Citation historique</cite>
-              </div>
-              
-              <div className="bg-white p-6 rounded-lg shadow-lg">
-                <h4 className="text-lg font-semibold mb-4">Réalisations Majeures</h4>
-                <ul className="space-y-2 text-gray-600">
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-yellow-600 rounded-full"></div>
-                    <span>Modernisation des infrastructures nationales</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-red-600 rounded-full"></div>
-                    <span>Promotion de l'unité nationale</span>
-                  </li>
-                  <li className="flex items-center space-x-2">
-                    <div className="w-2 h-2 bg-green-600 rounded-full"></div>
-                    <span>Développement culturel et patrimonial</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
-      {/* Chronologie avec fond bleu nuit */}
-      <section className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Chronologie Historique</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Chronologie Présidentielle</h2>
           
           <div className="max-w-4xl mx-auto">
-            <div className="relative">
-              <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-yellow-600 to-red-600"></div>
-              
+            <div className="space-y-8">
               {[
-                { year: '1933', title: 'Naissance', description: 'Naissance à Mvomeka\'a dans la région du Sud' },
-                { year: '1982', title: 'Accession à la Présidence', description: 'Début d\'un mandat présidentiel historique' },
-                { year: '2020', title: 'Conception du Monument', description: 'Lancement du projet architectural' },
-                { year: '2024', title: 'Inauguration', description: 'Ouverture officielle du Monument Paul Biya' }
+                {
+                  year: "1933",
+                  title: "Naissance à Mvomeka'a",
+                  description: "Naissance de Paul Biya dans le village de Mvomeka'a, région du Sud",
+                  color: "from-blue-400 to-blue-500"
+                },
+                {
+                  year: "1962",
+                  title: "Début de carrière",
+                  description: "Entrée dans la fonction publique camerounaise",
+                  color: "from-blue-500 to-blue-600"
+                },
+                {
+                  year: "1975",
+                  title: "Premier Ministre",
+                  description: "Nomination au poste de Premier Ministre du Cameroun",
+                  color: "from-blue-600 to-blue-700"
+                },
+                {
+                  year: "1982",
+                  title: "Accession à la Présidence",
+                  description: "Devient Président de la République du Cameroun",
+                  color: "from-blue-700 to-blue-800",
+                  featured: true
+                },
+                {
+                  year: "2025",
+                  title: "Monument Paul Biya",
+                  description: "Inauguration du monument à Sangmélima en son honneur",
+                  color: "from-blue-800 to-blue-900"
+                }
               ].map((event, index) => (
-                <div key={index} className={`flex items-center mb-12 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                  <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                    <Card className="p-6 hover:shadow-lg transition-shadow">
-                      <CardContent className="p-0">
-                        <div className="text-2xl font-bold text-yellow-600 mb-2">{event.year}</div>
-                        <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                        <p className="text-gray-600">{event.description}</p>
-                      </CardContent>
-                    </Card>
+                <Card key={index} className={`overflow-hidden hover:shadow-xl transition-shadow ${event.featured ? 'border-2 border-blue-600' : 'border-blue-200'}`}>
+                  <div className="grid md:grid-cols-4 gap-0">
+                    <div className={`bg-gradient-to-br ${event.color} p-6 text-white relative`}>
+                      {event.featured && (
+                        <Badge className="absolute top-2 right-2 bg-white text-blue-600">
+                          Événement majeur
+                        </Badge>
+                      )}
+                      <div className="text-center">
+                        <Calendar className="w-8 h-8 mx-auto mb-2" />
+                        <div className="text-2xl font-bold">{event.year}</div>
+                      </div>
+                    </div>
+                    <div className="md:col-span-3 p-6">
+                      <h3 className="text-2xl font-bold text-blue-900 mb-2">{event.title}</h3>
+                      <p className="text-gray-600">{event.description}</p>
+                    </div>
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-yellow-600 rounded-full border-4 border-white shadow-lg"></div>
-                </div>
+                </Card>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Vidéo documentaire avec bleu nuit profond */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 text-white">
+      <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4">Documentaire Historique</h2>
-            <p className="text-xl text-gray-300">
-              Plongez dans l'histoire à travers témoignages et archives
-            </p>
-          </div>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Réalisations Majeures</h2>
           
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-gray-800 rounded-lg aspect-video flex items-center justify-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/20 to-red-600/20"></div>
-              <Button size="lg" className="bg-yellow-600 hover:bg-yellow-700 text-white relative z-10">
-                <Play className="w-6 h-6 mr-2" />
-                Regarder le Documentaire
-              </Button>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                title: "Démocratisation",
+                icon: <Users className="w-8 h-8" />,
+                description: "Instauration du multipartisme et renforcement des institutions démocratiques",
+                color: "from-blue-500 to-blue-600"
+              },
+              {
+                title: "Développement Économique",
+                icon: <Award className="w-8 h-8" />,
+                description: "Modernisation de l'économie camerounaise et promotion de l'émergence",
+                color: "from-blue-600 to-blue-700"
+              },
+              {
+                title: "Unité Nationale",
+                icon: <BookOpen className="w-8 h-8" />,
+                description: "Préservation de l'unité et promotion de la diversité culturelle",
+                color: "from-blue-700 to-blue-800"
+              },
+              {
+                title: "Infrastructure",
+                icon: <Calendar className="w-8 h-8" />,
+                description: "Grands projets d'infrastructure pour le développement du pays",
+                color: "from-blue-800 to-blue-900"
+              },
+              {
+                title: "Éducation",
+                icon: <BookOpen className="w-8 h-8" />,
+                description: "Réformes du système éducatif et promotion de l'enseignement supérieur",
+                color: "from-blue-500 to-sky-600"
+              },
+              {
+                title: "Diplomatie",
+                icon: <Award className="w-8 h-8" />,
+                description: "Rayonnement international du Cameroun sur la scène africaine et mondiale",
+                color: "from-sky-600 to-blue-700"
+              }
+            ].map((achievement, index) => (
+              <Card key={index} className="group p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
+                <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                  <div className="text-white">{achievement.icon}</div>
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-blue-900">{achievement.title}</h3>
+                <p className="text-gray-600 text-sm">{achievement.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">L'Héritage du Monument</h2>
+            <div className="bg-gradient-to-r from-blue-100 to-sky-100 p-8 rounded-lg">
+              <blockquote className="text-xl italic text-blue-800 mb-6 leading-relaxed">
+                "Le Monument Paul Biya à Sangmélima incarne la vision d'un leader dévoué à l'unité nationale 
+                et au développement harmonieux du Cameroun. Il symbolise les valeurs de paix, de progrès 
+                et de diversité culturelle qui caractérisent notre nation."
+              </blockquote>
+              <cite className="text-lg font-semibold text-blue-700">
+                Vision présidentielle pour l'unité nationale
+              </cite>
             </div>
-            <p className="text-center text-gray-400 mt-4">
-              Disponible avec sous-titres FR/EN - Durée: 45 minutes
-            </p>
           </div>
         </div>
       </section>

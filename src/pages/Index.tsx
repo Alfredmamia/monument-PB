@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -25,14 +26,27 @@ const Index = () => {
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-sky-400/70 via-blue-500/50 to-blue-900/70"></div>
         
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-4 animate-fade-in">
-          <Badge className="mb-6 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
-            Monument Paul Biya 🇨🇲
-          </Badge>
-          <h1 className="text-6xl md:text-8xl font-bold mb-6 drop-shadow-2xl">
-            Bienvenue
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-95 drop-shadow-lg leading-relaxed">
+        <div className="relative z-10 text-center max-w-6xl mx-auto px-4 animate-fade-in">
+          {/* Photo du Président à côté du titre */}
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-8 mb-8">
+            <div className="flex-shrink-0">
+              <img 
+                src="/lovable-uploads/2e5a9a56-b104-469f-b401-523a344a35e3.png" 
+                alt="Président Paul Biya" 
+                className="w-32 h-40 lg:w-40 lg:h-48 object-cover rounded-lg shadow-2xl border-4 border-white/30"
+              />
+            </div>
+            <div className="text-center lg:text-left">
+              <Badge className="mb-6 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
+                Monument Paul Biya 🇨🇲
+              </Badge>
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 drop-shadow-2xl">
+                Bienvenue
+              </h1>
+            </div>
+          </div>
+          
+          <p className="text-xl md:text-2xl mb-8 opacity-95 drop-shadow-lg leading-relaxed max-w-4xl mx-auto">
             Bienvenue au Monument Paul Biya, symbole de l'unité et de la diversité camerounaise. 
             Découvrez un lieu unique où histoire, culture et modernité se rencontrent. Plongez dans l'expérience !
           </p>
@@ -179,7 +193,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Services Section with blue gradient */}
       <section className="py-20 bg-gradient-to-br from-blue-100 via-sky-100 to-blue-200">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Nos Services</h2>
@@ -206,7 +219,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Upcoming Events with blue theme */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Événements à Venir</h2>
