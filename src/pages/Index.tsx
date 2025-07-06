@@ -10,11 +10,11 @@ import Footer from '@/components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
-      {/* Hero Section avec dégradé bleu ciel → bleu foncé */}
-      <section className="relative h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-blue-900 flex items-center justify-center text-white overflow-hidden">
+      {/* Hero Section avec dégradé bleu ciel → bleu foncé et fond couvrant toute la page */}
+      <section className="relative min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-blue-900 flex items-center justify-center text-white overflow-hidden">
         {/* Filigrane central des 4 aires réunies */}
         <div className="absolute inset-0 opacity-10">
           <div className="grid grid-cols-2 h-full">
@@ -68,8 +68,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experience Cards section */}
-      <section className="py-20 bg-white">
+      {/* Experience Cards section avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">
             Explorez le Monument
@@ -79,6 +79,11 @@ const Index = () => {
             <Link to="/histoire">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
+                    alt="Découvrez l'histoire" 
+                    className="w-full h-full object-cover opacity-70"
+                  />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Histoire</Badge>
@@ -94,7 +99,11 @@ const Index = () => {
             <Link to="/monument">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-sky-400 to-blue-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
+                    <div className="bg-white/20 p-4 rounded-lg">
+                      <Award className="w-12 h-12 text-white" />
+                    </div>
+                  </div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Architecture</Badge>
                     <h3 className="text-lg font-bold">Admirez l'architecture</h3>
@@ -151,17 +160,17 @@ const Index = () => {
               </Card>
             </Link>
 
-            <Link to="/glam">
+            <Link to="/almanach">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-800 to-indigo-900 relative overflow-hidden">
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                   <div className="absolute bottom-4 left-4 text-white">
-                    <Badge className="mb-2 bg-white/20">GLAM</Badge>
-                    <h3 className="text-lg font-bold">Bibliothèque numérique</h3>
+                    <Badge className="mb-2 bg-white/20">Almanach</Badge>
+                    <h3 className="text-lg font-bold">Nos Partenaires</h3>
                   </div>
                 </div>
                 <CardContent className="p-6">
-                  <p className="text-gray-600">Accédez à notre bibliothèque numérique.</p>
+                  <p className="text-gray-600">Découvrez tous les partenaires du projet.</p>
                 </CardContent>
               </Card>
             </Link>
@@ -169,31 +178,32 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Stats Section with blue theme */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 to-sky-50">
+      {/* Stats Section avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-r from-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-blue-700">42m</div>
-              <div className="text-blue-600">Hauteur du Monument</div>
+              <div className="text-4xl font-bold text-blue-900">42m</div>
+              <div className="text-blue-800">Hauteur du Monument</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-blue-700">4</div>
-              <div className="text-blue-600">Aires Culturelles</div>
+              <div className="text-4xl font-bold text-blue-900">4</div>
+              <div className="text-blue-800">Aires Culturelles</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-blue-700">2025</div>
-              <div className="text-blue-600">Année d'Inauguration</div>
+              <div className="text-4xl font-bold text-blue-900">2025</div>
+              <div className="text-blue-800">Année d'Inauguration</div>
             </div>
             <div className="space-y-2">
-              <div className="text-4xl font-bold text-blue-700">1000+</div>
-              <div className="text-blue-600">Visiteurs Attendus</div>
+              <div className="text-4xl font-bold text-blue-900">1000+</div>
+              <div className="text-blue-800">Visiteurs Attendus</div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="py-20 bg-gradient-to-br from-blue-100 via-sky-100 to-blue-200">
+      {/* Services section avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Nos Services</h2>
           
@@ -219,7 +229,8 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      {/* Événements section avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Événements à Venir</h2>
           

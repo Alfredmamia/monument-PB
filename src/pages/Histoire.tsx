@@ -7,11 +7,11 @@ import Footer from '@/components/Footer';
 
 const Histoire = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
       {/* Hero Section avec bleu dilué et touches de bleu nuit */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-100 via-blue-200 to-blue-400 flex items-center justify-center text-white overflow-hidden">
+      <section className="relative min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-sky-400 flex items-center justify-center text-white overflow-hidden">
         {/* Photo du Président en fond avec filigrane discret en bas */}
         <div className="absolute inset-0 opacity-20">
           <img 
@@ -19,7 +19,7 @@ const Histoire = () => {
             alt="Président Paul Biya" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-blue-400/70 via-blue-300/30 to-blue-200/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/70 via-sky-300/30 to-sky-200/40"></div>
         </div>
         {/* Photo en petit format en bas à droite */}
         <div className="absolute bottom-4 right-4 opacity-30">
@@ -29,7 +29,7 @@ const Histoire = () => {
             className="w-16 h-20 object-cover rounded-lg"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-200/50 via-blue-300/40 to-blue-600/60"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-200/50 via-sky-300/40 to-blue-600/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-blue-900 border-white/30">
             Parcours Présidentiel
@@ -42,8 +42,8 @@ const Histoire = () => {
         </div>
       </section>
 
-      {/* rest of the Histoire page content */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 via-sky-50 to-blue-100">
+      {/* rest of the Histoire page content avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-blue-900 mb-8">Un parcours exceptionnel</h2>
@@ -55,7 +55,7 @@ const Histoire = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Chronologie Présidentielle</h2>
           
@@ -119,7 +119,7 @@ const Histoire = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Réalisations Majeures</h2>
           
@@ -174,7 +174,7 @@ const Histoire = () => {
         </div>
       </section>
 
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-blue-900 mb-8">L'Héritage du Monument</h2>

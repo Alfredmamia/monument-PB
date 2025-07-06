@@ -1,24 +1,42 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Users, Award, Handshake, Globe } from 'lucide-react';
+import { Users, Award, Handshake, Globe, Building2, Phone, Briefcase, TreePine } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const Almanach = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
-      {/* Hero Section avec bleu clair et filigrane logos partenaires */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane logos partenaires */}
+      {/* Hero Section avec bleu ciel et filigrane logos partenaires */}
+      <section className="relative min-h-screen bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500 flex items-center justify-center text-white overflow-hidden">
+        {/* Photo du Président en fond avec filigrane discret en bas */}
         <div className="absolute inset-0 opacity-15">
-          <div className="w-full h-full bg-repeat opacity-40" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Crect x='10' y='10' width='25' height='15' rx='3'/%3E%3Ccircle cx='60' cy='20' r='10'/%3E%3Crect x='45' y='50' width='20' height='20' rx='5'/%3E%3Cpath d='M15 60h15v15H15V60z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+          <img 
+            src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
+            alt="Président Paul Biya" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/70 via-sky-300/30 to-sky-200/40"></div>
+        </div>
+        {/* Photo en petit format en bas à droite */}
+        <div className="absolute bottom-4 right-4 opacity-40">
+          <img 
+            src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
+            alt="Président Paul Biya" 
+            className="w-16 h-20 object-cover rounded-lg border-2 border-white/30"
+          />
+        </div>
+        {/* Filigrane logos partenaires */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="w-full h-full bg-repeat opacity-30" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Crect x='15' y='15' width='25' height='15' rx='3'/%3E%3Ccircle cx='70' cy='25' r='12'/%3E%3Crect x='50' y='60' width='20' height='20' rx='5'/%3E%3Cpath d='M20 70h20v20H20V70z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-300/50 via-blue-400/40 to-blue-500/50"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-300/50 via-sky-400/40 to-blue-500/50"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Partenariats Stratégiques
@@ -31,80 +49,97 @@ const Almanach = () => {
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50">
+      {/* Introduction avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Nos partenaires</h2>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Découvrez les partenaires et entreprises qui ont contribué à la réalisation du monument. 
-              Un projet collectif pour l'avenir du Cameroun.
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">Nos Partenaires du Projet Monument Paul Biya</h2>
+            <p className="text-xl text-blue-800 leading-relaxed">
+              Le Monument Paul Biya est le fruit d'une collaboration exceptionnelle entre institutions publiques, 
+              entreprises privées et partenaires techniques. Découvrez tous ceux qui ont rendu ce projet possible.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Partenaires Institutionnels */}
-      <section className="py-20 bg-white">
+      {/* Partenaires Institutionnels avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Partenaires Institutionnels</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Partenaires Institutionnels</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                name: "CAMTEL",
+                name: "MAIRIE DE SANGMÉLIMA",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Télécommunications et infrastructure numérique",
-                category: "Télécommunications"
+                description: "Collectivité territoriale locale, pilote du projet",
+                category: "Administration Locale",
+                icon: <Building2 className="w-6 h-6" />
               },
               {
                 name: "FEICOM",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Financement des collectivités territoriales",
-                category: "Financement Public"
+                description: "Fonds spécial d'équipement et d'intervention intercommunale",
+                category: "Financement Public",
+                icon: <Handshake className="w-6 h-6" />
               },
               {
                 name: "MINAC",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
                 description: "Ministère des Arts et de la Culture",
-                category: "Culture"
+                category: "Culture",
+                icon: <Award className="w-6 h-6" />
               },
               {
                 name: "SOPECAM",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
                 description: "Société de Presse et d'Édition du Cameroun",
-                category: "Médias"
+                category: "Médias",
+                icon: <Globe className="w-6 h-6" />
+              },
+              {
+                name: "CAMTEL",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Cameroun Télécommunications - Infrastructure numérique",
+                category: "Télécommunications",
+                icon: <Phone className="w-6 h-6" />
               },
               {
                 name: "Ministère des Forêts et de la Faune",
                 logo: "/lovable-uploads/158e7195-b643-46ce-b446-aab10230e51c.png",
                 description: "Protection de l'environnement et biodiversité",
-                category: "Environnement"
+                category: "Environnement",
+                icon: <TreePine className="w-6 h-6" />
               },
               {
                 name: "MINHDU",
                 logo: "/lovable-uploads/e6647f0b-c37a-4d38-aaca-9b21583bf14d.png",
                 description: "Ministère de l'Habitat et du Développement Urbain",
-                category: "Développement Urbain"
+                category: "Développement Urbain",
+                icon: <Building2 className="w-6 h-6" />
               },
               {
                 name: "Ministère du Tourisme",
                 logo: "/lovable-uploads/ddac6329-9e9c-49fb-b4e1-26bdd388ea36.png",
                 description: "Promotion du tourisme et des loisirs",
-                category: "Tourisme"
+                category: "Tourisme",
+                icon: <Globe className="w-6 h-6" />
               }
             ].map((partner, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
                 <CardContent className="p-6 text-center">
-                  <div className="bg-white p-4 rounded-lg mb-4 shadow-sm">
+                  <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-4 rounded-lg mb-4 shadow-sm">
                     <img 
                       src={partner.logo} 
                       alt={partner.name}
                       className="h-16 w-auto mx-auto object-contain"
                     />
                   </div>
-                  <Badge variant="outline" className="mb-2">{partner.category}</Badge>
-                  <h3 className="text-lg font-bold mb-2">{partner.name}</h3>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <div className="text-blue-600">{partner.icon}</div>
+                    <Badge variant="outline" className="border-blue-300 text-blue-700">{partner.category}</Badge>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
                   <p className="text-gray-600 text-sm">{partner.description}</p>
                 </CardContent>
               </Card>
@@ -113,48 +148,120 @@ const Almanach = () => {
         </div>
       </section>
 
-      {/* Types de Partenariats */}
-      <section className="py-20 bg-gray-50">
+      {/* Partenaires Techniques avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Types de Partenariats</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Partenaires Techniques</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                name: "CABINET CEBR",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Cabinet d'études et de réalisation architecturale",
+                category: "Architecture",
+                icon: <Briefcase className="w-6 h-6" />
+              },
+              {
+                name: "AFRIKYA",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Entreprise de construction et travaux publics",
+                category: "Construction",
+                icon: <Building2 className="w-6 h-6" />
+              },
+              {
+                name: "ENTREPRISE GÉNÉRALE DU BÂTIMENT",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Spécialiste en génie civil et construction monumentale",
+                category: "Génie Civil",
+                icon: <Building2 className="w-6 h-6" />
+              },
+              {
+                name: "SOCIÉTÉ D'INGÉNIERIE",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Bureau d'études techniques et supervision",
+                category: "Ingénierie",
+                icon: <Briefcase className="w-6 h-6" />
+              },
+              {
+                name: "ARTISANS LOCAUX",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Artisans et sculpteurs traditionnels camerounais",
+                category: "Artisanat",
+                icon: <Award className="w-6 h-6" />
+              },
+              {
+                name: "FOURNISSEURS MATÉRIAUX",
+                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                description: "Approvisionnement en matériaux de construction",
+                category: "Fournitures",
+                icon: <Building2 className="w-6 h-6" />
+              }
+            ].map((partner, index) => (
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
+                <CardContent className="p-6 text-center">
+                  <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-4 rounded-lg mb-4 shadow-sm">
+                    <img 
+                      src={partner.logo} 
+                      alt={partner.name}
+                      className="h-16 w-auto mx-auto object-contain"
+                    />
+                  </div>
+                  <div className="flex items-center justify-center gap-2 mb-2">
+                    <div className="text-blue-600">{partner.icon}</div>
+                    <Badge variant="outline" className="border-blue-300 text-blue-700">{partner.category}</Badge>
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
+                  <p className="text-gray-600 text-sm">{partner.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Types de Partenariats avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Types de Partenariats</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 title: "Partenaires Institutionnels",
                 icon: <Award className="w-8 h-8" />,
-                color: "from-green-500 to-emerald-500",
-                count: "7+ ministères",
+                color: "from-sky-500 to-blue-500",
+                count: "8+ ministères",
                 description: "Institutions gouvernementales et organismes publics"
               },
               {
                 title: "Partenaires Techniques",
                 icon: <Users className="w-8 h-8" />,
-                color: "from-blue-500 to-cyan-500",
-                count: "15+ entreprises",
+                color: "from-blue-500 to-blue-600",
+                count: "6+ entreprises",
                 description: "Expertise technique et réalisation"
               },
               {
                 title: "Partenaires Financiers",
                 icon: <Handshake className="w-8 h-8" />,
-                color: "from-purple-500 to-indigo-500",
+                color: "from-blue-600 to-blue-700",
                 count: "5+ institutions",
                 description: "Financement et soutien économique"
               },
               {
-                title: "Partenaires Internationaux",
+                title: "Partenaires Locaux",
                 icon: <Globe className="w-8 h-8" />,
-                color: "from-orange-500 to-red-500",
-                count: "3+ pays",
-                description: "Coopération internationale"
+                color: "from-blue-700 to-blue-800",
+                count: "3+ communautés",
+                description: "Participation communautaire locale"
               }
             ].map((type, index) => (
-              <Card key={index} className="group text-center p-6 hover:shadow-lg transition-shadow">
+              <Card key={index} className="group text-center p-6 hover:shadow-lg transition-shadow bg-white/95 backdrop-blur-sm">
                 <div className={`w-16 h-16 bg-gradient-to-br ${type.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                   <div className="text-white">{type.icon}</div>
                 </div>
-                <h3 className="text-lg font-bold mb-2">{type.title}</h3>
-                <div className="text-2xl font-bold text-green-600 mb-2">{type.count}</div>
+                <h3 className="text-lg font-bold mb-2 text-blue-900">{type.title}</h3>
+                <div className="text-2xl font-bold text-sky-600 mb-2">{type.count}</div>
                 <p className="text-gray-600 text-sm">{type.description}</p>
               </Card>
             ))}
@@ -162,18 +269,19 @@ const Almanach = () => {
         </div>
       </section>
 
-      {/* Remerciements */}
-      <section className="py-20 bg-white">
+      {/* Remerciements avec fond bleu ciel */}
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Remerciements</h2>
-            <div className="bg-gradient-to-r from-green-100 to-emerald-100 p-8 rounded-lg">
-              <blockquote className="text-xl italic text-gray-800 mb-6 leading-relaxed">
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">Remerciements</h2>
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+              <blockquote className="text-xl italic text-blue-800 mb-6 leading-relaxed">
                 "Le Monument Paul Biya est le fruit d'une collaboration exceptionnelle entre institutions publiques, 
-                entreprises privées et partenaires internationaux. Grâce à leur engagement et leur vision partagée, 
-                ce projet emblématique voit le jour pour la fierté de tous les Camerounais."
+                entreprises privées, partenaires techniques et communautés locales. Grâce à leur engagement collectif 
+                et leur vision partagée pour l'unité nationale, ce projet emblématique voit le jour pour la fierté 
+                de tous les Camerounais et des générations futures."
               </blockquote>
-              <cite className="text-lg font-semibold text-gray-700">L'équipe du Monument Paul Biya</cite>
+              <cite className="text-lg font-semibold text-blue-900">L'équipe du Monument Paul Biya - Sangmélima</cite>
             </div>
           </div>
         </div>
