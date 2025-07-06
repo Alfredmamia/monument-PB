@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -8,117 +9,142 @@ import Footer from '@/components/Footer';
 
 const Restaurant = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-sky-300">
       <Header />
       
-      {/* Hero Section avec bleu doux et filigrane ustensiles */}
+      {/* Hero Section avec image phare du restaurant */}
       <section className="relative h-96 bg-gradient-to-br from-blue-200 via-blue-300 to-blue-400 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane ustensiles et plats */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full bg-repeat opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.15'%3E%3Ccircle cx='30' cy='15' r='3'/%3E%3Crect x='28' y='20' width='4' height='20' rx='2'/%3E%3Ccircle cx='15' cy='30' r='8'/%3E%3Ccircle cx='45' cy='45' r='5'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+        {/* Image de fond du restaurant */}
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/e479d3a2-497b-434f-9df8-f3957a15969d.png" 
+            alt="Restaurant La Marraine"
+            className="w-full h-full object-cover opacity-30"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-300/60 via-blue-400/40 to-blue-500/60"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-300/40 via-blue-400/30 to-blue-500/40"></div>
+        
+        {/* Petite image en coin */}
+        <div className="absolute bottom-4 right-4 w-24 h-24 rounded-lg overflow-hidden shadow-lg">
+          <img 
+            src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
+            alt="Monument Paul Biya"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
-            Gastronomie Camerounaise
+            Restaurant La Marraine
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl text-blue-900">Restaurant</h1>
-          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg text-blue-800">
-            Savourez la gastronomie camerounaise et internationale dans un cadre prestigieux. 
-            Réservez votre table pour un moment inoubliable.
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl text-white">Restaurant</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg text-white">
+            Savourez la gastronomie camerounaise dans un cadre prestigieux. 
+            Commandes et livraisons à domicile disponibles.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gradient-to-r from-blue-50 via-cyan-50 to-teal-50">
+      {/* Introduction avec images des plats */}
+      <section className="py-20 bg-gradient-to-r from-sky-50 via-cyan-50 to-teal-50">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Saveurs et convivialité</h2>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Savourez la gastronomie camerounaise et internationale dans un cadre prestigieux. 
-              Réservez votre table pour un moment inoubliable.
-            </p>
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-800 mb-8 text-center">Saveurs et convivialité</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+              <div>
+                <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                  Découvrez nos spécialités grillées et nos plats traditionnels camerounais 
+                  préparés avec passion dans notre restaurant La Marraine.
+                </p>
+                <div className="bg-blue-100 p-4 rounded-lg">
+                  <h3 className="font-bold text-blue-800 mb-2">Commandes et Livraisons</h3>
+                  <p className="text-blue-700 flex items-center">
+                    <Phone className="w-4 h-4 mr-2" />
+                    <span className="font-bold">6 90 34 31 66</span>
+                  </p>
+                  <p className="text-sm text-blue-600 mt-1">Livraison à domicile disponible</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="/lovable-uploads/6ee55d53-0524-4387-9dba-aaf52683015d.png" 
+                  alt="Grillades de crevettes"
+                  className="w-full h-48 object-cover rounded-lg shadow-lg"
+                />
+                <img 
+                  src="/lovable-uploads/21543333-acb1-417c-9e21-c18c52b601ee.png" 
+                  alt="Plat traditionnel camerounais"
+                  className="w-full h-48 object-cover rounded-lg shadow-lg"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Menu Highlights */}
+      {/* Notre Menu */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Nos Spécialités</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Notre Menu</h2>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Ndolé aux Crevettes",
-                description: "Plat traditionnel camerounais aux feuilles de ndolé, crevettes fraîches et arachides",
-                price: "8 500 FCFA",
-                category: "Plats Traditionnels",
-                rating: 5
-              },
-              {
-                name: "Poisson Braisé",
-                description: "Poisson frais grillé aux épices locales, accompagné de plantain et légumes",
-                price: "7 200 FCFA",
-                category: "Grillades",
-                rating: 5
-              },
-              {
-                name: "Poulet DG",
-                description: "Poulet aux légumes sautés, recette du Directeur Général",
-                price: "6 800 FCFA",
-                category: "Plats Signature",
-                rating: 4
-              },
-              {
-                name: "Koki de Maïs",
-                description: "Spécialité de l'Ouest à base de maïs, haricots et épices",
-                price: "4 500 FCFA",
-                category: "Végétarien",
-                rating: 4
-              },
-              {
-                name: "Saumon Grillé",
-                description: "Saumon atlantique grillé, sauce citron-gingembre",
-                price: "12 000 FCFA",
-                category: "International",
-                rating: 5
-              },
-              {
-                name: "Tarte aux Fruits Tropicaux",
-                description: "Dessert maison aux fruits de saison et crème pâtissière",
-                price: "3 200 FCFA",
-                category: "Desserts",
-                rating: 4
-              }
-            ].map((dish, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-shadow">
-                <div className="aspect-video bg-gradient-to-br from-blue-200 to-cyan-200 relative">
-                  <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors"></div>
-                  <div className="absolute top-2 left-2">
-                    <Badge variant="outline" className="bg-white/90">{dish.category}</Badge>
-                  </div>
-                  <div className="absolute bottom-2 right-2 flex">
-                    {Array.from({ length: dish.rating }, (_, i) => (
-                      <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Utensils className="w-12 h-12 text-blue-600" />
-                  </div>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-lg font-bold">{dish.name}</h3>
-                    <span className="text-lg font-bold text-blue-600">{dish.price}</span>
-                  </div>
-                  <p className="text-gray-600 text-sm">{dish.description}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-6">
+              {[
+                {
+                  name: "Porc fumé",
+                  price: "3 000 FCFA",
+                  emoji: "🥓",
+                  description: "Porc fumé aux épices locales, tendre et savoureux"
+                },
+                {
+                  name: "Poulet fumé",
+                  price: "3 000 FCFA", 
+                  emoji: "🍗",
+                  description: "Poulet fumé traditionnel, grillé à la perfection"
+                },
+                {
+                  name: "Bar frais",
+                  price: "à partir de 4 000 FCFA",
+                  emoji: "🐟",
+                  description: "Poisson bar frais du jour, grillé ou braisé"
+                },
+                {
+                  name: "Gambas",
+                  price: "5 000 FCFA",
+                  emoji: "🍤", 
+                  description: "Grosses crevettes grillées aux épices"
+                },
+                {
+                  name: "Poisson Sol",
+                  price: "7 000/8 000 FCFA et plus",
+                  emoji: "🐟",
+                  description: "Poisson Sol frais selon taille et préparation"
+                }
+              ].map((dish, index) => (
+                <Card key={index} className="group hover:shadow-xl transition-shadow border-l-4 border-l-blue-500">
+                  <CardContent className="p-6">
+                    <div className="flex items-center justify-between mb-3">
+                      <div className="flex items-center space-x-3">
+                        <span className="text-3xl">{dish.emoji}</span>
+                        <h3 className="text-xl font-bold text-gray-800">{dish.name}</h3>
+                      </div>
+                      <span className="text-lg font-bold text-blue-600">{dish.price}</span>
+                    </div>
+                    <p className="text-gray-600 text-sm">{dish.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+            
+            <div className="text-center mt-12 bg-gradient-to-r from-blue-50 to-cyan-50 p-8 rounded-lg">
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">Commandez maintenant !</h3>
+              <p className="text-gray-700 mb-6">Appelez-nous pour passer commande ou pour une livraison à domicile</p>
+              <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white text-xl px-8 py-4">
+                <Phone className="w-6 h-6 mr-3" />
+                6 90 34 31 66
+              </Button>
+            </div>
           </div>
         </div>
       </section>
@@ -161,7 +187,7 @@ const Restaurant = () => {
               <div className="space-y-1 text-sm text-gray-600">
                 <p>Wifi gratuit</p>
                 <p>Parking valet</p>
-                <p>Événements privés</p>
+                <p>Livraison à domicile</p>
               </div>
             </Card>
 
@@ -169,11 +195,11 @@ const Restaurant = () => {
               <div className="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Phone className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-lg font-bold mb-3">Réservation</h3>
+              <h3 className="text-lg font-bold mb-3">Contact</h3>
               <div className="space-y-1 text-sm text-gray-600">
-                <p>+237 620004018</p>
-                <p>resto@monumentpaulbiya.cm</p>
-                <p>Réservation recommandée</p>
+                <p className="font-bold">6 90 34 31 66</p>
+                <p>resto@monumentpaulbiya.com</p>
+                <p>Commandes & Livraisons</p>
               </div>
             </Card>
           </div>
@@ -192,23 +218,23 @@ const Restaurant = () => {
             <div className="bg-gradient-to-r from-blue-100 to-cyan-100 p-8 rounded-lg">
               <div className="grid md:grid-cols-2 gap-8">
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-800">Réservation en ligne</h3>
+                  <h3 className="text-xl font-bold text-gray-800">Réservation & Commandes</h3>
                   <p className="text-gray-700">
-                    Réservez directement via notre plateforme sécurisée
+                    Appelez-nous pour réserver ou commander
                   </p>
                   <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white">
-                    <Calendar className="w-5 h-5 mr-2" />
-                    Réserver en Ligne
+                    <Phone className="w-5 h-5 mr-2" />
+                    6 90 34 31 66
                   </Button>
                 </div>
                 <div className="space-y-4">
-                  <h3 className="text-xl font-bold text-gray-800">Réservation téléphonique</h3>
+                  <h3 className="text-xl font-bold text-gray-800">Livraison à domicile</h3>
                   <p className="text-gray-700">
-                    Appelez-nous pour une réservation personnalisée
+                    Service de livraison disponible dans Sangmélima
                   </p>
                   <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                    <Phone className="w-5 h-5 mr-2" />
-                    +237 620004018
+                    <Calendar className="w-5 h-5 mr-2" />
+                    Commander maintenant
                   </Button>
                 </div>
               </div>
