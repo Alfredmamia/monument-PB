@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -39,10 +40,22 @@ const Galerie = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-blue-900 mb-8">Plongez dans l'image</h2>
-            <p className="text-xl text-blue-800 leading-relaxed">
+            <p className="text-xl text-blue-800 leading-relaxed mb-8">
               Explorez nos photos, vidéos et œuvres d'artistes inspirés par le monument. 
               Revivez les plus beaux moments et découvrez la richesse culturelle de Sangmélima.
             </p>
+            <div className="bg-white/80 p-6 rounded-lg shadow-lg">
+              <p className="text-lg text-blue-900 mb-4">
+                <strong>Conception Architecturale</strong>
+              </p>
+              <p className="text-blue-800 italic">
+                "Le Monument Paul Biya et ses structures connexes sont le fruit d'une vision architecturale moderne 
+                qui dialogue harmonieusement avec les traditions camerounaises."
+              </p>
+              <cite className="text-sm text-blue-700 block mt-2">
+                - KPOLOM BILONG Dieudonné, Concepteur architectural du Monument et des structures connexes
+              </cite>
+            </div>
           </div>
         </div>
       </section>

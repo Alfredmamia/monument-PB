@@ -47,7 +47,7 @@ const AiresCulturelles = () => {
                 "La diversité culturelle du Cameroun est notre plus grande richesse. Elle forge notre identité 
                 nationale et unit nos peuples dans leur singularité."
               </blockquote>
-              <cite className="text-sm text-gray-600">- Concepteur M. HAMAN</cite>
+              <cite className="text-sm text-gray-600">- M. HAMAN, Concepteur des artefacts des aires géographiques</cite>
             </div>
           </div>
         </div>
@@ -218,7 +218,7 @@ const AiresCulturelles = () => {
                 diversité, mais aussi notre unité indéfectible. Ces objets, ces symboles, ces traditions ne sont pas 
                 de simples vestiges du passé, mais des ponts vivants entre nos générations."
               </blockquote>
-              <cite className="text-lg font-semibold text-gray-700">M. HAMAN - Concepteur du Monument</cite>
+              <cite className="text-lg font-semibold text-gray-700">M. HAMAN - Concepteur des artefacts des aires géographiques</cite>
             </div>
           </div>
         </div>

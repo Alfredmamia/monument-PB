@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -52,10 +53,22 @@ const Monument = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-blue-900 mb-8">Un chef-d'œuvre architectural</h2>
-            <p className="text-xl text-blue-800 leading-relaxed">
+            <p className="text-xl text-blue-800 leading-relaxed mb-8">
               Admirez l'architecture et la symbolique du Monument Paul Biya. 
               Un chef-d'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.
             </p>
+            <div className="bg-white/80 p-6 rounded-lg shadow-lg">
+              <p className="text-lg text-blue-900 mb-4">
+                <strong>Maître d'Œuvre Architectural</strong>
+              </p>
+              <p className="text-blue-800 italic">
+                "Cette œuvre architecturale moderne dialogue avec les traditions ancestrales du Cameroun, 
+                créant un symbole d'unité nationale à travers la diversité culturelle."
+              </p>
+              <cite className="text-sm text-blue-700 block mt-2">
+                - KPOLOM BILONG Dieudonné, Concepteur architectural du Monument et des structures connexes
+              </cite>
+            </div>
           </div>
         </div>
       </section>
@@ -394,7 +407,9 @@ const Monument = () => {
                 raconte l'histoire d'un Cameroun multiple et uni, où les traditions se mêlent à la modernité 
                 pour créer une œuvre d'art vivante au service de la mémoire collective."
               </blockquote>
-              <cite className="text-lg font-semibold text-blue-800">Concept architectural du monument</cite>
+              <cite className="text-lg font-semibold text-blue-800">
+                KPOLOM BILONG Dieudonné - Concepteur architectural du Monument et des structures connexes
+              </cite>
             </div>
           </div>
         </div>
