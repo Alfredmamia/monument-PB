@@ -1,25 +1,29 @@
+
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Facebook, Instagram, Twitter } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
+import { useLanguage } from '@/contexts/LanguageContext';
+import LanguageSelector from '@/components/LanguageSelector';
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
+  const { t } = useLanguage();
 
   const navItems = [
-    { label: 'Accueil', path: '/' },
-    { label: 'Histoire', path: '/histoire' },
-    { label: 'Visite', path: '/visite' },
-    { label: 'Galerie', path: '/galerie' },
-    { label: 'Événements', path: '/evenements' },
-    { label: 'GLAM', path: '/glam' },
-    { label: 'Aires Culturelles', path: '/aires-culturelles' },
-    { label: 'Éducation', path: '/education' },
-    { label: 'Restaurant', path: '/restaurant' },
-    { label: 'Hébergement', path: '/hebergement' },
-    { label: 'Contact', path: '/contact' }
+    { label: t('nav.home'), path: '/' },
+    { label: t('nav.history'), path: '/histoire' },
+    { label: t('nav.visit'), path: '/visite' },
+    { label: t('nav.gallery'), path: '/galerie' },
+    { label: t('nav.events'), path: '/evenements' },
+    { label: t('nav.glam'), path: '/glam' },
+    { label: t('nav.cultural-areas'), path: '/aires-culturelles' },
+    { label: t('nav.education'), path: '/education' },
+    { label: t('nav.restaurant'), path: '/restaurant' },
+    { label: t('nav.accommodation'), path: '/hebergement' },
+    { label: t('nav.contact'), path: '/contact' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -38,8 +42,8 @@ const Header = () => {
               />
             </div>
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-gray-800">Monument Paul Biya</h1>
-              <p className="text-xs text-gray-600">Gardien de notre mémoire</p>
+              <h1 className="text-xl font-bold text-gray-800">{t('site.title')}</h1>
+              <p className="text-xs text-gray-600">{t('site.subtitle')}</p>
             </div>
           </Link>
 
@@ -60,50 +64,56 @@ const Header = () => {
             ))}
           </div>
 
-          {/* Réseaux sociaux */}
-          <div className="hidden md:flex items-center space-x-3">
-            <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-pink-600 hover:text-pink-800 transition-colors">
-              <Instagram className="w-5 h-5" />
-            </a>
-            <a href="#" className="text-blue-400 hover:text-blue-600 transition-colors">
-              <Twitter className="w-5 h-5" />
-            </a>
-          </div>
+          {/* Actions section avec sélecteur de langue et réseaux sociaux */}
+          <div className="flex items-center space-x-3">
+            {/* Sélecteur de langue */}
+            <LanguageSelector />
+            
+            {/* Réseaux sociaux */}
+            <div className="hidden md:flex items-center space-x-3">
+              <a href="#" className="text-blue-600 hover:text-blue-800 transition-colors">
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-pink-600 hover:text-pink-800 transition-colors">
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a href="#" className="text-blue-400 hover:text-blue-600 transition-colors">
+                <Twitter className="w-5 h-5" />
+              </a>
+            </div>
 
-          {/* Menu Mobile */}
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild className="lg:hidden">
-              <Button variant="outline" size="icon">
-                <Menu className="h-6 w-6" />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-80">
-              <div className="flex flex-col space-y-4 mt-8">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.path}
-                    to={item.path}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                      isActive(item.path)
-                        ? 'bg-yellow-600 text-white'
-                        : 'text-gray-700 hover:bg-yellow-100'
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                ))}
-                <div className="flex justify-center space-x-4 pt-6 border-t">
-                  <Facebook className="w-6 h-6 text-blue-600 cursor-pointer" />
-                  <Instagram className="w-6 h-6 text-pink-600 cursor-pointer" />
-                  <Twitter className="w-6 h-6 text-blue-400 cursor-pointer" />
+            {/* Menu Mobile */}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild className="lg:hidden">
+                <Button variant="outline" size="icon">
+                  <Menu className="h-6 w-6" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-80">
+                <div className="flex flex-col space-y-4 mt-8">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.path}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                        isActive(item.path)
+                          ? 'bg-yellow-600 text-white'
+                          : 'text-gray-700 hover:bg-yellow-100'
+                      }`}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <div className="flex justify-center space-x-4 pt-6 border-t">
+                    <Facebook className="w-6 h-6 text-blue-600 cursor-pointer" />
+                    <Instagram className="w-6 h-6 text-pink-600 cursor-pointer" />
+                    <Twitter className="w-6 h-6 text-blue-400 cursor-pointer" />
+                  </div>
                 </div>
-              </div>
-            </SheetContent>
-          </Sheet>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </nav>
     </header>
