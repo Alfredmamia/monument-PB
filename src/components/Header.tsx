@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -17,6 +16,7 @@ const Header = () => {
     { label: 'Événements', path: '/evenements' },
     { label: 'GLAM', path: '/glam' },
     { label: 'Aires Culturelles', path: '/aires-culturelles' },
+    { label: 'Éducation', path: '/education' },
     { label: 'Restaurant', path: '/restaurant' },
     { label: 'Hébergement', path: '/hebergement' },
     { label: 'Contact', path: '/contact' }
