@@ -15,6 +15,7 @@ const Header = () => {
   const navItems = [
     { label: t('nav.home'), path: '/' },
     { label: t('nav.history'), path: '/histoire' },
+    { label: 'Monument', path: '/monument' },
     { label: t('nav.visit'), path: '/visite' },
     { label: t('nav.gallery'), path: '/galerie' },
     { label: t('nav.events'), path: '/evenements' },
@@ -42,7 +43,10 @@ const Header = () => {
               />
             </div>
             <div className="hidden md:block">
-              <h1 className="text-xl font-bold text-gray-800">{t('site.title')}</h1>
+              <div className="flex items-center space-x-2">
+                <h1 className="text-xl font-bold text-gray-800">{t('site.title')}</h1>
+                <span className="text-2xl">🇨🇲</span>
+              </div>
               <p className="text-xs text-gray-600">{t('site.subtitle')}</p>
             </div>
           </Link>

@@ -37,9 +37,12 @@ const Index = () => {
               />
             </div>
             <div className="text-center lg:text-left">
-              <Badge className="mb-6 bg-white/20 text-white border-white/30 text-lg px-4 py-2">
-                Monument Paul Biya 🇨🇲
-              </Badge>
+              <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
+                <Badge className="bg-white/20 text-white border-white/30 text-lg px-4 py-2">
+                  Monument Paul Biya
+                </Badge>
+                <span className="text-4xl">🇨🇲</span>
+              </div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 drop-shadow-2xl">
                 Bienvenue
               </h1>
@@ -51,12 +54,16 @@ const Index = () => {
             Découvrez un lieu unique où histoire, culture et modernité se rencontrent. Plongez dans l'expérience !
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50 text-lg px-8 py-4 shadow-xl">
-              Découvrir le Monument
-            </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-              Planifier ma Visite
-            </Button>
+            <Link to="/monument">
+              <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50 text-lg px-8 py-4 shadow-xl">
+                Découvrir le Monument
+              </Button>
+            </Link>
+            <Link to="/visite">
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8 py-4">
+                Planifier ma Visite
+              </Button>
+            </Link>
           </div>
         </div>
         

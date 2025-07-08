@@ -51,6 +51,175 @@ const Evenements = () => {
         </div>
       </section>
 
+      {/* Visite du DG FEICOM */}
+      <section className="py-20 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white">
+              Visite Officielle
+            </Badge>
+            <h2 className="text-4xl font-bold text-emerald-900 mb-4">Visite du DG FEICOM</h2>
+            <p className="text-xl text-emerald-800">Inspection et évaluation de l'avancement des travaux</p>
+          </div>
+
+          <Card className="max-w-6xl mx-auto overflow-hidden shadow-2xl border-2 border-emerald-200 mb-16">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Galerie d'images */}
+              <div className="bg-gradient-to-br from-emerald-100 to-green-100 p-8">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/ef7703e5-d40e-4b22-b61a-3fd3a37e8dde.png" 
+                      alt="Accueil du DG FEICOM" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/83c88ec0-df3d-4008-8c9a-633354caf460.png" 
+                      alt="Présentation officielle" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/d4befd1b-15d6-42df-927c-5c7585ff5a0d.png" 
+                      alt="Visite des installations" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/44269114-b3eb-43ef-aaa0-96a7130f10ae.png" 
+                      alt="Réunion de travail" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/5d2c25a1-a4f2-45e6-924d-9fff8c505f73.png" 
+                      alt="Échanges techniques" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/908d95bb-401b-4e75-a3ee-ff21b69c36ff.png" 
+                      alt="Salle de réunion" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Contenu informatif */}
+              <div className="bg-white p-8 flex flex-col justify-center">
+                <div className="mb-6">
+                  <Badge variant="outline" className="mb-4 border-emerald-300 text-emerald-600">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Mai 2025
+                  </Badge>
+                  <h3 className="text-3xl font-bold text-emerald-900 mb-4">
+                    Visite du Directeur Général du FEICOM
+                  </h3>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    Visite officielle du Directeur Général du Fonds d'Équipement et d'Intervention pour le Développement 
+                    Communal (FEICOM) pour l'inspection et l'évaluation de l'avancement des travaux du Monument Paul Biya.
+                  </p>
+                </div>
+
+                <div className="bg-emerald-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-emerald-900 mb-3">Objectifs de la Visite</h4>
+                  <p className="text-emerald-800 mb-4">
+                    Cette inspection avait pour but d'évaluer l'état d'avancement des travaux, de s'assurer de la 
+                    conformité aux standards de qualité, et de valider les étapes finales avant l'inauguration officielle.
+                  </p>
+                  <div className="flex items-center text-emerald-700 text-sm">
+                    <Award className="w-4 h-4 mr-2" />
+                    <span>Validation Institutionnelle</span>
+                  </div>
+                </div>
+
+                <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-blue-900 mb-3">Points Clés de l'Inspection</h4>
+                  <p className="text-blue-800 mb-4">
+                    La visite a permis de constater l'excellence des finitions, la conformité architecturale, 
+                    et la préparation optimale des espaces d'exposition et d'accueil des visiteurs.
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-blue-700">
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      <span>Équipe FEICOM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Button className="flex-1 bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white">
+                    <Camera className="w-4 h-4 mr-2" />
+                    Voir Plus
+                  </Button>
+                  <Button variant="outline" className="border-emerald-300 text-emerald-600 hover:bg-emerald-50">
+                    <Heart className="w-4 h-4 mr-2" />
+                    Partager
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Images supplémentaires */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/bf1198ac-6cd2-43b4-9e36-7d616a882922.png" 
+                alt="Inspection technique" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Inspection des espaces intérieurs</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/d8516330-678c-4d98-8d49-3eaca9dc7b3e.png" 
+                alt="Visite panoramique" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Vue panoramique depuis l'étage</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/ed76fdfc-0dec-4669-8b4d-13bb4c478513.png" 
+                alt="Échanges avec l'équipe" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Échanges avec l'équipe de construction</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/cba89e71-52da-46f7-a11c-cc36fc23429e.png" 
+                alt="Réunion finale" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Réunion de clôture de la visite</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Événement Spécial - Visite des Chefs Traditionnels */}
       <section className="py-20 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
         <div className="container mx-auto px-4">
