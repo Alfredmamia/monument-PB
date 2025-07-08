@@ -2,11 +2,18 @@
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Building, Ruler, Palette, Eye, Camera, MapPin } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const Monument = () => {
+  const openGoogleMaps = () => {
+    const coordinates = "2.9589,11.9625"; // 2°57'32"N 11°57'45"E en format décimal
+    const url = `https://www.google.com/maps/search/?api=1&query=${coordinates}`;
+    window.open(url, '_blank');
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
@@ -45,6 +52,78 @@ const Monument = () => {
             Admirez l'architecture et la symbolique du Monument Paul Biya. 
             Un chef-d'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.
           </p>
+        </div>
+      </section>
+
+      {/* Section Localisation */}
+      <section className="py-20 bg-gradient-to-r from-blue-100 via-blue-200 to-blue-300">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-blue-900 mb-4">Localisation du Monument</h2>
+              <p className="text-xl text-blue-800">Découvrez l'emplacement exact du Monument Paul Biya à Sangmélima</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 items-center">
+              {/* Image satellite */}
+              <div className="relative">
+                <img 
+                  src="/lovable-uploads/87373c14-359d-464c-85cd-d18c3e71e424.png" 
+                  alt="Vue satellite du Monument Paul Biya" 
+                  className="w-full h-96 object-cover rounded-lg shadow-2xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-lg"></div>
+              </div>
+
+              {/* Informations de localisation */}
+              <div className="space-y-6">
+                <Card className="p-8 bg-white/90 backdrop-blur-sm shadow-xl">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center">
+                        <MapPin className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-blue-900">Monument Paul Biya</h3>
+                        <p className="text-blue-700">Sangmélima, Cameroun</p>
+                      </div>
+                    </div>
+
+                    <div className="bg-blue-50 p-6 rounded-lg">
+                      <h4 className="text-lg font-semibold text-blue-900 mb-3">Coordonnées GPS</h4>
+                      <div className="space-y-2">
+                        <div className="flex items-center space-x-2">
+                          <Navigation className="w-4 h-4 text-blue-600" />
+                          <span className="text-blue-800 font-mono">2°57'32"N 11°57'45"E</span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <MapPin className="w-4 h-4 text-blue-600" />
+                          <span className="text-blue-800">Carrefour MEPHO, Sangmélima</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="space-y-4">
+                      <Button 
+                        onClick={openGoogleMaps}
+                        className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg"
+                        size="lg"
+                      >
+                        <ExternalLink className="w-5 h-5 mr-2" />
+                        Ouvrir dans Google Maps
+                      </Button>
+                      
+                      <div className="text-center">
+                        <p className="text-sm text-blue-600">
+                          Cliquez pour naviguer vers le monument avec votre application de carte préférée
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
