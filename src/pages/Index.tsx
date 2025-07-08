@@ -80,11 +80,11 @@ const Index = () => {
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
                   <img 
-                    src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
-                    alt="Découvrez l'histoire" 
-                    className="w-full h-full object-cover opacity-70"
+                    src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=500&h=300&fit=crop&crop=center" 
+                    alt="Histoire du Cameroun" 
+                    className="w-full h-full object-cover opacity-80"
                   />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Histoire</Badge>
                     <h3 className="text-lg font-bold">Découvrez l'histoire</h3>
@@ -99,11 +99,12 @@ const Index = () => {
             <Link to="/monument">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-sky-400 to-blue-500 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors flex items-center justify-center">
-                    <div className="bg-white/20 p-4 rounded-lg">
-                      <Award className="w-12 h-12 text-white" />
-                    </div>
-                  </div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1493397212122-2b85dda8106b?w=500&h=300&fit=crop&crop=center" 
+                    alt="Architecture moderne" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Architecture</Badge>
                     <h3 className="text-lg font-bold">Admirez l'architecture</h3>
@@ -118,7 +119,12 @@ const Index = () => {
             <Link to="/visite">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=500&h=300&fit=crop&crop=center" 
+                    alt="Visite guidée" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Visite</Badge>
                     <h3 className="text-lg font-bold">Planifiez votre visite</h3>
@@ -133,7 +139,12 @@ const Index = () => {
             <Link to="/galerie">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&crop=center" 
+                    alt="Galerie photos" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Galerie</Badge>
                     <h3 className="text-lg font-bold">Explorez la galerie</h3>
@@ -148,7 +159,12 @@ const Index = () => {
             <Link to="/evenements">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-700 to-blue-900 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=500&h=300&fit=crop&crop=center" 
+                    alt="Événements culturels" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Événements</Badge>
                     <h3 className="text-lg font-bold">Consultez l'agenda</h3>
@@ -163,7 +179,12 @@ const Index = () => {
             <Link to="/almanach">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-800 to-indigo-900 relative overflow-hidden">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                  <img 
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=300&fit=crop&crop=center" 
+                    alt="Partenaires et collaborations" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Almanach</Badge>
                     <h3 className="text-lg font-bold">Nos Partenaires</h3>
@@ -208,23 +229,73 @@ const Index = () => {
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Nos Services</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { title: "Visite Guidée", icon: <Users className="w-8 h-8" />, color: "from-blue-500 to-sky-500", link: "/visite" },
-              { title: "Galerie", icon: <Camera className="w-8 h-8" />, color: "from-sky-500 to-blue-600", link: "/galerie" },
-              { title: "Restaurant", icon: <Utensils className="w-8 h-8" />, color: "from-blue-600 to-blue-700", link: "/restaurant" },
-              { title: "Hébergement", icon: <Bed className="w-8 h-8" />, color: "from-blue-700 to-blue-800", link: "/hebergement" }
-            ].map((service, index) => (
-              <Link key={index} to={service.link}>
-                <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-200">
-                  <CardContent className="p-8 text-center">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${service.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                      <div className="text-white">{service.icon}</div>
-                    </div>
-                    <h3 className="text-xl font-bold text-blue-900">{service.title}</h3>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+            <Link to="/visite">
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-200">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-sky-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Users className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Visite Guidée</h3>
+                  <img 
+                    src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=300&h=200&fit=crop&crop=center" 
+                    alt="Visite guidée en groupe" 
+                    className="w-full h-32 object-cover rounded-lg mb-3"
+                  />
+                  <p className="text-gray-600 text-sm">Découvrez le monument avec nos guides experts</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/galerie">
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-200">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Camera className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Galerie</h3>
+                  <img 
+                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=300&h=200&fit=crop&crop=center" 
+                    alt="Galerie photo et vidéo" 
+                    className="w-full h-32 object-cover rounded-lg mb-3"
+                  />
+                  <p className="text-gray-600 text-sm">Explorez notre collection d'images et vidéos</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/restaurant">
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-200">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Utensils className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Restaurant</h3>
+                  <img 
+                    src="/lovable-uploads/07343eb9-7b5a-4c93-8b44-eb37c618a84d.png" 
+                    alt="Restaurant La Marraine" 
+                    className="w-full h-32 object-cover rounded-lg mb-3"
+                  />
+                  <p className="text-gray-600 text-sm">Savourez nos spécialités camerounaises</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/hebergement">
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-200">
+                <CardContent className="p-8 text-center">
+                  <div className="w-16 h-16 bg-gradient-to-br from-blue-700 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
+                    <Bed className="w-8 h-8 text-white" />
+                  </div>
+                  <h3 className="text-xl font-bold text-blue-900 mb-3">Hébergement</h3>
+                  <img 
+                    src="https://images.unsplash.com/photo-1721322800607-8c38375eef04?w=300&h=200&fit=crop&crop=center" 
+                    alt="Hébergement confortable" 
+                    className="w-full h-32 object-cover rounded-lg mb-3"
+                  />
+                  <p className="text-gray-600 text-sm">Séjournez dans un cadre exceptionnel</p>
+                </CardContent>
+              </Card>
+            </Link>
           </div>
         </div>
       </section>
@@ -236,7 +307,12 @@ const Index = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-xl transition-shadow border-blue-100">
-              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative">
+              <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=400&h=300&fit=crop&crop=center" 
+                  alt="Cérémonie d'inauguration" 
+                  className="w-full h-full object-cover opacity-80"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="mb-2 bg-white/20">Inauguration</Badge>
@@ -249,7 +325,12 @@ const Index = () => {
             </Card>
 
             <Card className="hover:shadow-xl transition-shadow border-blue-100">
-              <div className="h-48 bg-gradient-to-br from-sky-400 to-blue-500 relative">
+              <div className="h-48 bg-gradient-to-br from-sky-400 to-blue-500 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1466442929976-97f336a657be?w=400&h=300&fit=crop&crop=center" 
+                  alt="Festival arts camerounais" 
+                  className="w-full h-full object-cover opacity-80"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="mb-2 bg-white/20">Festival</Badge>
@@ -262,7 +343,12 @@ const Index = () => {
             </Card>
 
             <Card className="hover:shadow-xl transition-shadow border-blue-100">
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative">
+              <div className="h-48 bg-gradient-to-br from-blue-500 to-blue-700 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1466721591366-2d5fba72006d?w=400&h=300&fit=crop&crop=center" 
+                  alt="Exposition aires culturelles" 
+                  className="w-full h-full object-cover opacity-80"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="mb-2 bg-white/20">Exposition</Badge>
