@@ -1,13 +1,15 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink } from 'lucide-react';
+import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink, Heart, Star, Crown } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Monument = () => {
+  const { t } = useLanguage();
+  
   const openGoogleMaps = () => {
     const coordinates = "2.9589,11.9625"; // 2°57'32"N 11°57'45"E en format décimal
     const url = `https://www.google.com/maps/search/?api=1&query=${coordinates}`;
@@ -45,13 +47,94 @@ const Monument = () => {
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
-            Architecture Symbolique
+            {t('monument.badge')}
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Monument</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">{t('nav.monument')}</h1>
           <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
-            Admirez l'architecture et la symbolique du Monument Paul Biya. 
-            Un chef-d'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.
+            {t('monument.hero.description')}
           </p>
+        </div>
+      </section>
+
+      {/* Section dédiée au Maire de Sangmélima - Le Penseur */}
+      <section className="py-20 bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg px-6 py-2">
+                <Crown className="w-5 h-5 mr-2" />
+                {t('monument.mayor.badge')}
+              </Badge>
+              <h2 className="text-4xl font-bold text-amber-900 mb-4">{t('monument.mayor.title')}</h2>
+              <p className="text-xl text-amber-800">{t('monument.mayor.subtitle')}</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Portrait du Maire */}
+              <div className="relative">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/4dd05292-15f7-48dc-a73e-874800784c24.png" 
+                    alt="Maire de Sangmélima" 
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-2xl font-bold mb-2">{t('monument.mayor.name')}</h3>
+                    <p className="text-lg opacity-90">{t('monument.mayor.position')}</p>
+                  </div>
+                </div>
+                {/* Ornements décoratifs */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-amber-400 to-orange-500 rounded-full opacity-20"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-full opacity-30"></div>
+              </div>
+
+              {/* Article sur le Maire */}
+              <div className="space-y-6">
+                <Card className="p-8 bg-gradient-to-br from-white to-amber-50 shadow-xl border-l-4 border-l-amber-500">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                        <Heart className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-amber-900">{t('monument.mayor.vision.title')}</h3>
+                    </div>
+
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      {t('monument.mayor.vision.description1')}
+                    </p>
+
+                    <div className="bg-amber-100 p-6 rounded-lg border-l-4 border-l-amber-500">
+                      <blockquote className="text-amber-900 italic text-lg">
+                        "{t('monument.mayor.quote')}"
+                      </blockquote>
+                    </div>
+
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      {t('monument.mayor.vision.description2')}
+                    </p>
+
+                    <div className="grid md:grid-cols-2 gap-4">
+                      <div className="bg-gradient-to-br from-amber-50 to-yellow-50 p-4 rounded-lg text-center">
+                        <Star className="w-8 h-8 text-amber-600 mx-auto mb-2" />
+                        <h4 className="font-bold text-amber-800">{t('monument.mayor.achievements.inspiration.title')}</h4>
+                        <p className="text-sm text-amber-700">{t('monument.mayor.achievements.inspiration.description')}</p>
+                      </div>
+                      <div className="bg-gradient-to-br from-orange-50 to-amber-50 p-4 rounded-lg text-center">
+                        <Building className="w-8 h-8 text-orange-600 mx-auto mb-2" />
+                        <h4 className="font-bold text-orange-800">{t('monument.mayor.achievements.realization.title')}</h4>
+                        <p className="text-sm text-orange-700">{t('monument.mayor.achievements.realization.description')}</p>
+                      </div>
+                    </div>
+
+                    <p className="text-lg text-gray-700 leading-relaxed font-medium">
+                      {t('monument.mayor.legacy')}
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -60,8 +143,8 @@ const Monument = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-blue-900 mb-4">Localisation du Monument</h2>
-              <p className="text-xl text-blue-800">Découvrez l'emplacement exact du Monument Paul Biya à Sangmélima</p>
+              <h2 className="text-4xl font-bold text-blue-900 mb-4">{t('monument.location.title')}</h2>
+              <p className="text-xl text-blue-800">{t('monument.location.description')}</p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -84,13 +167,13 @@ const Monument = () => {
                         <MapPin className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-blue-900">Monument Paul Biya</h3>
+                        <h3 className="text-2xl font-bold text-blue-900">{t('site.title')}</h3>
                         <p className="text-blue-700">Sangmélima, Cameroun</p>
                       </div>
                     </div>
 
                     <div className="bg-blue-50 p-6 rounded-lg">
-                      <h4 className="text-lg font-semibold text-blue-900 mb-3">Coordonnées GPS</h4>
+                      <h4 className="text-lg font-semibold text-blue-900 mb-3">{t('monument.location.gps')}</h4>
                       <div className="space-y-2">
                         <div className="flex items-center space-x-2">
                           <Navigation className="w-4 h-4 text-blue-600" />
@@ -98,7 +181,7 @@ const Monument = () => {
                         </div>
                         <div className="flex items-center space-x-2">
                           <MapPin className="w-4 h-4 text-blue-600" />
-                          <span className="text-blue-800">Carrefour MEPHO, Sangmélima</span>
+                          <span className="text-blue-800">{t('contact.address.line1')}</span>
                         </div>
                       </div>
                     </div>
@@ -110,12 +193,12 @@ const Monument = () => {
                         size="lg"
                       >
                         <ExternalLink className="w-5 h-5 mr-2" />
-                        Ouvrir dans Google Maps
+                        {t('monument.location.google_maps')}
                       </Button>
                       
                       <div className="text-center">
                         <p className="text-sm text-blue-600">
-                          Cliquez pour naviguer vers le monument avec votre application de carte préférée
+                          {t('monument.location.navigate')}
                         </p>
                       </div>
                     </div>
@@ -131,21 +214,19 @@ const Monument = () => {
       <section className="py-20 bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-blue-900 mb-8">Un chef-d'œuvre architectural</h2>
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">{t('monument.intro.title')}</h2>
             <p className="text-xl text-blue-800 leading-relaxed mb-8">
-              Admirez l'architecture et la symbolique du Monument Paul Biya. 
-              Un chef-d'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.
+              {t('monument.intro.description')}
             </p>
             <div className="bg-white/80 p-6 rounded-lg shadow-lg">
               <p className="text-lg text-blue-900 mb-4">
-                <strong>Maître d'Œuvre Architectural</strong>
+                <strong>{t('monument.architect.title')}</strong>
               </p>
               <p className="text-blue-800 italic">
-                "Cette œuvre architecturale moderne dialogue avec les traditions ancestrales du Cameroun, 
-                créant un symbole d'unité nationale à travers la diversité culturelle."
+                "{t('monument.architect.quote')}"
               </p>
               <cite className="text-sm text-blue-700 block mt-2">
-                - KPOLOM BILONG Dieudonné, Concepteur architectural du Monument et des structures connexes
+                - {t('monument.architect.name')}
               </cite>
             </div>
           </div>
@@ -155,7 +236,7 @@ const Monument = () => {
       {/* Évolution du Projet avec Images */}
       <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Évolution du Projet</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">{t('monument.evolution.title')}</h2>
           
           {/* Présentation des composantes */}
           <div className="mb-16">
@@ -168,10 +249,9 @@ const Monument = () => {
                 />
               </div>
               <CardContent className="p-6 bg-white">
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">Composantes du Programme Global</h3>
+                <h3 className="text-2xl font-bold text-blue-900 mb-4">{t('monument.evolution.components.title')}</h3>
                 <p className="text-blue-800">
-                  Évolution des composantes du programme global du monument Paul Biya et ses équipements connexes 
-                  dans la ville de Sangmélima, de l'initiative en janvier 2021 aux réalisations concrètes en avril 2025.
+                  {t('monument.evolution.components.description')}
                 </p>
               </CardContent>
             </Card>
@@ -188,10 +268,9 @@ const Monument = () => {
                 />
               </div>
               <CardContent className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Statue Monumentale</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">{t('monument.evolution.statue.title')}</h3>
                 <p className="text-blue-800 text-sm">
-                  Juste face à l'entrée principale du monument, Paul BIYA, lui-même admirera ainsi l'immensité 
-                  de son parcours et de ses œuvres.
+                  {t('monument.evolution.statue.description')}
                 </p>
               </CardContent>
             </Card>
@@ -205,10 +284,9 @@ const Monument = () => {
                 />
               </div>
               <CardContent className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">Symbolisme Architectural</h3>
+                <h3 className="text-xl font-bold text-blue-900 mb-2">{t('monument.evolution.symbolism.title')}</h3>
                 <p className="text-blue-800 text-sm">
-                  Le Monument Paul BIYA est matérialisé par une calebasse renversée, signe de sauvegarde 
-                  des acquis durant le Magistère du Fils Prodigue du Dja et Lobo.
+                  {t('monument.evolution.symbolism.description')}
                 </p>
               </CardContent>
             </Card>
@@ -216,7 +294,7 @@ const Monument = () => {
 
           {/* Variantes Architecturales */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">Variantes Architecturales</h3>
+            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.variants.title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="overflow-hidden shadow-xl">
                 <div className="h-96 relative">
@@ -227,10 +305,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Études Architecturales</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.variants.studies.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    Différentes variantes d'images initiales du Monument prévues au lieu-dit Ayebe Yekombo 
-                    et celles reconfigurées pour le lieu-dit MEPHO dans la ville de Sangmélima.
+                    {t('monument.evolution.variants.studies.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -244,10 +321,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Perspectives Finales</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.variants.perspectives.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    Autres variantes d'images initiales du Monument prévu au lieu-dit Ayebe Yekombo 
-                    et celles reconfigurées pour le lieu-dit MEPHO dans la ville de Sangmélima.
+                    {t('monument.evolution.variants.perspectives.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -256,7 +332,7 @@ const Monument = () => {
 
           {/* Équipements Connexes */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">Équipements Connexes</h3>
+            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.equipment.title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="overflow-hidden shadow-xl">
                 <div className="h-80 relative">
@@ -267,10 +343,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Case d'Accueil Présidentiel</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.equipment.presidential.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    La Construction d'une case d'accueil VVIP conçue et réalisée pour constituer un espace 
-                    de repos et d'accueil VIP durant et après la cérémonie d'inauguration du Monument.
+                    {t('monument.evolution.equipment.presidential.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -284,10 +359,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Bloc Boutique et Snack Bar</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.equipment.boutique.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    Le bloc boutique et petit snack bar restaurant de la cité décongestionnés de six bungalows 
-                    aux berges du fleuve Lobo connexes au monument Paul Biya à Sangmélima.
+                    {t('monument.evolution.equipment.boutique.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -301,10 +375,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Modernisation du Cercle Municipal</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.equipment.municipal.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    Le cercle municipal actuel devrait également être restructuré pour moderniser une salle 
-                    de fête à proximité du restaurant du boulevard Paul Biya à Sangmélima.
+                    {t('monument.evolution.equipment.municipal.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -313,7 +386,7 @@ const Monument = () => {
 
           {/* Évolution Construction */}
           <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">Évolution de la Construction</h3>
+            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.construction.title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="overflow-hidden shadow-xl">
                 <div className="h-96 relative">
@@ -324,10 +397,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Évolution du Chantier</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.construction.progress.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    Quelques images du chantier dans son évolution entre janvier 2021 et fin avril 2025. 
-                    Images d'études et photos des chantiers/extraits des rapports de l'architecte et maître d'œuvre.
+                    {t('monument.evolution.construction.progress.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -341,10 +413,9 @@ const Monument = () => {
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">Finitions et Aménagements</h4>
+                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.construction.finishes.title')}</h4>
                   <p className="text-blue-800 text-sm">
-                    Variantes finales présentant les recollements des VRD, de la clôture, ainsi que de la cage 
-                    ascenseur donnant sur terrasse panoramique supportant écrans géants au sommet du Monument.
+                    {t('monument.evolution.construction.finishes.description')}
                   </p>
                 </CardContent>
               </Card>
@@ -355,50 +426,50 @@ const Monument = () => {
 
       <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Caractéristiques Architecturales</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">{t('monument.characteristics.title')}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                title: "Hauteur Imposante",
-                value: "42 mètres",
+                title: t('monument.characteristics.height.title'),
+                value: t('monument.characteristics.height.value'),
                 icon: <Ruler className="w-8 h-8" />,
-                description: "Une structure majestueuse visible de loin",
+                description: t('monument.characteristics.height.description'),
                 color: "from-indigo-500 to-blue-500"
               },
               {
-                title: "Design Moderne",
-                value: "Architecture contemporaine",
+                title: t('monument.characteristics.design.title'),
+                value: t('monument.characteristics.design.value'),
                 icon: <Building className="w-8 h-8" />,
-                description: "Mélange harmonieux tradition-modernité",
+                description: t('monument.characteristics.design.description'),
                 color: "from-blue-500 to-slate-500"
               },
               {
-                title: "Symbolisme Culturel",
-                value: "4 Aires représentées",
+                title: t('monument.characteristics.symbolism.title'),
+                value: t('monument.characteristics.symbolism.value'),
                 icon: <Palette className="w-8 h-8" />,
-                description: "Chaque façade honore une aire culturelle",
+                description: t('monument.characteristics.symbolism.description'),
                 color: "from-slate-500 to-indigo-600"
               },
               {
-                title: "Point de Vue Panoramique",
-                value: "360° sur Sangmélima",
+                title: t('monument.characteristics.viewpoint.title'),
+                value: t('monument.characteristics.viewpoint.value'),
                 icon: <Eye className="w-8 h-8" />,
-                description: "Vue imprenable depuis le sommet",
+                description: t('monument.characteristics.viewpoint.description'),
                 color: "from-indigo-600 to-blue-600"
               },
               {
-                title: "Éclairage Nocturne",
-                value: "LED multicolore",
+                title: t('monument.characteristics.lighting.title'),
+                value: t('monument.characteristics.lighting.value'),
                 icon: <Camera className="w-8 h-8" />,
-                description: "Illumination spectaculaire la nuit",
+                description: t('monument.characteristics.lighting.description'),
                 color: "from-blue-600 to-slate-600"
               },
               {
-                title: "Emplacement Stratégique",
-                value: "Carrefour MEPHO",
+                title: t('monument.characteristics.location.title'),
+                value: t('monument.characteristics.location.value'),
                 icon: <MapPin className="w-8 h-8" />,
-                description: "Au cœur de la ville de Sangmélima",
+                description: t('monument.characteristics.location.description'),
                 color: "from-slate-600 to-indigo-700"
               }
             ].map((feature, index) => (
@@ -417,37 +488,37 @@ const Monument = () => {
 
       <section className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Les Quatre Aires Culturelles</h2>
+          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">{t('monument.cultural_areas.title')}</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             {[
               {
-                name: "Aire Sawa",
+                name: t('monument.cultural_areas.sawa.name'),
                 image: "/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png",
-                description: "Représentation des peuples côtiers avec leurs traditions maritimes et leur riche patrimoine culturel.",
-                symbolism: "Façade Est du monument",
-                colors: "Bleu océan et blanc"
+                description: t('monument.cultural_areas.sawa.description'),
+                symbolism: t('monument.cultural_areas.sawa.symbolism'),
+                colors: t('monument.cultural_areas.sawa.colors')
               },
               {
-                name: "Aire Grassfield",
+                name: t('monument.cultural_areas.grassfield.name'),
                 image: "/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png",
-                description: "Hommage aux hauts plateaux de l'Ouest avec leurs chefferies traditionnelles et leur artisanat.",
-                symbolism: "Façade Ouest du monument", 
-                colors: "Vert émeraude et or"
+                description: t('monument.cultural_areas.grassfield.description'),
+                symbolism: t('monument.cultural_areas.grassfield.symbolism'),
+                colors: t('monument.cultural_areas.grassfield.colors')
               },
               {
-                name: "Aire Fang-Beti",
+                name: t('monument.cultural_areas.fang_beti.name'),
                 image: "/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png",
-                description: "Célébration de la forêt équatoriale et des traditions des peuples du Centre et du Sud.",
-                symbolism: "Façade Sud du monument",
-                colors: "Vert forêt et terre"
+                description: t('monument.cultural_areas.fang_beti.description'),
+                symbolism: t('monument.cultural_areas.fang_beti.symbolism'),
+                colors: t('monument.cultural_areas.fang_beti.colors')
               },
               {
-                name: "Aire Soudano-Sahélienne",
+                name: t('monument.cultural_areas.sudano.name'),
                 image: "/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png",
-                description: "Représentation du Nord avec ses traditions pastorales et son patrimoine islamique.",
-                symbolism: "Façade Nord du monument",
-                colors: "Ocre et rouge brique"
+                description: t('monument.cultural_areas.sudano.description'),
+                symbolism: t('monument.cultural_areas.sudano.symbolism'),
+                colors: t('monument.cultural_areas.sudano.colors')
               }
             ].map((aire, index) => (
               <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
@@ -467,7 +538,7 @@ const Monument = () => {
                   <p className="text-gray-600 mb-4">{aire.description}</p>
                   <div className="flex justify-between items-center">
                     <Badge variant="outline">{aire.colors}</Badge>
-                    <span className="text-sm text-gray-500">Façade représentative</span>
+                    <span className="text-sm text-gray-500">{t('monument.cultural_areas.facade')}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -479,15 +550,13 @@ const Monument = () => {
       <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-blue-900 mb-8">Vision Architecturale</h2>
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">{t('monument.vision.title')}</h2>
             <div className="bg-gradient-to-r from-white/80 to-white/90 p-8 rounded-lg">
               <blockquote className="text-xl italic text-blue-900 mb-6 leading-relaxed">
-                "Le Monument Paul Biya incarne l'unité dans la diversité. Chaque élément architectural 
-                raconte l'histoire d'un Cameroun multiple et uni, où les traditions se mêlent à la modernité 
-                pour créer une œuvre d'art vivante au service de la mémoire collective."
+                "{t('monument.vision.quote')}"
               </blockquote>
               <cite className="text-lg font-semibold text-blue-800">
-                KPOLOM BILONG Dieudonné - Concepteur architectural du Monument et des structures connexes
+                {t('monument.architect.name')}
               </cite>
             </div>
           </div>
