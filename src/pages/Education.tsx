@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -24,15 +23,17 @@ const Education = () => {
     <div className="min-h-screen bg-gradient-to-br from-sky-100 via-sky-50 to-blue-100">
       <Header />
       
-      {/* Hero Section avec bleu ciel */}
+      {/* Hero Section avec bleu ciel et image africaine */}
       <section className="relative h-96 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane livres stylisés */}
+        {/* Image de fond africaine - enfants étudiant */}
         <div className="absolute inset-0 opacity-15">
-          <div className="w-full h-full bg-repeat opacity-40" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Crect x='10' y='15' width='15' height='20' rx='2'/%3E%3Crect x='30' y='10' width='15' height='25' rx='2'/%3E%3Cpath d='M5 45h20v2H5zm25 0h20v2H30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+          <img 
+            src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            alt="Enfants africains étudiant" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-400/40 via-sky-500/30 to-blue-600/40"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/40 via-sky-500/30 to-blue-600/40"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
             Centre Éducatif d'Excellence
@@ -44,7 +45,7 @@ const Education = () => {
         </div>
       </section>
 
-      {/* Services Principaux */}
+      {/* Services Principaux avec images camerounaises */}
       <section className="py-20 bg-white/80 backdrop-blur-sm">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
@@ -61,33 +62,42 @@ const Education = () => {
                 icon: <BookOpen className="w-8 h-8" />,
                 description: "Plus de 50,000 ouvrages spécialisés",
                 features: ["Archives historiques", "Documents rares", "Consultation numérique", "Espaces de lecture"],
-                color: "from-blue-500 to-sky-500"
+                color: "from-blue-500 to-sky-500",
+                image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               },
               {
                 title: "Vidéothèque HD",
                 icon: <Video className="w-8 h-8" />,
                 description: "Collection audiovisuelle exceptionnelle",
                 features: ["Documentaires historiques", "Conférences enregistrées", "Archives vidéo", "Système de diffusion"],
-                color: "from-sky-500 to-cyan-500"
+                color: "from-sky-500 to-cyan-500",
+                image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               },
               {
                 title: "Salles de Conférence",
                 icon: <Users className="w-8 h-8" />,
                 description: "Espaces équipés pour événements académiques",
                 features: ["Amphithéâtre 300 places", "Salles de séminaire", "Équipement audiovisuel", "Traduction simultanée"],
-                color: "from-cyan-500 to-teal-500"
+                color: "from-cyan-500 to-teal-500",
+                image: "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               },
               {
                 title: "Centre de Recherche",
                 icon: <Microscope className="w-8 h-8" />,
                 description: "Laboratoire d'études historiques et culturelles",
                 features: ["Archives numériques", "Base de données", "Espaces collaboratifs", "Support technique"],
-                color: "from-teal-500 to-green-500"
+                color: "from-teal-500 to-green-500",
+                image: "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
               }
             ].map((service, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm">
-                <div className={`h-32 bg-gradient-to-br ${service.color} relative overflow-hidden`}>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+              <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/90 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <img 
+                    src={service.image} 
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                  />
+                  <div className={`absolute inset-0 bg-gradient-to-br ${service.color} opacity-80 group-hover:opacity-70 transition-opacity`}></div>
                   <div className="absolute inset-0 flex items-center justify-center text-white">
                     {service.icon}
                   </div>
@@ -113,7 +123,7 @@ const Education = () => {
         </div>
       </section>
 
-      {/* Programmes par Niveau */}
+      {/* Programmes par Niveau avec images éducatives africaines */}
       <section className="py-20 bg-gradient-to-r from-sky-50 to-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Programmes Éducatifs</h2>
@@ -127,14 +137,19 @@ const Education = () => {
             </TabsList>
 
             <TabsContent value="primaire" className="space-y-6">
-              <Card className="bg-white/90 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <BookOpen className="w-6 h-6 text-sky-600" />
-                    <span>Programme Primaire (6-11 ans)</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
+              <Card className="bg-white/90 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-64">
+                  <img 
+                    src="https://images.unsplash.com/photo-1580894894513-541e068a3e2b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    alt="Enfants africains en classe primaire"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-2xl font-bold">Programme Primaire (6-11 ans)</h3>
+                  </div>
+                </div>
+                <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-semibold mb-4 text-sky-800">Activités Disponibles</h4>
@@ -182,14 +197,19 @@ const Education = () => {
             </TabsContent>
 
             <TabsContent value="secondaire" className="space-y-6">
-              <Card className="bg-white/90 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <GraduationCap className="w-6 h-6 text-sky-600" />
-                    <span>Programme Secondaire (12-18 ans)</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
+              <Card className="bg-white/90 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-64">
+                  <img 
+                    src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    alt="Élèves africains au secondaire"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-2xl font-bold">Programme Secondaire (12-18 ans)</h3>
+                  </div>
+                </div>
+                <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-semibold mb-4 text-sky-800">Programmes Spécialisés</h4>
@@ -236,14 +256,19 @@ const Education = () => {
             </TabsContent>
 
             <TabsContent value="universitaire" className="space-y-6">
-              <Card className="bg-white/90 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Globe className="w-6 h-6 text-sky-600" />
-                    <span>Programme Universitaire</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
+              <Card className="bg-white/90 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-64">
+                  <img 
+                    src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    alt="Étudiants universitaires africains"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-2xl font-bold">Programme Universitaire</h3>
+                  </div>
+                </div>
+                <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-semibold mb-4 text-sky-800">Formations Spécialisées</h4>
@@ -290,14 +315,19 @@ const Education = () => {
             </TabsContent>
 
             <TabsContent value="recherche" className="space-y-6">
-              <Card className="bg-white/90 backdrop-blur-sm">
-                <CardHeader>
-                  <CardTitle className="flex items-center space-x-2">
-                    <Microscope className="w-6 h-6 text-sky-600" />
-                    <span>Centre de Recherche Avancée</span>
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
+              <Card className="bg-white/90 backdrop-blur-sm overflow-hidden">
+                <div className="relative h-64">
+                  <img 
+                    src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    alt="Chercheurs africains en laboratoire"
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <h3 className="text-2xl font-bold">Centre de Recherche Avancée</h3>
+                  </div>
+                </div>
+                <CardContent className="p-8">
                   <div className="grid md:grid-cols-2 gap-8">
                     <div>
                       <h4 className="font-semibold mb-4 text-sky-800">Projets de Recherche</h4>

@@ -45,7 +45,11 @@ const Header = () => {
             <div className="hidden md:block">
               <div className="flex items-center space-x-2">
                 <h1 className="text-xl font-bold text-gray-800">{t('site.title')}</h1>
-                <span className="text-2xl">🇨🇲</span>
+                <img 
+                  src="/lovable-uploads/1c121526-a924-4856-8137-02c40c261581.png" 
+                  alt="Drapeau du Cameroun" 
+                  className="w-8 h-6 object-cover rounded-sm"
+                />
               </div>
               <p className="text-xs text-gray-600">{t('site.subtitle')}</p>
             </div>

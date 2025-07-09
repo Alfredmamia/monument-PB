@@ -20,30 +20,24 @@ const Monument = () => {
     <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
-      {/* Hero Section avec bleu ciel dominant et filigrane architectural */}
+      {/* Hero Section avec image de fond du chantier */}
       <section className="relative h-96 bg-gradient-to-br from-sky-400 via-blue-500 to-blue-900 flex items-center justify-center text-white overflow-hidden">
-        {/* Photo du Président en fond */}
-        <div className="absolute inset-0 opacity-15">
+        {/* Image de fond du chantier */}
+        <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
-            alt="Président Paul Biya" 
+            src="/lovable-uploads/090d8c00-f7df-4c8f-a639-9e68ac86e85d.png" 
+            alt="Chantier de construction du Monument" 
             className="w-full h-full object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-br from-sky-400/70 via-blue-500/50 to-blue-900/70"></div>
         </div>
-        {/* Photo en petit format en bas */}
+        {/* Photo du Président en petit format en bas */}
         <div className="absolute bottom-4 right-4 opacity-20">
           <img 
             src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
             alt="Président Paul Biya" 
             className="w-16 h-20 object-cover rounded-lg"
           />
-        </div>
-        {/* Filigrane architectural en pleine page */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full bg-repeat opacity-40" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.3'%3E%3Crect x='10' y='20' width='80' height='60' rx='5'/%3E%3Crect x='20' y='10' width='60' height='10'/%3E%3Crect x='30' y='85' width='40' height='10'/%3E%3Ccircle cx='50' cy='50' r='20' fill='none' stroke='%23ffffff' stroke-width='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
         </div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
@@ -210,30 +204,69 @@ const Monument = () => {
         </div>
       </section>
 
-      {/* Introduction */}
+      {/* Introduction avec l'architecte */}
       <section className="py-20 bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-blue-900 mb-8">{t('monument.intro.title')}</h2>
-            <p className="text-xl text-blue-800 leading-relaxed mb-8">
-              {t('monument.intro.description')}
-            </p>
-            <div className="bg-white/80 p-6 rounded-lg shadow-lg">
-              <p className="text-lg text-blue-900 mb-4">
-                <strong>{t('monument.architect.title')}</strong>
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold text-blue-900 mb-8">{t('monument.intro.title')}</h2>
+              <p className="text-xl text-blue-800 leading-relaxed mb-8">
+                {t('monument.intro.description')}
               </p>
-              <p className="text-blue-800 italic">
-                "{t('monument.architect.quote')}"
-              </p>
-              <cite className="text-sm text-blue-700 block mt-2">
-                - {t('monument.architect.name')}
-              </cite>
+            </div>
+            
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Portrait de l'architecte */}
+              <div className="relative">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/8fa7c810-39f4-40d4-bdd1-103267ef8c7b.png" 
+                    alt="Dieudonné KPOLOM BILONG - Architecte" 
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-2xl font-bold mb-2">Dieudonné KPOLOM BILONG</h3>
+                    <p className="text-lg opacity-90">Architecte</p>
+                  </div>
+                </div>
+                {/* Ornements décoratifs */}
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-gradient-to-br from-blue-400 to-sky-500 rounded-full opacity-20"></div>
+                <div className="absolute -bottom-4 -left-4 w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-500 rounded-full opacity-30"></div>
+              </div>
+
+              {/* Citation de l'architecte */}
+              <div className="space-y-6">
+                <Card className="p-8 bg-white/90 backdrop-blur-sm shadow-xl border-l-4 border-l-blue-500">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-sky-500 rounded-full flex items-center justify-center">
+                        <Building className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-blue-900">{t('monument.architect.title')}</h3>
+                    </div>
+
+                    <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-l-blue-500">
+                      <blockquote className="text-blue-900 italic text-lg leading-relaxed">
+                        "{t('monument.architect.quote')}"
+                      </blockquote>
+                      <cite className="text-blue-700 block mt-4 font-medium">
+                        - {t('monument.architect.name')}
+                      </cite>
+                    </div>
+
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      L'architecte Dieudonné KPOLOM BILONG a conçu ce monument comme un symbole d'unité nationale, intégrant les quatre aires culturelles du Cameroun dans une œuvre architecturale moderne et respectueuse des traditions.
+                    </p>
+                  </div>
+                </Card>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Évolution du Projet avec Images */}
+      {/* Évolution du Projet avec Images agrandies */}
       <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">{t('monument.evolution.title')}</h2>
@@ -241,7 +274,7 @@ const Monument = () => {
           {/* Présentation des composantes */}
           <div className="mb-16">
             <Card className="overflow-hidden shadow-xl">
-              <div className="h-96 relative">
+              <div className="h-[500px] relative">
                 <img 
                   src="/lovable-uploads/7152caed-1e07-4b62-b75e-43ee466390e9.png" 
                   alt="Composantes du projet Monument Paul Biya"
@@ -260,7 +293,7 @@ const Monument = () => {
           {/* Statue et Architecture Principale */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <Card className="overflow-hidden shadow-xl">
-              <div className="h-80 relative">
+              <div className="h-[400px] relative">
                 <img 
                   src="/lovable-uploads/fd7d2281-1023-47f3-9daa-80f39ede1664.png" 
                   alt="Statue du Monument Paul Biya"
@@ -276,7 +309,7 @@ const Monument = () => {
             </Card>
 
             <Card className="overflow-hidden shadow-xl">
-              <div className="h-80 relative">
+              <div className="h-[400px] relative">
                 <img 
                   src="/lovable-uploads/7f307549-6fc5-4315-a87a-c49a295a0543.png" 
                   alt="Symbolisme architectural"
