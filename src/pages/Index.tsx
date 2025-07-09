@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -7,8 +6,11 @@ import { Calendar, Users, Award, Camera, BookOpen, Utensils, Bed } from 'lucide-
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Index = () => {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
@@ -39,29 +41,32 @@ const Index = () => {
             <div className="text-center lg:text-left">
               <div className="flex items-center justify-center lg:justify-start space-x-3 mb-6">
                 <Badge className="bg-white/20 text-white border-white/30 text-lg px-4 py-2">
-                  Monument Paul Biya
+                  {t('site.title')}
                 </Badge>
-                <span className="text-4xl">🇨🇲</span>
+                <img 
+                  src="/lovable-uploads/7652d362-5716-4dfc-9a56-2158775830c1.png" 
+                  alt="Drapeau du Cameroun" 
+                  className="w-8 h-6 object-cover rounded shadow-md"
+                />
               </div>
               <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-4 drop-shadow-2xl">
-                Bienvenue
+                {t('home.welcome')}
               </h1>
             </div>
           </div>
           
           <p className="text-xl md:text-2xl mb-8 opacity-95 drop-shadow-lg leading-relaxed max-w-4xl mx-auto">
-            Bienvenue au Monument Paul Biya, symbole de l'unité et de la diversité camerounaise. 
-            Découvrez un lieu unique où histoire, culture et modernité se rencontrent. Plongez dans l'expérience !
+            {t('home.hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/monument">
               <Button size="lg" className="bg-white text-blue-900 hover:bg-blue-50 text-lg px-8 py-4 shadow-xl">
-                Découvrir le Monument
+                {t('home.discover')}
               </Button>
             </Link>
             <Link to="/visite">
               <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 text-lg px-8 py-4">
-                Planifier ma Visite
+                {t('home.plan.visit')}
               </Button>
             </Link>
           </div>
@@ -79,7 +84,7 @@ const Index = () => {
       <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">
-            Explorez le Monument
+            {t('home.explore')}
           </h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -212,19 +217,19 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8 text-center">
             <div className="space-y-2">
               <div className="text-4xl font-bold text-blue-900">42m</div>
-              <div className="text-blue-800">Hauteur du Monument</div>
+              <div className="text-blue-800">{t('home.stats.height')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-blue-900">4</div>
-              <div className="text-blue-800">Aires Culturelles</div>
+              <div className="text-blue-800">{t('home.stats.areas')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-blue-900">2025</div>
-              <div className="text-blue-800">Année d'Inauguration</div>
+              <div className="text-blue-800">{t('home.stats.year')}</div>
             </div>
             <div className="space-y-2">
               <div className="text-4xl font-bold text-blue-900">1000+</div>
-              <div className="text-blue-800">Visiteurs Attendus</div>
+              <div className="text-blue-800">{t('home.stats.visitors')}</div>
             </div>
           </div>
         </div>
@@ -233,7 +238,7 @@ const Index = () => {
       {/* Services section avec fond bleu ciel */}
       <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Nos Services</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">{t('home.services')}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             <Link to="/visite">
@@ -310,7 +315,7 @@ const Index = () => {
       {/* Événements section avec fond bleu ciel */}
       <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Événements à Venir</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">{t('home.events')}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             <Card className="hover:shadow-xl transition-shadow border-blue-100">
