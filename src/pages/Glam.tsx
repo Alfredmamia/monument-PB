@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
@@ -10,20 +11,17 @@ const Glam = () => {
     <div className="min-h-screen bg-white">
       <Header />
       
-      {/* Hero Section avec bleu nuit */}
+      {/* Hero Section avec nouveau fond */}
       <section className="relative h-96 bg-gradient-to-br from-blue-900 via-indigo-900 to-slate-900 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane livres et QR codes */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="w-full h-full bg-repeat opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M20 20h40v40H20V20zm10 10h20v20H30V30z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+        {/* Nouveau fond d'écran GLAM */}
+        <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" 
-            alt="Aire Culturelle Fang-Beti" 
-            className="w-full h-full object-cover opacity-20"
+            src="/lovable-uploads/3f092590-6888-4609-87eb-ee67e9ac909d.png" 
+            alt="GLAM du Monument Paul Biya" 
+            className="w-full h-full object-cover opacity-40"
           />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-900/60 to-slate-900/70"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/70 via-indigo-900/50 to-slate-900/70"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">GLAM</h1>
           <p className="text-xl md:text-2xl opacity-95 drop-shadow-lg">
@@ -68,11 +66,15 @@ const Glam = () => {
 
               {/* Informations et accès direct */}
               <div className="space-y-6">
-                <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-800 to-indigo-800 border-blue-600">
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-800 to-indigo-800 border-blue-600 overflow-hidden">
                   <CardContent className="p-0">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center">
-                        <BookOpen className="w-6 h-6 text-white" />
+                      <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                        <img 
+                          src="/lovable-uploads/5b5f0f0a-4dcb-4564-a0d7-0b49cb084bc0.png" 
+                          alt="Bibliothèque" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold mb-2 text-white">Bibliothèque Numérique</h3>
@@ -88,11 +90,15 @@ const Glam = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-800 to-indigo-800 border-blue-600">
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-800 to-indigo-800 border-blue-600 overflow-hidden">
                   <CardContent className="p-0">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center">
-                        <Archive className="w-6 h-6 text-white" />
+                      <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                        <img 
+                          src="/lovable-uploads/d79dca92-2f14-4f97-b5f5-96d4f34d8e02.png" 
+                          alt="Archives" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold mb-2 text-white">Archives Historiques</h3>
@@ -107,11 +113,15 @@ const Glam = () => {
                   </CardContent>
                 </Card>
 
-                <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-800 to-indigo-800 border-blue-600">
+                <Card className="p-6 hover:shadow-lg transition-shadow bg-gradient-to-br from-blue-800 to-indigo-800 border-blue-600 overflow-hidden">
                   <CardContent className="p-0">
                     <div className="flex items-start space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center">
-                        <Image className="w-6 h-6 text-white" />
+                      <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0">
+                        <img 
+                          src="/lovable-uploads/461a3107-17fa-4cf0-9234-c318cc43a1a8.png" 
+                          alt="Collections Multimédias" 
+                          className="w-full h-full object-cover"
+                        />
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold mb-2 text-white">Collections Multimédias</h3>
