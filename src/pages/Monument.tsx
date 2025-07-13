@@ -288,11 +288,11 @@ const Monument = () => {
           {/* Présentation des composantes */}
           <div className="mb-16">
             <Card className="overflow-hidden shadow-xl">
-              <div className="h-[500px] relative">
+              <div className="h-[600px] relative">
                 <img 
                   src="/lovable-uploads/7152caed-1e07-4b62-b75e-43ee466390e9.png" 
                   alt="Composantes du projet Monument Paul Biya"
-                  className="w-full h-full object-contain bg-white"
+                  className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                 />
               </div>
               <CardContent className="p-6 bg-white">
@@ -307,11 +307,11 @@ const Monument = () => {
           {/* Statue et Architecture Principale */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <Card className="overflow-hidden shadow-xl">
-              <div className="h-[400px] relative">
+              <div className="h-[500px] relative">
                 <img 
                   src="/lovable-uploads/fd7d2281-1023-47f3-9daa-80f39ede1664.png" 
                   alt="Statue du Monument Paul Biya"
-                  className="w-full h-full object-contain bg-white"
+                  className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                 />
               </div>
               <CardContent className="p-6 bg-white">
@@ -323,11 +323,11 @@ const Monument = () => {
             </Card>
 
             <Card className="overflow-hidden shadow-xl">
-              <div className="h-[400px] relative">
+              <div className="h-[500px] relative">
                 <img 
                   src="/lovable-uploads/7f307549-6fc5-4315-a87a-c49a295a0543.png" 
                   alt="Symbolisme architectural"
-                  className="w-full h-full object-contain bg-white"
+                  className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                 />
               </div>
               <CardContent className="p-6 bg-white">
@@ -344,11 +344,11 @@ const Monument = () => {
             <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.variants.title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-96 relative">
+                <div className="h-[500px] relative">
                   <img 
                     src="/lovable-uploads/972e95e9-d4e4-42af-b5e3-faebfca0e4a5.png" 
                     alt="Variantes architecturales du monument"
-                    className="w-full h-full object-contain bg-white"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
@@ -360,11 +360,11 @@ const Monument = () => {
               </Card>
 
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-96 relative">
+                <div className="h-[500px] relative">
                   <img 
                     src="/lovable-uploads/e6f228dd-e8d6-4929-8122-8b72b2ac7eb3.png" 
                     alt="Monument sous différents angles"
-                    className="w-full h-full object-contain bg-white"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
@@ -382,11 +382,11 @@ const Monument = () => {
             <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.equipment.title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-80 relative">
+                <div className="h-[450px] relative">
                   <img 
                     src="/lovable-uploads/44198484-3ff1-44da-a83d-bb2fb0e43300.png" 
                     alt="Case d'accueil présidentiel"
-                    className="w-full h-full object-contain bg-white"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
@@ -398,11 +398,11 @@ const Monument = () => {
               </Card>
 
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-80 relative">
+                <div className="h-[450px] relative">
                   <img 
                     src="/lovable-uploads/98207a5b-f77a-4173-8cd0-005a5c1bf4b8.png" 
                     alt="Bloc boutique et snack bar"
-                    className="w-full h-full object-contain bg-white"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
@@ -414,11 +414,11 @@ const Monument = () => {
               </Card>
 
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-80 relative">
+                <div className="h-[450px] relative">
                   <img 
                     src="/lovable-uploads/498466bf-d895-4904-9894-f15bac0badbe.png" 
                     alt="Cercle municipal"
-                    className="w-full h-full object-contain bg-white"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
@@ -436,11 +436,11 @@ const Monument = () => {
             <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.construction.title')}</h3>
             <div className="grid md:grid-cols-2 gap-8">
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-96 relative">
+                <div className="h-[500px] relative">
                   <img 
                     src="/lovable-uploads/0af22208-5b03-433d-bd03-ee1b9e9ab49b.png" 
                     alt="Images d'études et photos des chantiers"
-                    className="w-full h-full object-contain bg-blue-400"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
@@ -452,11 +452,11 @@ const Monument = () => {
               </Card>
 
               <Card className="overflow-hidden shadow-xl">
-                <div className="h-96 relative">
+                <div className="h-[500px] relative">
                   <img 
                     src="/lovable-uploads/039d4b5e-36f7-4b0f-ad16-49fc4e3b8c7c.png" 
                     alt="Variantes finales"
-                    className="w-full h-full object-contain bg-blue-400"
+                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
                   />
                 </div>
                 <CardContent className="p-6 bg-white">
