@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink, Heart, Star, Crown } from 'lucide-react';
+import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink, Heart, Star, Crown, BookOpen } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -74,7 +74,7 @@ const Monument = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
                   <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-2xl font-bold mb-2">{t('monument.mayor.name')}</h3>
+                    <h3 className="text-2xl font-bold mb-2">BEKONO Jean Faustin</h3>
                     <p className="text-lg opacity-90">{t('monument.mayor.position')}</p>
                   </div>
                 </div>
@@ -124,6 +124,13 @@ const Monument = () => {
                     <p className="text-lg text-gray-700 leading-relaxed font-medium">
                       {t('monument.mayor.legacy')}
                     </p>
+
+                    <div className="mt-6">
+                      <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        Bibliographie
+                      </Button>
+                    </div>
                   </div>
                 </Card>
               </div>
@@ -258,6 +265,13 @@ const Monument = () => {
                     <p className="text-lg text-gray-700 leading-relaxed">
                       L'architecte Dieudonné KPOLOM BILONG a conçu ce monument comme un symbole d'unité nationale, intégrant les quatre aires culturelles du Cameroun dans une œuvre architecturale moderne et respectueuse des traditions.
                     </p>
+
+                    <div className="mt-6">
+                      <Button className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white">
+                        <BookOpen className="w-4 h-4 mr-2" />
+                        Bibliographie
+                      </Button>
+                    </div>
                   </div>
                 </Card>
               </div>
