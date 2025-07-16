@@ -1,8 +1,13 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from '@/components/ui/sheet';
-import { Menu, Facebook, Instagram, Twitter } from 'lucide-react';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu';
+import { Menu, Facebook, Instagram, Twitter, ChevronDown } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
 import LanguageSelector from '@/components/LanguageSelector';
@@ -12,28 +17,44 @@ const Header = () => {
   const location = useLocation();
   const { t } = useLanguage();
 
-  const navItems = [
+  const mainNavItems = [
     { label: t('nav.home'), path: '/' },
-    { label: t('nav.history'), path: '/histoire' },
-    { label: 'Monument', path: '/monument' },
-    { label: t('nav.visit'), path: '/visite' },
-    { label: t('nav.gallery'), path: '/galerie' },
-    { label: t('nav.events'), path: '/evenements' },
-    { label: t('nav.glam'), path: '/glam' },
-    { label: t('nav.cultural-areas'), path: '/aires-culturelles' },
-    { label: t('nav.education'), path: '/education' },
-    { label: t('nav.restaurant'), path: '/restaurant' },
-    { label: t('nav.accommodation'), path: '/hebergement' },
+    {
+      label: 'Découvrir',
+      submenu: [
+        { label: t('nav.history'), path: '/histoire' },
+        { label: 'Monument', path: '/monument' },
+        { label: t('nav.cultural-areas'), path: '/aires-culturelles' }
+      ]
+    },
+    {
+      label: 'Visiter',
+      submenu: [
+        { label: t('nav.visit'), path: '/visite' },
+        { label: t('nav.gallery'), path: '/galerie' },
+        { label: t('nav.events'), path: '/evenements' }
+      ]
+    },
+    {
+      label: 'Services',
+      submenu: [
+        { label: t('nav.glam'), path: '/glam' },
+        { label: t('nav.education'), path: '/education' },
+        { label: t('nav.restaurant'), path: '/restaurant' },
+        { label: t('nav.accommodation'), path: '/hebergement' }
+      ]
+    },
     { label: t('nav.contact'), path: '/contact' }
   ];
 
   const isActive = (path: string) => location.pathname === path;
+  const isSubmenuActive = (submenu: any[]) => submenu.some(item => isActive(item.path));
 
   return (
     <header className="bg-white shadow-lg sticky top-0 z-50 border-b-2 border-yellow-600">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {/* Logo avec le nouveau design */}
+          {/* Logo avec le design de l'image */}
           <Link to="/" className="flex items-center space-x-3">
             <div className="relative">
               <img 
@@ -55,20 +76,55 @@ const Header = () => {
             </div>
           </Link>
 
-          {/* Navigation Desktop */}
+          {/* Navigation Desktop avec sous-menus */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                to={item.path}
-                className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                  isActive(item.path)
-                    ? 'bg-yellow-600 text-white'
-                    : 'text-gray-700 hover:bg-yellow-100 hover:text-yellow-800'
-                }`}
-              >
-                {item.label}
-              </Link>
+            {mainNavItems.map((item, index) => (
+              <div key={index}>
+                {item.submenu ? (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button
+                        variant="ghost"
+                        className={`px-4 py-2 rounded-md text-sm font-medium transition-colors flex items-center space-x-1 ${
+                          isSubmenuActive(item.submenu)
+                            ? 'bg-yellow-600 text-white'
+                            : 'text-gray-700 hover:bg-yellow-100 hover:text-yellow-800'
+                        }`}
+                      >
+                        <span>{item.label}</span>
+                        <ChevronDown className="w-4 h-4" />
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-56">
+                      {item.submenu.map((subItem, subIndex) => (
+                        <DropdownMenuItem key={subIndex} asChild>
+                          <Link
+                            to={subItem.path}
+                            className={`w-full px-3 py-2 text-sm transition-colors ${
+                              isActive(subItem.path)
+                                ? 'bg-yellow-100 text-yellow-800 font-medium'
+                                : 'text-gray-700 hover:bg-yellow-50'
+                            }`}
+                          >
+                            {subItem.label}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                      isActive(item.path)
+                        ? 'bg-yellow-600 text-white'
+                        : 'text-gray-700 hover:bg-yellow-100 hover:text-yellow-800'
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
             ))}
           </div>
 
@@ -100,19 +156,42 @@ const Header = () => {
               <SheetContent side="right" className="w-80">
                 <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
                 <div className="flex flex-col space-y-4 mt-8">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.path}
-                      to={item.path}
-                      onClick={() => setIsOpen(false)}
-                      className={`px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                        isActive(item.path)
-                          ? 'bg-yellow-600 text-white'
-                          : 'text-gray-700 hover:bg-yellow-100'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
+                  {mainNavItems.map((item, index) => (
+                    <div key={index}>
+                      {item.submenu ? (
+                        <div className="space-y-2">
+                          <div className="px-4 py-2 text-base font-semibold text-gray-800 border-b border-gray-200">
+                            {item.label}
+                          </div>
+                          {item.submenu.map((subItem, subIndex) => (
+                            <Link
+                              key={subIndex}
+                              to={subItem.path}
+                              onClick={() => setIsOpen(false)}
+                              className={`block px-6 py-2 text-sm transition-colors ${
+                                isActive(subItem.path)
+                                  ? 'bg-yellow-600 text-white font-medium'
+                                  : 'text-gray-600 hover:bg-yellow-100'
+                              }`}
+                            >
+                              {subItem.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : (
+                        <Link
+                          to={item.path}
+                          onClick={() => setIsOpen(false)}
+                          className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                            isActive(item.path)
+                              ? 'bg-yellow-600 text-white'
+                              : 'text-gray-700 hover:bg-yellow-100'
+                          }`}
+                        >
+                          {item.label}
+                        </Link>
+                      )}
+                    </div>
                   ))}
                   <div className="flex justify-center space-x-4 pt-6 border-t">
                     <Facebook className="w-6 h-6 text-blue-600 cursor-pointer" />
