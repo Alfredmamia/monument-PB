@@ -280,193 +280,57 @@ const Monument = () => {
         </div>
       </section>
 
-      {/* Évolution du Projet avec Images agrandies */}
+      {/* Section DÉCOUVRIR LE PROJET */}
       <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">{t('monument.evolution.title')}</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">DÉCOUVRIR LE PROJET</h2>
           
-          {/* Présentation des composantes */}
-          <div className="mb-16">
-            <Card className="overflow-hidden shadow-xl">
-              <div className="h-[600px] relative">
-                <img 
-                  src="/lovable-uploads/7152caed-1e07-4b62-b75e-43ee466390e9.png" 
-                  alt="Composantes du projet Monument Paul Biya"
-                  className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                />
-              </div>
-              <CardContent className="p-6 bg-white">
-                <h3 className="text-2xl font-bold text-blue-900 mb-4">{t('monument.evolution.components.title')}</h3>
-                <p className="text-blue-800">
-                  {t('monument.evolution.components.description')}
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden shadow-2xl border-2 border-blue-300">
+              <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 text-white text-center">
+                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <BookOpen className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-3xl font-bold mb-4">Architecture Monument Paul BIYA</h3>
+                <p className="text-xl opacity-90 mb-6">
+                  Découvrez tous les détails architecturaux, les plans et la conception complète du Monument Paul Biya
                 </p>
+                <Button 
+                  size="lg" 
+                  className="bg-white text-blue-800 hover:bg-blue-50 shadow-xl"
+                  onClick={() => window.open('/documents/Architecture Monument Paul BIYA.pdf', '_blank')}
+                >
+                  <BookOpen className="w-5 h-5 mr-2" />
+                  Consulter le Document Complet
+                </Button>
+              </div>
+              
+              <CardContent className="p-8 bg-white">
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Building className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="font-bold text-blue-900 mb-2">Plans Architecturaux</h4>
+                    <p className="text-sm text-blue-700">Dessins techniques détaillés</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Palette className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="font-bold text-blue-900 mb-2">Conception Artistique</h4>
+                    <p className="text-sm text-blue-700">Symbolisme et esthétique</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                      <Ruler className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <h4 className="font-bold text-blue-900 mb-2">Spécifications</h4>
+                    <p className="text-sm text-blue-700">Dimensions et matériaux</p>
+                  </div>
+                </div>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Statue et Architecture Principale */}
-          <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="overflow-hidden shadow-xl">
-              <div className="h-[500px] relative">
-                <img 
-                  src="/lovable-uploads/fd7d2281-1023-47f3-9daa-80f39ede1664.png" 
-                  alt="Statue du Monument Paul Biya"
-                  className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                />
-              </div>
-              <CardContent className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{t('monument.evolution.statue.title')}</h3>
-                <p className="text-blue-800 text-sm">
-                  {t('monument.evolution.statue.description')}
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="overflow-hidden shadow-xl">
-              <div className="h-[500px] relative">
-                <img 
-                  src="/lovable-uploads/7f307549-6fc5-4315-a87a-c49a295a0543.png" 
-                  alt="Symbolisme architectural"
-                  className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                />
-              </div>
-              <CardContent className="p-6 bg-white">
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{t('monument.evolution.symbolism.title')}</h3>
-                <p className="text-blue-800 text-sm">
-                  {t('monument.evolution.symbolism.description')}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Variantes Architecturales */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.variants.title')}</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[500px] relative">
-                  <img 
-                    src="/lovable-uploads/972e95e9-d4e4-42af-b5e3-faebfca0e4a5.png" 
-                    alt="Variantes architecturales du monument"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.variants.studies.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.variants.studies.description')}
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[500px] relative">
-                  <img 
-                    src="/lovable-uploads/e6f228dd-e8d6-4929-8122-8b72b2ac7eb3.png" 
-                    alt="Monument sous différents angles"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.variants.perspectives.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.variants.perspectives.description')}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Équipements Connexes */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.equipment.title')}</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[450px] relative">
-                  <img 
-                    src="/lovable-uploads/44198484-3ff1-44da-a83d-bb2fb0e43300.png" 
-                    alt="Case d'accueil présidentiel"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.equipment.presidential.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.equipment.presidential.description')}
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[450px] relative">
-                  <img 
-                    src="/lovable-uploads/98207a5b-f77a-4173-8cd0-005a5c1bf4b8.png" 
-                    alt="Bloc boutique et snack bar"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.equipment.boutique.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.equipment.boutique.description')}
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[450px] relative">
-                  <img 
-                    src="/lovable-uploads/498466bf-d895-4904-9894-f15bac0badbe.png" 
-                    alt="Cercle municipal"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.equipment.municipal.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.equipment.municipal.description')}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-
-          {/* Évolution Construction */}
-          <div className="mb-16">
-            <h3 className="text-3xl font-bold text-center text-blue-900 mb-8">{t('monument.evolution.construction.title')}</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[500px] relative">
-                  <img 
-                    src="/lovable-uploads/0af22208-5b03-433d-bd03-ee1b9e9ab49b.png" 
-                    alt="Images d'études et photos des chantiers"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.construction.progress.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.construction.progress.description')}
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="overflow-hidden shadow-xl">
-                <div className="h-[500px] relative">
-                  <img 
-                    src="/lovable-uploads/039d4b5e-36f7-4b0f-ad16-49fc4e3b8c7c.png" 
-                    alt="Variantes finales"
-                    className="w-full h-full object-contain bg-white hover:scale-105 transition-transform duration-300 cursor-zoom-in"
-                  />
-                </div>
-                <CardContent className="p-6 bg-white">
-                  <h4 className="text-lg font-bold text-blue-900 mb-2">{t('monument.evolution.construction.finishes.title')}</h4>
-                  <p className="text-blue-800 text-sm">
-                    {t('monument.evolution.construction.finishes.description')}
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
           </div>
         </div>
       </section>
