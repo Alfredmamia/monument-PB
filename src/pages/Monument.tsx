@@ -281,8 +281,17 @@ const Monument = () => {
       </section>
 
       {/* Section DÉCOUVRIR LE PROJET */}
-      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
-        <div className="container mx-auto px-4">
+      <section className="relative py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500 overflow-hidden">
+        {/* Image de fond */}
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/lovable-uploads/710324ad-daa8-4e40-a98a-671ca73e00a2.png" 
+            alt="Monument Paul Biya" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-400/80 via-sky-500/60 to-blue-600/80"></div>
+        </div>
+        <div className="relative z-10 container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">DÉCOUVRIR LE PROJET</h2>
           
           <div className="max-w-4xl mx-auto">

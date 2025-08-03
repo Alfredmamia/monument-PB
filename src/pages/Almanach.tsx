@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -74,59 +73,71 @@ const Almanach = () => {
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
                 description: "Collectivité territoriale locale, pilote du projet",
                 category: "Administration Locale",
-                icon: <Building2 className="w-6 h-6" />
+                icon: <Building2 className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH SANGMELIMA.pdf"
               },
               {
                 name: "FEICOM",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
                 description: "Fonds spécial d'équipement et d'intervention intercommunale",
                 category: "Financement Public",
-                icon: <Handshake className="w-6 h-6" />
+                icon: <Handshake className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH FEICOM.pdf"
               },
               {
                 name: "MINAC",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
                 description: "Ministère des Arts et de la Culture",
                 category: "Culture",
-                icon: <Award className="w-6 h-6" />
+                icon: <Award className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH MINAC.pdf"
               },
               {
                 name: "SOPECAM",
                 logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
                 description: "Société de Presse et d'Édition du Cameroun",
                 category: "Médias",
-                icon: <Globe className="w-6 h-6" />
+                icon: <Globe className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH SOPECAM.pdf"
               },
               {
                 name: "CAMTEL",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                logo: "/lovable-uploads/f5e82fac-7fa6-4f34-b61e-3057c20c531f.png",
                 description: "Cameroun Télécommunications - Infrastructure numérique",
                 category: "Télécommunications",
-                icon: <Phone className="w-6 h-6" />
+                icon: <Phone className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH CAMTEL.pdf"
               },
               {
                 name: "Ministère des Forêts et de la Faune",
                 logo: "/lovable-uploads/158e7195-b643-46ce-b446-aab10230e51c.png",
                 description: "Protection de l'environnement et biodiversité",
                 category: "Environnement",
-                icon: <TreePine className="w-6 h-6" />
+                icon: <TreePine className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH MINFOF.pdf"
               },
               {
                 name: "MINHDU",
                 logo: "/lovable-uploads/e6647f0b-c37a-4d38-aaca-9b21583bf14d.png",
                 description: "Ministère de l'Habitat et du Développement Urbain",
                 category: "Développement Urbain",
-                icon: <Building2 className="w-6 h-6" />
+                icon: <Building2 className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH MINHDU.pdf"
               },
               {
                 name: "Ministère du Tourisme",
                 logo: "/lovable-uploads/ddac6329-9e9c-49fb-b4e1-26bdd388ea36.png",
                 description: "Promotion du tourisme et des loisirs",
                 category: "Tourisme",
-                icon: <Globe className="w-6 h-6" />
+                icon: <Globe className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH MINTOUL.pdf"
               }
             ].map((partner, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
+              <Card 
+                key={index} 
+                className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm cursor-pointer"
+                onClick={() => partner.almanach && window.open(partner.almanach, '_blank')}
+              >
                 <CardContent className="p-6 text-center">
                   <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-4 rounded-lg mb-4 shadow-sm">
                     <img 
@@ -141,6 +152,19 @@ const Almanach = () => {
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
                   <p className="text-gray-600 text-sm">{partner.description}</p>
+                  {partner.almanach && (
+                    <div className="mt-3">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(partner.almanach, '_blank');
+                        }}
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-xs transition-colors"
+                      >
+                        Charger votre almanach
+                      </button>
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -157,7 +181,7 @@ const Almanach = () => {
             {[
               {
                 name: "CAMTEL",
-                logo: "/lovable-uploads/e2bbeaa3-6487-4e3c-b27e-fa9f4ea95e16.png",
+                logo: "/lovable-uploads/f5e82fac-7fa6-4f34-b61e-3057c20c531f.png",
                 description: "Cameroun Télécommunications - Infrastructure numérique",
                 category: "Télécommunications",
                 icon: <Phone className="w-6 h-6" />,
