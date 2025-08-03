@@ -135,72 +135,72 @@ const Galerie = () => {
               </Badge>
               <h2 className="text-4xl font-bold text-blue-900 mb-8">Visite de Chantier</h2>
               <p className="text-xl text-blue-800 max-w-3xl mx-auto">
-                Visite de chantier effectuée sous la supervision de <strong>Monsieur ONAMBELE Aristide</strong>, 
+                Visite de chantier effectuée sous la supervision de <strong>Monsieur OMBGA ONAMBELE Aristide</strong>, 
                 Représentant personnel du DCC (Directeur du Cabinet Civil de la Présidence)
               </p>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="overflow-hidden hover:shadow-xl transition-shadow border-blue-200">
-                <div className="relative h-80">
-                  <img 
-                    src="/lovable-uploads/b2916893-f49a-4c34-abcd-2eed59dedbf8.png" 
-                    alt="Supervision de M. ONAMBELE Aristide" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-semibold">Supervision Officielle</h3>
-                    <p className="text-sm opacity-90">M. ONAMBELE Aristide en inspection</p>
+                  <div className="relative h-96">
+                    <img 
+                      src="/lovable-uploads/b2916893-f49a-4c34-abcd-2eed59dedbf8.png" 
+                      alt="Supervision de M. OMBGA ONAMBELE Aristide" 
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-lg font-semibold">Supervision Officielle</h3>
+                      <p className="text-sm opacity-90">M. OMBGA ONAMBELE Aristide en inspection</p>
+                    </div>
                   </div>
-                </div>
               </Card>
 
               <Card className="overflow-hidden hover:shadow-xl transition-shadow border-blue-200">
-                <div className="relative h-80">
-                  <img 
-                    src="/lovable-uploads/881738c7-5a87-4527-89b1-54c9230b0dde.png" 
-                    alt="Visite guidée des installations" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-semibold">Visite Guidée</h3>
-                    <p className="text-sm opacity-90">Présentation des installations</p>
+                  <div className="relative h-96">
+                    <img 
+                      src="/lovable-uploads/881738c7-5a87-4527-89b1-54c9230b0dde.png" 
+                      alt="Visite guidée des installations" 
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-lg font-semibold">Visite Guidée</h3>
+                      <p className="text-sm opacity-90">Présentation des installations</p>
+                    </div>
                   </div>
-                </div>
               </Card>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <Card className="overflow-hidden hover:shadow-xl transition-shadow border-blue-200">
-                <div className="relative h-80">
-                  <img 
-                    src="/lovable-uploads/25766e02-97fa-4002-8654-d3f6f5b51b9f.png" 
-                    alt="Délégation officielle" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-semibold">Délégation Officielle</h3>
-                    <p className="text-sm opacity-90">Accompagnement de la délégation</p>
+                  <div className="relative h-96">
+                    <img 
+                      src="/lovable-uploads/25766e02-97fa-4002-8654-d3f6f5b51b9f.png" 
+                      alt="Délégation officielle" 
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-lg font-semibold">Délégation Officielle</h3>
+                      <p className="text-sm opacity-90">Accompagnement de la délégation</p>
+                    </div>
                   </div>
-                </div>
               </Card>
 
               <Card className="overflow-hidden hover:shadow-xl transition-shadow border-blue-200">
-                <div className="relative h-80">
-                  <img 
-                    src="/lovable-uploads/34b71f9a-bf78-4f38-b276-c8d92857ebd1.png" 
-                    alt="Évaluation du projet" 
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-lg font-semibold">Évaluation du Projet</h3>
-                    <p className="text-sm opacity-90">Inspection des travaux</p>
+                  <div className="relative h-96">
+                    <img 
+                      src="/lovable-uploads/34b71f9a-bf78-4f38-b276-c8d92857ebd1.png" 
+                      alt="Évaluation du projet" 
+                      className="w-full h-full object-cover object-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div className="absolute bottom-4 left-4 text-white">
+                      <h3 className="text-lg font-semibold">Évaluation du Projet</h3>
+                      <p className="text-sm opacity-90">Inspection des travaux</p>
+                    </div>
                   </div>
-                </div>
               </Card>
             </div>
 
@@ -212,7 +212,7 @@ const Galerie = () => {
               <p className="text-blue-800 mb-6 leading-relaxed">
                 Ces images témoignent de l'importance accordée par la Présidence de la République 
                 au suivi et à la qualité de réalisation du Monument Paul Biya. La présence de 
-                M. ONAMBELE Aristide, Représentant personnel du DCC, illustre l'engagement 
+                M. OMBGA ONAMBELE Aristide, Représentant personnel du DCC, illustre l'engagement 
                 des plus hautes autorités dans la concrétisation de ce projet d'envergure nationale.
               </p>
               <div className="flex justify-center space-x-4">
