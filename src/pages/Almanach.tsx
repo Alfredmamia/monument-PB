@@ -157,48 +157,42 @@ const Almanach = () => {
             {[
               {
                 name: "CABINET CEBR",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                logo: "/lovable-uploads/cdb45303-444a-4b18-8939-8f2057231b0e.png",
                 description: "Cabinet d'études et de réalisation architecturale",
                 category: "Architecture",
-                icon: <Briefcase className="w-6 h-6" />
+                icon: <Briefcase className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH CEBR.pdf"
               },
               {
-                name: "AFRIKYA",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Entreprise de construction et travaux publics",
-                category: "Construction",
-                icon: <Building2 className="w-6 h-6" />
+                name: "CAMTEL",
+                logo: "/lovable-uploads/dc79591a-5ef3-40fc-9e11-01db558d2e28.png",
+                description: "Cameroun Télécommunications - Infrastructure numérique",
+                category: "Télécommunications",
+                icon: <Phone className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH CAMTEL.pdf"
               },
               {
-                name: "ENTREPRISE GÉNÉRALE DU BÂTIMENT",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Spécialiste en génie civil et construction monumentale",
-                category: "Génie Civil",
-                icon: <Building2 className="w-6 h-6" />
+                name: "KP AFRICA",
+                logo: "/lovable-uploads/3cbabc46-d657-4881-bd09-ef68aeb0d1db.png",
+                description: "Partenaire technique et logistique",
+                category: "Partenariat",
+                icon: <Handshake className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH KP AFRICA.pdf"
               },
               {
-                name: "SOCIÉTÉ D'INGÉNIERIE",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Bureau d'études techniques et supervision",
-                category: "Ingénierie",
-                icon: <Briefcase className="w-6 h-6" />
-              },
-              {
-                name: "ARTISANS LOCAUX",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Artisans et sculpteurs traditionnels camerounais",
-                category: "Artisanat",
-                icon: <Award className="w-6 h-6" />
-              },
-              {
-                name: "FOURNISSEURS MATÉRIAUX",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
-                description: "Approvisionnement en matériaux de construction",
-                category: "Fournitures",
-                icon: <Building2 className="w-6 h-6" />
+                name: "MINTOUL",
+                logo: "/lovable-uploads/01edca7f-ea9e-4ce1-b0b0-c687c13518e8.png",
+                description: "Ministère du Tourisme et des Loisirs",
+                category: "Tourisme",
+                icon: <Globe className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH MINTOUL.pdf"
               }
             ].map((partner, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
+              <Card 
+                key={index} 
+                className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm cursor-pointer"
+                onClick={() => partner.almanach && window.open(partner.almanach, '_blank')}
+              >
                 <CardContent className="p-6 text-center">
                   <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-4 rounded-lg mb-4 shadow-sm">
                     <img 
@@ -213,6 +207,11 @@ const Almanach = () => {
                   </div>
                   <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
                   <p className="text-gray-600 text-sm">{partner.description}</p>
+                  {partner.almanach && (
+                    <div className="mt-3 text-xs text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
+                      Cliquez pour consulter l'almanach
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             ))}
