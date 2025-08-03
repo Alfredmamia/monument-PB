@@ -92,7 +92,7 @@ const Index = () => {
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative overflow-hidden">
                   <img 
-                    src="https://images.unsplash.com/photo-1472396961693-142e6e269027?w=500&h=300&fit=crop&crop=center" 
+                    src="/lovable-uploads/d2cd6901-5e4d-4eec-ae1d-867848b72c50.png" 
                     alt="Histoire du Cameroun" 
                     className="w-full h-full object-cover opacity-80"
                   />
@@ -328,7 +328,7 @@ const Index = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <Badge className="mb-2 bg-white/20">Inauguration</Badge>
-                  <h3 className="text-lg font-bold">18 Juillet 2025</h3>
+                  <h3 className="text-lg font-bold">22 août 2025</h3>
                 </div>
               </div>
               <CardContent className="p-6">

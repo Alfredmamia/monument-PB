@@ -480,7 +480,7 @@ const Evenements = () => {
             {[
               {
                 title: "Inauguration Officielle du Monument",
-                date: "18 Juillet 2025",
+                date: "22 août 2025",
                 time: "10h00 - 18h00",
                 type: "Cérémonie Officielle",
                 description: "Cérémonie d'inauguration en présence des plus hautes autorités de l'État et des dignitaires internationaux.",

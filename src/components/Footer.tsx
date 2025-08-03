@@ -166,7 +166,7 @@ const Footer = () => {
               © 2025 Monument Paul Biya - République du Cameroun
             </p>
             <p className="text-gray-500 text-xs mt-1">
-              Inauguration officielle: 18 juillet 2025
+              Inauguration officielle: 22 août 2025
             </p>
             <div className="flex flex-wrap justify-center md:justify-end space-x-4 mt-2 text-xs">
               <a href="#" className="text-gray-400 hover:text-yellow-400">Mentions légales</a>

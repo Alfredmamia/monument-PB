@@ -28,7 +28,7 @@ const Education = () => {
         {/* Image de fond africaine - enfants étudiant */}
         <div className="absolute inset-0 opacity-15">
           <img 
-            src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+            src="/lovable-uploads/b1fe3e19-83bd-4b50-bc28-cad41ec3f492.png" 
             alt="Enfants africains étudiant" 
             className="w-full h-full object-cover"
           />

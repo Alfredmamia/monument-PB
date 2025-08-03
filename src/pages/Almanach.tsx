@@ -156,16 +156,8 @@ const Almanach = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {[
               {
-                name: "CABINET CEBR",
-                logo: "/lovable-uploads/cdb45303-444a-4b18-8939-8f2057231b0e.png",
-                description: "Cabinet d'études et de réalisation architecturale",
-                category: "Architecture",
-                icon: <Briefcase className="w-6 h-6" />,
-                almanach: "/almanachs/ALMANACH CEBR.pdf"
-              },
-              {
                 name: "CAMTEL",
-                logo: "/lovable-uploads/dc79591a-5ef3-40fc-9e11-01db558d2e28.png",
+                logo: "/lovable-uploads/e2bbeaa3-6487-4e3c-b27e-fa9f4ea95e16.png",
                 description: "Cameroun Télécommunications - Infrastructure numérique",
                 category: "Télécommunications",
                 icon: <Phone className="w-6 h-6" />,
@@ -173,11 +165,27 @@ const Almanach = () => {
               },
               {
                 name: "KP AFRICA",
-                logo: "/lovable-uploads/3cbabc46-d657-4881-bd09-ef68aeb0d1db.png",
+                logo: "/lovable-uploads/6ffdb104-4794-4406-ad21-04b6931fa882.png",
                 description: "Partenaire technique et logistique",
                 category: "Partenariat",
                 icon: <Handshake className="w-6 h-6" />,
                 almanach: "/almanachs/ALMANACH KP AFRICA.pdf"
+              },
+              {
+                name: "SONDY",
+                logo: "/lovable-uploads/981caa3d-b5df-4cbc-a80e-0301a0e092f2.png",
+                description: "Partenaire technique spécialisé",
+                category: "Technique",
+                icon: <Briefcase className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH SONDY.pdf"
+              },
+              {
+                name: "CABINET CEBR",
+                logo: "/lovable-uploads/f95a3ba7-5d16-4446-83a2-a195b008333c.png",
+                description: "Cabinet d'études et de réalisation architecturale",
+                category: "Architecture",
+                icon: <Briefcase className="w-6 h-6" />,
+                almanach: "/almanachs/ALMANACH CEBR.pdf"
               },
               {
                 name: "MINTOUL",
@@ -208,8 +216,16 @@ const Almanach = () => {
                   <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
                   <p className="text-gray-600 text-sm">{partner.description}</p>
                   {partner.almanach && (
-                    <div className="mt-3 text-xs text-blue-600 opacity-0 group-hover:opacity-100 transition-opacity">
-                      Cliquez pour consulter l'almanach
+                    <div className="mt-3">
+                      <button 
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          window.open(partner.almanach, '_blank');
+                        }}
+                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-xs transition-colors"
+                      >
+                        Charger votre almanach
+                      </button>
                     </div>
                   )}
                 </CardContent>
