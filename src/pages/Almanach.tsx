@@ -86,7 +86,7 @@ const Almanach = () => {
               },
               {
                 name: "MINAC",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                logo: "/lovable-uploads/6b62030c-ecc4-4700-a65f-50bcf002e07f.png",
                 description: "Ministère des Arts et de la Culture",
                 category: "Culture",
                 icon: <Award className="w-6 h-6" />,
@@ -94,7 +94,7 @@ const Almanach = () => {
               },
               {
                 name: "SOPECAM",
-                logo: "/lovable-uploads/ffa1485d-b3bf-4fd5-a7f2-25d0d0a6a2f8.png",
+                logo: "/lovable-uploads/6ed1780a-1f56-4d58-b736-e2d61a0bb424.png",
                 description: "Société de Presse et d'Édition du Cameroun",
                 category: "Médias",
                 icon: <Globe className="w-6 h-6" />,
@@ -130,43 +130,51 @@ const Almanach = () => {
                 description: "Promotion du tourisme et des loisirs",
                 category: "Tourisme",
                 icon: <Globe className="w-6 h-6" />,
-                almanach: "/almanachs/ALMANACH MINTOUL.pdf"
-              }
-            ].map((partner, index) => (
+                 almanach: "/almanachs/ALMANACH MINTOUL.pdf"
+               },
+               {
+                 name: "MINDCAF",
+                 logo: "/lovable-uploads/3cd2fcbb-0f90-4a43-9438-ccd5944815c4.png",
+                 description: "Ministère des Domaines, du Cadastre et des Affaires foncières",
+                 category: "Affaires foncières",
+                 icon: <Building2 className="w-6 h-6" />,
+                 almanach: "/almanachs/ALMANACH MINDCAF.pdf"
+               }
+             ].map((partner, index) => (
               <Card 
                 key={index} 
                 className="group hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm cursor-pointer"
-                onClick={() => partner.almanach && window.open(partner.almanach, '_blank')}
-              >
-                <CardContent className="p-6 text-center">
-                  <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-4 rounded-lg mb-4 shadow-sm">
-                    <img 
-                      src={partner.logo} 
-                      alt={partner.name}
-                      className="h-16 w-auto mx-auto object-contain"
-                    />
-                  </div>
-                  <div className="flex items-center justify-center gap-2 mb-2">
-                    <div className="text-blue-600">{partner.icon}</div>
-                    <Badge variant="outline" className="border-blue-300 text-blue-700">{partner.category}</Badge>
-                  </div>
-                  <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
-                  <p className="text-gray-600 text-sm">{partner.description}</p>
-                  {partner.almanach && (
-                    <div className="mt-3">
-                      <button 
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          window.open(partner.almanach, '_blank');
-                        }}
-                        className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-xs transition-colors"
-                      >
-                        Charger votre almanach
-                      </button>
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                 onClick={() => partner.almanach && window.open(partner.almanach, '_blank')}
+               >
+                 <CardContent className="p-6 text-center">
+                   <div className="bg-gradient-to-br from-sky-100 to-blue-100 p-4 rounded-lg mb-4 shadow-sm">
+                     <img 
+                       src={partner.logo} 
+                       alt={partner.name}
+                       className="h-16 w-auto mx-auto object-contain"
+                     />
+                   </div>
+                   <div className="flex items-center justify-center gap-2 mb-2">
+                     <div className="text-blue-600">{partner.icon}</div>
+                     <Badge variant="outline" className="border-blue-300 text-blue-700">{partner.category}</Badge>
+                   </div>
+                   <h3 className="text-lg font-bold mb-2 text-blue-900">{partner.name}</h3>
+                   <p className="text-gray-600 text-sm">{partner.description}</p>
+                   {partner.almanach && (
+                     <div className="mt-3">
+                       <button 
+                         onClick={(e) => {
+                           e.stopPropagation();
+                           window.open(partner.almanach, '_blank');
+                         }}
+                         className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-xs transition-colors"
+                       >
+                         Charger votre almanach
+                       </button>
+                     </div>
+                   )}
+                 </CardContent>
+               </Card>
             ))}
           </div>
         </div>
@@ -266,13 +274,13 @@ const Almanach = () => {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              {
-                title: "Partenaires Institutionnels",
-                icon: <Award className="w-8 h-8" />,
-                color: "from-sky-500 to-blue-500",
-                count: "8+ ministères",
-                description: "Institutions gouvernementales et organismes publics"
-              },
+               {
+                 title: "Partenaires Institutionnels",
+                 icon: <Award className="w-8 h-8" />,
+                 color: "from-sky-500 to-blue-500",
+                 count: "9+ ministères",
+                 description: "Institutions gouvernementales et organismes publics"
+               },
               {
                 title: "Partenaires Techniques",
                 icon: <Users className="w-8 h-8" />,

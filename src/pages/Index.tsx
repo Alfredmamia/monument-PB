@@ -1,32 +1,91 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Users, Award, Camera, BookOpen, Utensils, Bed } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Calendar, Users, Award, Camera, BookOpen, Utensils, Bed, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
+import infrastructureImg from '@/assets/infrastructure-biya.jpg';
+import educationImg from '@/assets/education-biya.jpg';
+import democratizationImg from '@/assets/democratization-biya.jpg';
+import economicImg from '@/assets/economic-development-biya.jpg';
+import unityImg from '@/assets/unity-biya.jpg';
+import diplomacyImg from '@/assets/diplomacy-biya.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
+
+  const achievements = [
+    {
+      title: "Démocratisation",
+      icon: <Users className="w-8 h-8" />,
+      description: "Instauration du multipartisme et renforcement des institutions démocratiques",
+      color: "from-blue-500 to-blue-600",
+      image: democratizationImg,
+      details: "Sous la présidence de Paul Biya, le Cameroun a connu une transformation démocratique majeure avec l'instauration du multipartisme en 1990. Cette révolution politique a permis la création de dizaines de partis politiques, l'organisation d'élections libres et transparentes, et le renforcement des institutions démocratiques. Le pays a ainsi adopté une nouvelle constitution en 1996, créé un Conseil constitutionnel, et mis en place un système électoral moderne. Cette ouverture démocratique a favorisé l'expression de la diversité politique et consolidé l'État de droit au Cameroun."
+    },
+    {
+      title: "Développement Économique",
+      icon: <Award className="w-8 h-8" />,
+      description: "Modernisation de l'économie camerounaise et promotion de l'émergence",
+      color: "from-blue-600 to-blue-700",
+      image: economicImg,
+      details: "Paul Biya a lancé la Vision Cameroun 2035 visant à faire du pays une économie émergente. Sous son leadership, le PIB du Cameroun a connu une croissance soutenue, passant de 7 milliards USD en 1982 à plus de 45 milliards USD aujourd'hui. Les réformes structurelles ont modernisé l'économie avec la privatisation d'entreprises publiques, la création de zones économiques spéciales, et l'amélioration du climat des affaires. Le secteur privé a été dynamisé, l'agriculture modernisée, et l'industrie diversifiée, positionnant le Cameroun comme la première économie d'Afrique centrale."
+    },
+    {
+      title: "Unité Nationale",
+      icon: <BookOpen className="w-8 h-8" />,
+      description: "Préservation de l'unité et promotion de la diversité culturelle",
+      color: "from-blue-700 to-blue-800",
+      image: unityImg,
+      details: "Paul Biya a fait de l'unité nationale sa priorité absolue, préservant la cohésion d'un pays aux 250 ethnies et deux héritages coloniaux. Sa politique de 'l'unité dans la diversité' a permis de maintenir la stabilité dans une région marquée par les conflits. Il a promu l'intégration nationale par le biais de l'éducation bilingue, la représentativité équitable dans l'administration, et la valorisation de toutes les cultures camerounaises. Cette vision a été concrétisée par la création de structures comme le Conseil économique et social, et la reconnaissance constitutionnelle de la diversité culturelle comme richesse nationale."
+    },
+    {
+      title: "Infrastructure",
+      icon: <Calendar className="w-8 h-8" />,
+      description: "Grands projets d'infrastructure pour le développement du pays",
+      color: "from-blue-800 to-blue-900",
+      image: infrastructureImg,
+      details: "Le règne de Paul Biya est marqué par des investissements massifs dans les infrastructures. Le réseau routier est passé de 50 000 à plus de 120 000 km, avec des autoroutes modernes comme Yaoundé-Douala. Dans l'énergie, la capacité électrique a été multipliée par 4 avec des barrages comme Memve'ele et Mekin. Le port autonome de Douala a été modernisé, l'aéroport international de Nsimalen construit, et le projet de port en eau profonde de Kribi lancé. Ces infrastructures ont transformé le paysage économique et social du Cameroun, facilitant les échanges et améliorant la qualité de vie des populations."
+    },
+    {
+      title: "Éducation",
+      icon: <BookOpen className="w-8 h-8" />,
+      description: "Réformes du système éducatif et promotion de l'enseignement supérieur",
+      color: "from-blue-500 to-sky-600",
+      image: educationImg,
+      details: "Paul Biya a révolutionné l'éducation camerounaise en créant des milliers d'établissements scolaires et universitaires. Le taux de scolarisation primaire est passé de 70% à plus de 95%. Il a créé 8 universités d'État, de nombreuses grandes écoles, et favorisé l'émergence d'universités privées. Les réformes pédagogiques ont introduit l'approche par compétences, l'enseignement technique et professionnel a été valorisé, et l'enseignement supérieur adapté aux besoins du marché du travail. Cette politique éducative ambitieuse a formé une jeunesse qualifiée, moteur du développement national."
+    },
+    {
+      title: "Diplomatie",
+      icon: <Award className="w-8 h-8" />,
+      description: "Rayonnement international du Cameroun sur la scène africaine et mondiale",
+      color: "from-sky-600 to-blue-700",
+      image: diplomacyImg,
+      details: "Sous Paul Biya, le Cameroun est devenu une puissance diplomatique respectée. Le pays a été membre non permanent du Conseil de sécurité de l'ONU à deux reprises, a présidé l'Union africaine, et joue un rôle de médiateur dans les conflits régionaux. Paul Biya a développé un réseau diplomatique étendu, renforçant les relations avec la France, diversifiant les partenariats avec la Chine, les États-Unis, et l'Union européenne. Cette diplomatie active a attiré des investissements, renforcé la coopération Sud-Sud, and positionné le Cameroun comme un acteur incontournable de la géopolitique africaine et mondiale."
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
-      {/* Hero Section avec dégradé bleu ciel → bleu foncé et fond couvrant toute la page */}
+      {/* Hero Section avec fond d'écran plus visible */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-blue-900 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane central des 4 aires réunies */}
-        <div className="absolute inset-0 opacity-10">
+        {/* Filigrane central des 4 aires réunies - fond plus visible */}
+        <div className="absolute inset-0 opacity-30">
           <div className="grid grid-cols-2 h-full">
-            <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover opacity-50" />
-            <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover opacity-50" />
-            <img src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" alt="Fang-Beti" className="w-full h-full object-cover opacity-50" />
-            <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover opacity-50" />
+            <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover" />
+            <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover" />
+            <img src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" alt="Fang-Beti" className="w-full h-full object-cover" />
+            <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover" />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/70 via-blue-500/50 to-blue-900/70"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-blue-500/30 to-blue-900/40"></div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto px-4 animate-fade-in">
           {/* Photo du Président à côté du titre */}
@@ -151,11 +210,14 @@ const Index = () => {
             <Link to="/galerie">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=500&h=300&fit=crop&crop=center" 
-                    alt="Galerie photos" 
-                    className="w-full h-full object-cover opacity-80"
-                  />
+                  <div className="absolute inset-0 opacity-30">
+                    <div className="grid grid-cols-2 h-full">
+                      <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" alt="Fang-Beti" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Galerie</Badge>
@@ -265,11 +327,14 @@ const Index = () => {
                     <Camera className="w-8 h-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-blue-900 mb-3">Galerie</h3>
-                  <img 
-                    src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=300&h=200&fit=crop&crop=center" 
-                    alt="Galerie photo et vidéo" 
-                    className="w-full h-32 object-cover rounded-lg mb-3"
-                  />
+                  <div className="w-full h-32 rounded-lg mb-3 relative overflow-hidden">
+                    <div className="grid grid-cols-2 h-full opacity-80">
+                      <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/fbcb5b53-2630-433e-ac13-a7c27de03957.png" alt="Fang-Beti" className="w-full h-full object-cover" />
+                      <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover" />
+                    </div>
+                  </div>
                   <p className="text-gray-600 text-sm">Explorez notre collection d'images et vidéos</p>
                 </CardContent>
               </Card>
@@ -374,6 +439,117 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Section L'héritage du moment avec la 4e image */}
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400 relative">
+        <div className="absolute inset-0 opacity-20">
+          <img 
+            src="/lovable-uploads/7b57886f-98a9-4af8-af24-08f7c33d5563.png" 
+            alt="Histoire du Cameroun" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-300/70 via-sky-400/50 to-blue-500/60"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-blue-900 mb-8">L'Héritage du Moment</h2>
+            <div className="bg-white/90 backdrop-blur-sm p-8 rounded-lg shadow-xl">
+              <blockquote className="text-xl italic text-blue-800 mb-6 leading-relaxed">
+                "Ce monument ne célèbre pas seulement un homme, mais l'âme d'une nation. 
+                Il incarne les valeurs de paix, d'unité et de progrès qui guident le Cameroun 
+                vers son destin d'émergence. Chaque pierre raconte l'histoire d'un peuple 
+                déterminé à bâtir un avenir meilleur pour ses enfants."
+              </blockquote>
+              <cite className="text-lg font-semibold text-blue-900">
+                Vision d'unité et de développement pour le Cameroun moderne
+              </cite>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Découvrir - Réalisations Majeures Interactives */}
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Découvrir - Réalisations Majeures</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {achievements.map((achievement, index) => (
+              <Card 
+                key={index} 
+                className="group hover:shadow-2xl transition-all duration-300 border-blue-200 cursor-pointer"
+                onClick={() => setSelectedAchievement(achievement)}
+              >
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={achievement.image} 
+                    alt={achievement.title}
+                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <Badge className="mb-2 bg-white/20">{achievement.title}</Badge>
+                  </div>
+                </div>
+                <CardContent className="p-6 text-center">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className="text-white">{achievement.icon}</div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-blue-900">{achievement.title}</h3>
+                  <p className="text-gray-600 text-sm">{achievement.description}</p>
+                  <Button 
+                    className="mt-4 bg-blue-600 hover:bg-blue-700 text-white"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setSelectedAchievement(achievement);
+                    }}
+                  >
+                    En savoir plus
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Dialog pour les détails des réalisations */}
+      <Dialog open={!!selectedAchievement} onOpenChange={() => setSelectedAchievement(null)}>
+        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+          {selectedAchievement && (
+            <>
+              <DialogHeader>
+                <DialogTitle className="text-2xl font-bold text-blue-900 flex items-center gap-3">
+                  <div className={`w-12 h-12 bg-gradient-to-br ${selectedAchievement.color} rounded-full flex items-center justify-center`}>
+                    <div className="text-white">{selectedAchievement.icon}</div>
+                  </div>
+                  {selectedAchievement.title}
+                </DialogTitle>
+              </DialogHeader>
+              <div className="space-y-6">
+                <div className="relative h-64 rounded-lg overflow-hidden">
+                  <img 
+                    src={selectedAchievement.image} 
+                    alt={selectedAchievement.title}
+                    className="w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                </div>
+                <div className="space-y-4">
+                  <p className="text-lg text-gray-700 font-medium">
+                    {selectedAchievement.description}
+                  </p>
+                  <div className="prose max-w-none">
+                    <p className="text-gray-600 leading-relaxed text-justify">
+                      {selectedAchievement.details}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>
