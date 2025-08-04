@@ -1,11 +1,72 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, Award, BookOpen, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Calendar, Award, BookOpen, Users, Building, TrendingUp, Heart, Globe } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import infrastructureCameroon from '@/assets/infrastructure-cameroon.jpg';
+import educationCameroon from '@/assets/education-cameroon.jpg';
+import democracyCameroon from '@/assets/democracy-cameroon.jpg';
+import economyCameroon from '@/assets/economy-cameroon.jpg';
+import unityCameroon from '@/assets/unity-cameroon.jpg';
+import diplomacyCameroon from '@/assets/diplomacy-cameroon.jpg';
 
 const Histoire = () => {
+  const [selectedAchievement, setSelectedAchievement] = useState(null);
+
+  const achievements = [
+    {
+      title: "Infrastructure",
+      icon: <Building className="w-8 h-8" />,
+      description: "Modernisation de l'économie et promotion de l'émergence",
+      image: infrastructureCameroon,
+      color: "from-blue-500 to-blue-600",
+      fullDescription: "Sous la présidence de Paul Biya, le Cameroun a connu une transformation majeure de ses infrastructures. Des projets d'envergure comme le port en eaux profondes de Kribi, l'autoroute Yaoundé-Douala, et les barrages hydroélectriques de Memve'ele et Mekin ont révolutionné le paysage économique national. Ces réalisations concrètes témoignent d'une vision stratégique visant à faire du Cameroun le moteur économique de l'Afrique centrale."
+    },
+    {
+      title: "Éducation",
+      icon: <BookOpen className="w-8 h-8" />,
+      description: "Réformes du système éducatif et promotion de l'enseignement supérieur",
+      image: educationCameroon,
+      color: "from-blue-600 to-blue-700",
+      fullDescription: "L'engagement de Paul Biya pour l'éducation s'est traduit par la création de nombreuses universités d'État, l'amélioration de l'accès à l'enseignement primaire et secondaire, et la modernisation des programmes pédagogiques. Ces réformes ont permis au Cameroun de former une génération de leaders capables de relever les défis du développement durable."
+    },
+    {
+      title: "Démocratisation",
+      icon: <Users className="w-8 h-8" />,
+      description: "Instauration du multipartisme et renforcement des institutions démocratiques",
+      image: democracyCameroon,
+      color: "from-blue-700 to-blue-800",
+      fullDescription: "La transition démocratique initiée par Paul Biya en 1990 avec l'instauration du multipartisme a marqué un tournant historique. Cette ouverture politique a permis l'émergence d'une société civile dynamique et le renforcement de l'État de droit, consolidant ainsi les fondements d'une démocratie moderne et inclusive."
+    },
+    {
+      title: "Développement Économique",
+      icon: <TrendingUp className="w-8 h-8" />,
+      description: "Diversification économique et promotion de l'investissement",
+      image: economyCameroon,
+      color: "from-blue-800 to-blue-900",
+      fullDescription: "Sous l'impulsion de Paul Biya, le Cameroun a mis en œuvre des politiques économiques ambitieuses visant l'émergence à l'horizon 2035. La diversification de l'économie, la promotion des investissements privés et le développement des secteurs porteurs ont permis de consolider la position du pays comme puissance économique régionale."
+    },
+    {
+      title: "Unité Nationale",
+      icon: <Heart className="w-8 h-8" />,
+      description: "Préservation de l'unité dans la diversité culturelle",
+      image: unityCameroon,
+      color: "from-blue-500 to-sky-600",
+      fullDescription: "La préservation de l'unité nationale constitue l'un des piliers de la gouvernance de Paul Biya. En valorisant la diversité culturelle comme richesse nationale et en promouvant le vivre-ensemble, il a su maintenir la cohésion sociale malgré les défis régionaux et internationaux."
+    },
+    {
+      title: "Diplomatie",
+      icon: <Globe className="w-8 h-8" />,
+      description: "Rayonnement international et leadership africain",
+      image: diplomacyCameroon,
+      color: "from-sky-600 to-blue-700",
+      fullDescription: "Sur la scène internationale, Paul Biya a positionné le Cameroun comme un acteur majeur de la diplomatie africaine. Son engagement pour la paix régionale, la coopération Sud-Sud et le dialogue multilatéral a renforcé l'influence du Cameroun dans les instances internationales et régionales."
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
@@ -119,60 +180,78 @@ const Histoire = () => {
         </div>
       </section>
 
+      {/* Section Réalisations Majeures Interactives */}
       <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
           <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Réalisations Majeures</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Démocratisation",
-                icon: <Users className="w-8 h-8" />,
-                description: "Instauration du multipartisme et renforcement des institutions démocratiques",
-                color: "from-blue-500 to-blue-600"
-              },
-              {
-                title: "Développement Économique",
-                icon: <Award className="w-8 h-8" />,
-                description: "Modernisation de l'économie camerounaise et promotion de l'émergence",
-                color: "from-blue-600 to-blue-700"
-              },
-              {
-                title: "Unité Nationale",
-                icon: <BookOpen className="w-8 h-8" />,
-                description: "Préservation de l'unité et promotion de la diversité culturelle",
-                color: "from-blue-700 to-blue-800"
-              },
-              {
-                title: "Infrastructure",
-                icon: <Calendar className="w-8 h-8" />,
-                description: "Grands projets d'infrastructure pour le développement du pays",
-                color: "from-blue-800 to-blue-900"
-              },
-              {
-                title: "Éducation",
-                icon: <BookOpen className="w-8 h-8" />,
-                description: "Réformes du système éducatif et promotion de l'enseignement supérieur",
-                color: "from-blue-500 to-sky-600"
-              },
-              {
-                title: "Diplomatie",
-                icon: <Award className="w-8 h-8" />,
-                description: "Rayonnement international du Cameroun sur la scène africaine et mondiale",
-                color: "from-sky-600 to-blue-700"
-              }
-            ].map((achievement, index) => (
-              <Card key={index} className="group p-6 text-center hover:shadow-lg transition-shadow border-blue-200">
-                <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
-                  <div className="text-white">{achievement.icon}</div>
+            {achievements.map((achievement, index) => (
+              <Card 
+                key={index} 
+                className="group hover:shadow-2xl transition-all duration-300 border-blue-200 cursor-pointer"
+                onClick={() => setSelectedAchievement(achievement)}
+              >
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={achievement.image} 
+                    alt={achievement.title}
+                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <Badge className="mb-2 bg-white/20">{achievement.title}</Badge>
+                  </div>
                 </div>
-                <h3 className="text-lg font-bold mb-3 text-blue-900">{achievement.title}</h3>
-                <p className="text-gray-600 text-sm">{achievement.description}</p>
+                <CardContent className="p-6 text-center">
+                  <div className={`w-16 h-16 bg-gradient-to-br ${achievement.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                    <div className="text-white">{achievement.icon}</div>
+                  </div>
+                  <h3 className="text-lg font-bold mb-3 text-blue-900">{achievement.title}</h3>
+                  <p className="text-gray-600 text-sm">{achievement.description}</p>
+                  <Button 
+                    variant="outline" 
+                    size="sm" 
+                    className="mt-4 group-hover:bg-blue-600 group-hover:text-white transition-colors"
+                  >
+                    En savoir plus
+                  </Button>
+                </CardContent>
               </Card>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Dialog pour les détails des réalisations */}
+      <Dialog open={!!selectedAchievement} onOpenChange={() => setSelectedAchievement(null)}>
+        <DialogContent className="max-w-2xl">
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-3 text-blue-900">
+              {selectedAchievement && (
+                <>
+                  <div className={`w-12 h-12 bg-gradient-to-br ${selectedAchievement.color} rounded-full flex items-center justify-center`}>
+                    <div className="text-white">{selectedAchievement.icon}</div>
+                  </div>
+                  {selectedAchievement.title}
+                </>
+              )}
+            </DialogTitle>
+          </DialogHeader>
+          {selectedAchievement && (
+            <div className="space-y-4">
+              <img 
+                src={selectedAchievement.image} 
+                alt={selectedAchievement.title}
+                className="w-full h-64 object-cover rounded-lg"
+              />
+              <p className="text-gray-700 leading-relaxed">
+                {selectedAchievement.fullDescription}
+              </p>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
