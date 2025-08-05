@@ -77,7 +77,7 @@ const Index = () => {
       {/* Hero Section avec fond d'écran plus visible */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-blue-900 flex items-center justify-center text-white overflow-hidden">
         {/* Filigrane central des 4 aires réunies - fond plus visible */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-40">
           <div className="grid grid-cols-2 h-full">
             <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover" />
             <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover" />
@@ -85,7 +85,7 @@ const Index = () => {
             <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover" />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/20 via-blue-500/30 to-blue-900/40"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/10 via-blue-500/20 to-blue-900/30"></div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto px-4 animate-fade-in">
           {/* Photo du Président à côté du titre */}
@@ -210,7 +210,7 @@ const Index = () => {
             <Link to="/galerie">
               <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
                 <div className="h-48 bg-gradient-to-br from-blue-600 to-blue-800 relative overflow-hidden">
-                  <div className="absolute inset-0 opacity-30">
+                  <div className="absolute inset-0 opacity-40">
                     <div className="grid grid-cols-2 h-full">
                       <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover" />
                       <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover" />
@@ -218,7 +218,7 @@ const Index = () => {
                       <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover" />
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">Galerie</Badge>
                     <h3 className="text-lg font-bold">Explorez la galerie</h3>

@@ -12,6 +12,7 @@ import democracyCameroon from '@/assets/democracy-cameroon.jpg';
 import economyCameroon from '@/assets/economy-cameroon.jpg';
 import unityCameroon from '@/assets/unity-cameroon.jpg';
 import diplomacyCameroon from '@/assets/diplomacy-cameroon.jpg';
+import cameroonFlag from '@/assets/cameroon-flag.jpg';
 
 const Histoire = () => {
   const [selectedAchievement, setSelectedAchievement] = useState(null);
@@ -74,13 +75,13 @@ const Histoire = () => {
       {/* Hero Section avec bleu dilué et touches de bleu nuit */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-sky-400 flex items-center justify-center text-white overflow-hidden">
         {/* Photo du Président en fond avec filigrane discret en bas */}
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-30">
           <img 
             src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
             alt="Président Paul Biya" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/70 via-sky-300/30 to-sky-200/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/60 via-sky-300/20 to-sky-200/30"></div>
         </div>
         {/* Photo en petit format en bas à droite */}
         <div className="absolute bottom-4 right-4 opacity-30">
@@ -198,6 +199,14 @@ const Histoire = () => {
                     alt={achievement.title}
                     className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
                   />
+                  {/* Filigrane drapeau du Cameroun en arrière-plan */}
+                  <div className="absolute inset-0 opacity-20">
+                    <img 
+                      src={cameroonFlag} 
+                      alt="Drapeau du Cameroun"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">{achievement.title}</Badge>

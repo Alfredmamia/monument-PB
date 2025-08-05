@@ -2,94 +2,80 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingBag, Book, Shirt, Award, CreditCard, Truck } from 'lucide-react';
+import { ShoppingBag, Crown, Award, Star, CreditCard, Truck, Gift } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const Boutique = () => {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
-      {/* Hero Section avec bleu profond et filigrane objets d'art */}
-      <section className="relative h-96 bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane objets d'art */}
+      {/* Hero Section avec thème présidentiel */}
+      <section className="relative min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 flex items-center justify-center text-white overflow-hidden">
+        {/* Filigrane emblèmes du Cameroun */}
         <div className="absolute inset-0 opacity-15">
           <div className="w-full h-full bg-repeat opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Ccircle cx='20' cy='20' r='8'/%3E%3Crect x='45' y='10' width='20' height='15' rx='3'/%3E%3Cpath d='M10 50l15-10 15 10v20H10V50z'/%3E%3Ccircle cx='60' cy='60' r='10'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M20 20l10-5 10 5v15l-10 5-10-5V20z'/%3E%3Ccircle cx='55' cy='25' r='8'/%3E%3Cpath d='M15 50l15-8 15 8v20H15V50z'/%3E%3Cpath d='M50 55l8-4 8 4v15l-8 4-8-4V55z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
           }}></div>
         </div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-800/60 via-blue-900/40 to-indigo-900/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
-            Souvenirs Authentiques
+            Collection Présidentielle
           </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Boutique</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Boutique Officielle</h1>
           <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
-            Offrez-vous un souvenir unique du Monument Paul Biya : livres, objets d'art, textiles et plus encore. 
-            Paiement sécurisé garanti.
+            Découvrez la collection exclusive du Monument Paul Biya et des emblèmes présidentiels. 
+            Gadgets authentiques inspirés des plus grands musées du monde.
           </p>
         </div>
       </section>
 
-      {/* Introduction */}
-      <section className="py-20 bg-gradient-to-r from-green-50 via-emerald-50 to-teal-50">
+      {/* Collections Présidentielles */}
+      <section className="py-20 bg-gradient-to-r from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl font-bold text-gray-800 mb-8">Souvenirs et cadeaux</h2>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Offrez-vous un souvenir unique du Monument Paul Biya : livres, objets d'art, textiles et plus encore. 
-              Paiement sécurisé garanti.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Catégories de Produits */}
-      <section className="py-20 bg-white">
-        <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Nos Collections</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Collections Présidentielles</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {[
               {
-                name: "Livres & Publications",
-                icon: <Book className="w-8 h-8" />,
-                color: "from-green-500 to-emerald-500",
-                count: "25+ titres",
-                description: "Biographies, guides, livres d'art"
+                name: "Collection Paul Biya",
+                icon: <Crown className="w-8 h-8" />,
+                color: "from-blue-600 to-blue-700",
+                count: "25+ articles",
+                description: "Portraits officiels, biographies, objets commemoratifs"
               },
               {
-                name: "Textiles Traditionnels",
-                icon: <Shirt className="w-8 h-8" />,
-                color: "from-emerald-500 to-teal-500",
-                count: "40+ articles",
-                description: "Pagnes, broderies, vêtements"
-              },
-              {
-                name: "Objets d'Art",
+                name: "Collection Monument",
                 icon: <Award className="w-8 h-8" />,
-                color: "from-teal-500 to-cyan-500",
-                description: "Sculptures, masques, peintures"
+                color: "from-blue-700 to-blue-800",
+                count: "40+ modèles",
+                description: "Répliques, maquettes, souvenirs architecturaux"
               },
               {
-                name: "Accessoires",
-                icon: <ShoppingBag className="w-8 h-8" />,
-                color: "from-cyan-500 to-blue-500",
-                count: "60+ produits",
-                description: "Bijoux, sacs, porte-clés"
+                name: "Emblèmes du Cameroun",
+                icon: <Star className="w-8 h-8" />,
+                color: "from-blue-800 to-blue-900",
+                count: "30+ symboles",
+                description: "Drapeaux, armoiries, insignes officiels"
+              },
+              {
+                name: "Éditions Limitées",
+                icon: <Gift className="w-8 h-8" />,
+                color: "from-blue-900 to-indigo-900",
+                count: "15+ pièces",
+                description: "Objets de collection rares et numérotés"
               }
             ].map((category, index) => (
-              <Card key={index} className="group text-center p-6 hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="group text-center p-6 hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
                 <div className={`w-16 h-16 bg-gradient-to-br ${category.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
                   <div className="text-white">{category.icon}</div>
                 </div>
-                <h3 className="text-lg font-bold mb-2">{category.name}</h3>
-                {category.count && (
-                  <Badge variant="outline" className="mb-2">{category.count}</Badge>
-                )}
+                <h3 className="text-lg font-bold mb-2 text-blue-900">{category.name}</h3>
+                <Badge variant="outline" className="mb-2 border-blue-300 text-blue-700">{category.count}</Badge>
                 <p className="text-gray-600 text-sm mb-4">{category.description}</p>
-                <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-50">
+                <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
                   Explorer
                 </Button>
               </Card>
@@ -98,61 +84,69 @@ const Boutique = () => {
         </div>
       </section>
 
-      {/* Produits Vedettes */}
-      <section className="py-20 bg-gray-50">
+      {/* Produits Vedettes Présidentiels */}
+      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Produits Vedettes</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Produits Vedettes</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Biographie Officielle Paul Biya",
-                price: "12 500 FCFA",
-                category: "Livre",
-                description: "Ouvrage de référence sur la vie et l'œuvre du Président",
-                color: "from-green-400 to-emerald-400",
-                bestseller: true
+                name: "Portrait Officiel Paul Biya - Édition Prestige",
+                price: "45 000 FCFA",
+                category: "Collection Présidentielle",
+                description: "Portrait officiel haute qualité avec cadre présidentiel doré",
+                color: "from-blue-600 to-blue-700",
+                bestseller: true,
+                icon: <Crown className="w-8 h-8" />
               },
               {
-                name: "Pagne Traditionnel Camerounais",
-                price: "25 000 FCFA",
-                category: "Textile",
-                description: "Pagne authentique aux motifs des quatre aires culturelles",
-                color: "from-emerald-400 to-teal-400"
+                name: "Maquette Monument Paul Biya - Bronze",
+                price: "85 000 FCFA",
+                category: "Collection Monument",
+                description: "Réplique exacte en bronze du monument (30cm)",
+                color: "from-blue-700 to-blue-800",
+                limited: true,
+                icon: <Award className="w-8 h-8" />
               },
               {
-                name: "Sculpture Miniature du Monument",
-                price: "18 000 FCFA",
-                category: "Art",
-                description: "Réplique détaillée en bronze du Monument Paul Biya",
-                color: "from-teal-400 to-cyan-400"
-              },
-              {
-                name: "T-shirt Commémoratif",
-                price: "8 500 FCFA",
-                category: "Vêtement",
-                description: "T-shirt de qualité avec logo officiel du monument",
-                color: "from-cyan-400 to-blue-400"
-              },
-              {
-                name: "Masque Traditionnel (Reproduction)",
+                name: "Drapeau Présidentiel Camerounais",
                 price: "35 000 FCFA",
-                category: "Art",
-                description: "Reproduction fidèle d'un masque traditionnel camerounais",
-                color: "from-blue-400 to-indigo-400",
-                limited: true
+                category: "Emblèmes Cameroun",
+                description: "Drapeau officiel aux dimensions protocolaires",
+                color: "from-blue-800 to-blue-900",
+                icon: <Star className="w-8 h-8" />
               },
               {
-                name: "Carnet de Notes Personnalisé",
-                price: "5 500 FCFA",
-                category: "Accessoire",
-                description: "Carnet élégant avec couverture aux couleurs nationales",
-                color: "from-indigo-400 to-purple-400"
+                name: "Médaille Commémorative - Or",
+                price: "120 000 FCFA",
+                category: "Édition Limitée",
+                description: "Médaille en or 18K numérotée (500 exemplaires)",
+                color: "from-blue-900 to-indigo-900",
+                limited: true,
+                icon: <Award className="w-8 h-8" />
+              },
+              {
+                name: "Album Photo Présidentiel Deluxe",
+                price: "55 000 FCFA",
+                category: "Collection Présidentielle",
+                description: "Album relié cuir avec photos officielles inédites",
+                color: "from-blue-600 to-blue-700",
+                icon: <Crown className="w-8 h-8" />
+              },
+              {
+                name: "Épinglette Armoiries du Cameroun",
+                price: "15 000 FCFA",
+                category: "Emblèmes Cameroun",
+                description: "Épinglette officielle en émail et métal doré",
+                color: "from-blue-700 to-blue-800",
+                bestseller: true,
+                icon: <Star className="w-8 h-8" />
               }
             ].map((product, index) => (
-              <Card key={index} className={`group overflow-hidden hover:shadow-xl transition-shadow ${product.bestseller ? 'border-2 border-green-500' : ''}`}>
+              <Card key={index} className={`group overflow-hidden hover:shadow-xl transition-shadow bg-white/95 backdrop-blur-sm ${product.bestseller ? 'border-2 border-blue-500' : product.limited ? 'border-2 border-red-500' : ''}`}>
                 {product.bestseller && (
-                  <Badge className="absolute top-2 left-2 z-10 bg-green-500 text-white">
+                  <Badge className="absolute top-2 left-2 z-10 bg-blue-500 text-white">
                     Best-seller
                   </Badge>
                 )}
@@ -164,19 +158,19 @@ const Boutique = () => {
                 <div className={`h-48 bg-gradient-to-br ${product.color} relative`}>
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
                   <div className="absolute top-2 right-2">
-                    <Badge variant="outline" className="bg-white/90">{product.category}</Badge>
+                    <Badge variant="outline" className="bg-white/90 text-blue-700">{product.category}</Badge>
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <ShoppingBag className="w-12 h-12 text-white" />
+                    <div className="text-white opacity-80">{product.icon}</div>
                   </div>
                 </div>
                 <CardContent className="p-6">
                   <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-lg font-bold">{product.name}</h3>
-                    <span className="text-lg font-bold text-green-600">{product.price}</span>
+                    <h3 className="text-lg font-bold text-blue-900">{product.name}</h3>
+                    <span className="text-lg font-bold text-blue-600">{product.price}</span>
                   </div>
                   <p className="text-gray-600 text-sm mb-4">{product.description}</p>
-                  <Button className="w-full bg-green-600 hover:bg-green-700 text-white">
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                     Ajouter au Panier
                   </Button>
                 </CardContent>
@@ -187,41 +181,41 @@ const Boutique = () => {
       </section>
 
       {/* Informations Pratiques */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center text-gray-800 mb-16">Informations Pratiques</h2>
+          <h2 className="text-4xl font-bold text-center text-blue-900 mb-16">Services Premium</h2>
           
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: "Paiement Sécurisé",
-                icon: <CreditCard className="w-8 h-8" />,
-                description: "Paiement par carte bancaire, Mobile Money ou espèces",
-                features: ["SSL sécurisé", "Mobile Money", "Cartes Visa/MasterCard"]
+                title: "Authentification Officielle",
+                icon: <Award className="w-8 h-8" />,
+                description: "Tous nos produits sont certifiés et authentifiés",
+                features: ["Certificat d'authenticité", "Garantie officielle", "Traçabilité complète"]
               },
               {
-                title: "Livraison",
+                title: "Livraison Sécurisée",
                 icon: <Truck className="w-8 h-8" />,
-                description: "Livraison dans tout le Cameroun et retrait sur place",
-                features: ["Livraison gratuite dès 50 000 FCFA", "Retrait gratuit", "Suivi de commande"]
+                description: "Livraison premium avec assurance tous risques",
+                features: ["Emballage de luxe", "Livraison express", "Assurance incluse"]
               },
               {
-                title: "Service Client",
-                icon: <ShoppingBag className="w-8 h-8" />,
-                description: "Équipe dédiée pour vous accompagner dans vos achats",
-                features: ["Support 7j/7", "Échange/Remboursement", "Conseils personnalisés"]
+                title: "Service Concierge",
+                icon: <Crown className="w-8 h-8" />,
+                description: "Service personnalisé digne de l'excellence présidentielle",
+                features: ["Conseiller dédié", "Personnalisation possible", "Service VIP"]
               }
             ].map((service, index) => (
-              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <div className="text-green-600">{service.icon}</div>
+              <Card key={index} className="p-6 text-center hover:shadow-lg transition-shadow bg-white/95 backdrop-blur-sm">
+                <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="text-white">{service.icon}</div>
                 </div>
-                <h3 className="text-lg font-bold mb-3">{service.title}</h3>
+                <h3 className="text-lg font-bold mb-3 text-blue-900">{service.title}</h3>
                 <p className="text-gray-600 text-sm mb-4">{service.description}</p>
                 <ul className="space-y-1">
                   {service.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center justify-center space-x-2 text-sm text-gray-600">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                      <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                       <span>{feature}</span>
                     </li>
                   ))}

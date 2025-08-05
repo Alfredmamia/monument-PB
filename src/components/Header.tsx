@@ -41,7 +41,8 @@ const Header = () => {
         { label: t('nav.glam'), path: '/glam' },
         { label: t('nav.education'), path: '/education' },
         { label: t('nav.restaurant'), path: '/restaurant' },
-        { label: t('nav.accommodation'), path: '/hebergement' }
+        { label: t('nav.accommodation'), path: '/hebergement' },
+        { label: 'Boutique', path: '/boutique' }
       ]
     },
     { label: t('nav.contact'), path: '/contact' }
