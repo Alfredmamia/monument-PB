@@ -13,13 +13,13 @@ const Almanach = () => {
       {/* Hero Section avec bleu ciel et filigrane logos partenaires */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500 flex items-center justify-center text-white overflow-hidden">
         {/* Photo du Président en fond avec filigrane discret en bas */}
-        <div className="absolute inset-0 opacity-25">
+        <div className="absolute inset-0 opacity-60">
           <img 
             src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
             alt="Président Paul Biya" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/60 via-sky-300/20 to-sky-200/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/30 via-sky-300/10 to-sky-200/15"></div>
         </div>
         {/* Photo en petit format en bas à droite */}
         <div className="absolute bottom-4 right-4 opacity-40">
@@ -109,12 +109,12 @@ const Almanach = () => {
                 almanach: "/almanachs/ALMANACH CAMTEL.pdf"
               },
               {
-                name: "Ministère des Forêts et de la Faune",
-                logo: "/lovable-uploads/158e7195-b643-46ce-b446-aab10230e51c.png",
-                description: "Protection de l'environnement et biodiversité",
+                name: "MINFOF",
+                logo: "/lovable-uploads/b5f2bd7e-d4a6-4425-b70d-b6e27162fe1d.png",
+                description: "Ministère des Forêts et de la Faune - Protection de l'environnement et biodiversité",
                 category: "Environnement",
                 icon: <TreePine className="w-6 h-6" />,
-                almanach: "/lovable-uploads/212cb820-f5ee-4c0e-b331-726a606fb2d2.png"
+                almanach: "/almanachs/ALMANACH MINFOF.pdf"
               },
               {
                 name: "MINHDU",
@@ -205,11 +205,11 @@ const Almanach = () => {
               },
               {
                 name: "SONDY",
-                logo: "/lovable-uploads/981caa3d-b5df-4cbc-a80e-0301a0e092f2.png",
-                description: "Partenaire technique spécialisé",
+                logo: "/lovable-uploads/5d240f06-7ffe-4ae2-8ab2-6a7a6c4c56bc.png",
+                description: "Partenaire technique spécialisé - Personnel administratif",
                 category: "Technique",
                 icon: <Briefcase className="w-6 h-6" />,
-                almanach: "/lovable-uploads/b91ae14b-559d-40d7-9ec3-92c480cb88b3.png"
+                almanach: "/almanachs/ALMANACH SONDY.pdf"
               },
               {
                 name: "CABINET CEBR",

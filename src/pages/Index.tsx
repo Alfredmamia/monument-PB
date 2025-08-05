@@ -77,7 +77,7 @@ const Index = () => {
       {/* Hero Section avec fond d'écran plus visible */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-blue-900 flex items-center justify-center text-white overflow-hidden">
         {/* Filigrane central des 4 aires réunies - fond plus visible */}
-        <div className="absolute inset-0 opacity-40">
+        <div className="absolute inset-0 opacity-70">
           <div className="grid grid-cols-2 h-full">
             <img src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" alt="Grassfield" className="w-full h-full object-cover" />
             <img src="/lovable-uploads/e385d921-8f16-44a1-9b07-f0b633c293f3.png" alt="Sawa" className="w-full h-full object-cover" />
@@ -85,7 +85,7 @@ const Index = () => {
             <img src="/lovable-uploads/21bd0be9-07e2-44b5-b0d4-194d93611a88.png" alt="Soudano-Sahélienne" className="w-full h-full object-cover" />
           </div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/10 via-blue-500/20 to-blue-900/30"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-sky-400/5 via-blue-500/10 to-blue-900/15"></div>
         
         <div className="relative z-10 text-center max-w-6xl mx-auto px-4 animate-fade-in">
           {/* Photo du Président à côté du titre */}
@@ -442,13 +442,13 @@ const Index = () => {
 
       {/* Section L'héritage du moment avec la 4e image */}
       <section className="py-20 bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400 relative">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-60">
           <img 
-            src="/lovable-uploads/7b57886f-98a9-4af8-af24-08f7c33d5563.png" 
-            alt="Histoire du Cameroun" 
+            src="/lovable-uploads/6a14b45d-34e9-47d2-a581-8ebfa652dd83.png" 
+            alt="Histoire du Cameroun - Photo historique" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-br from-sky-300/70 via-sky-400/50 to-blue-500/60"></div>
+          <div className="absolute inset-0 bg-gradient-to-br from-sky-300/30 via-sky-400/20 to-blue-500/30"></div>
         </div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">

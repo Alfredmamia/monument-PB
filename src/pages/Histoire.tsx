@@ -75,13 +75,13 @@ const Histoire = () => {
       {/* Hero Section avec bleu dilué et touches de bleu nuit */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-sky-400 flex items-center justify-center text-white overflow-hidden">
         {/* Photo du Président en fond avec filigrane discret en bas */}
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-60">
           <img 
             src="/lovable-uploads/c8685942-cb17-4981-8d1b-b55fe11f2a8e.png" 
             alt="Président Paul Biya" 
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/60 via-sky-300/20 to-sky-200/30"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-400/30 via-sky-300/10 to-sky-200/15"></div>
         </div>
         {/* Photo en petit format en bas à droite */}
         <div className="absolute bottom-4 right-4 opacity-30">
@@ -200,7 +200,7 @@ const Histoire = () => {
                     className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
                   />
                   {/* Filigrane drapeau du Cameroun en arrière-plan */}
-                  <div className="absolute inset-0 opacity-20">
+                  <div className="absolute inset-0 opacity-60">
                     <img 
                       src={cameroonFlag} 
                       alt="Drapeau du Cameroun"
@@ -262,11 +262,20 @@ const Histoire = () => {
         </DialogContent>
       </Dialog>
 
-      <section className="py-20 bg-gradient-to-br from-sky-300 via-sky-400 to-blue-500">
-        <div className="container mx-auto px-4">
+      <section className="py-20 relative overflow-hidden">
+        {/* Image historique en fond d'écran */}
+        <div className="absolute inset-0 opacity-40">
+          <img 
+            src="/lovable-uploads/6a14b45d-34e9-47d2-a581-8ebfa652dd83.png" 
+            alt="Photo historique du Cameroun" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-800/20 via-sky-600/10 to-blue-900/30"></div>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-blue-900 mb-8">L'Héritage du Monument</h2>
-            <div className="bg-gradient-to-r from-blue-100 to-sky-100 p-8 rounded-lg">
+            <div className="bg-gradient-to-r from-blue-100/90 to-sky-100/90 p-8 rounded-lg backdrop-blur-sm">
               <blockquote className="text-xl italic text-blue-800 mb-6 leading-relaxed">
                 "Le Monument Paul Biya à Sangmélima incarne la vision d'un leader dévoué à l'unité nationale 
                 et au développement harmonieux du Cameroun. Il symbolise les valeurs de paix, de progrès 
