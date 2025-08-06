@@ -5,7 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { ShoppingBag, Crown, Award, Star, CreditCard, Truck, Gift, Watch, Shield, Package } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import boutiqueBanner from '@/assets/boutique-banner.jpg';
+import boutiqueBanner from '@/assets/boutique-banner-new.jpg';
 
 const Boutique = () => {
   return (

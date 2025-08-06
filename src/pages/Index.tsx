@@ -14,7 +14,7 @@ import democratizationImg from '@/assets/democratization-biya.jpg';
 import economicImg from '@/assets/economic-development-biya.jpg';
 import unityImg from '@/assets/unity-biya.jpg';
 import diplomacyImg from '@/assets/diplomacy-biya.jpg';
-import boutiqueBanner from '@/assets/boutique-banner.jpg';
+import boutiqueBanner from '@/assets/boutique-banner-new.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
