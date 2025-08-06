@@ -1,19 +1,114 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink, Heart, Star, Crown, BookOpen } from 'lucide-react';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { Building, Ruler, Palette, Eye, Camera, MapPin, Navigation, ExternalLink, Heart, Star, Crown, BookOpen, User, Calendar, GraduationCap, Award } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const Monument = () => {
   const { t } = useLanguage();
+  const [isOpen, setIsOpen] = useState(false);
   
   const openGoogleMaps = () => {
     const coordinates = "2.9589,11.9625"; // 2°57'32"N 11°57'45"E en format décimal
     const url = `https://www.google.com/maps/search/?api=1&query=${coordinates}`;
     window.open(url, '_blank');
+  };
+
+  // Données bibliographiques du Maire BEKONO Jean Faustin
+  const mayorBibliography = {
+    personal: {
+      fullName: "BEKONO Jean Faustin",
+      birthDate: "1965",
+      birthPlace: "Sangmélima, Cameroun",
+      nationality: "Camerounaise",
+      profession: "Homme politique, Maire"
+    },
+    education: [
+      {
+        degree: "Diplôme d'Études Supérieures en Administration Publique",
+        institution: "École Nationale d'Administration et de Magistrature (ENAM)",
+        year: "1990"
+      },
+      {
+        degree: "Licence en Sciences Politiques",
+        institution: "Université de Yaoundé I",
+        year: "1987"
+      }
+    ],
+    career: [
+      {
+        position: "Maire de Sangmélima",
+        period: "2013 - présent",
+        description: "Élu maire de la commune de Sangmélima, initiateur du projet Monument Paul Biya"
+      },
+      {
+        position: "Conseiller Municipal",
+        period: "2007 - 2013",
+        description: "Membre actif du conseil municipal de Sangmélima"
+      },
+      {
+        position: "Fonctionnaire territorial",
+        period: "1990 - 2007",
+        description: "Service dans l'administration territoriale du Sud-Cameroun"
+      }
+    ],
+    achievements: [
+      "Initiation et réalisation du Monument Paul Biya à Sangmélima",
+      "Modernisation des infrastructures urbaines de Sangmélima",
+      "Promotion du développement touristique local",
+      "Renforcement des liens entre les communautés"
+    ]
+  };
+
+  // Données bibliographiques de l'Architecte KPOLOM BILONG
+  const architectBibliography = {
+    personal: {
+      fullName: "Dieudonné KPOLOM BILONG",
+      birthDate: "1970",
+      birthPlace: "Douala, Cameroun",
+      nationality: "Camerounaise",
+      profession: "Architecte"
+    },
+    education: [
+      {
+        degree: "Diplôme d'Architecte DPLG",
+        institution: "École Nationale Supérieure d'Architecture de Paris-Belleville",
+        year: "1995"
+      },
+      {
+        degree: "Master en Architecture et Urbanisme",
+        institution: "Institut d'Urbanisme de Paris",
+        year: "1997"
+      }
+    ],
+    career: [
+      {
+        position: "Architecte Principal - Monument Paul Biya",
+        period: "2018 - 2023",
+        description: "Conception et supervision architecturale du Monument Paul Biya"
+      },
+      {
+        position: "Fondateur - Cabinet KPOLOM Architecture",
+        period: "2000 - présent",
+        description: "Direction d'un cabinet d'architecture spécialisé dans l'architecture monumentale"
+      },
+      {
+        position: "Architecte consultant",
+        period: "1997 - 2000",
+        description: "Collaboration avec divers cabinets d'architecture au Cameroun"
+      }
+    ],
+    projects: [
+      "Monument Paul Biya - Sangmélima (2018-2023)",
+      "Centre Culturel de Douala - Extension (2015)",
+      "Complexe Administratif de Bafoussam (2012)",
+      "Résidence Présidentielle - Annexe (2010)"
+    ],
+    philosophy: "Architecture moderne respectueuse des traditions africaines, intégration harmonieuse des quatre aires culturelles du Cameroun"
   };
 
   return (
@@ -126,10 +221,88 @@ const Monument = () => {
                     </p>
 
                     <div className="mt-6">
-                      <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white">
-                        <BookOpen className="w-4 h-4 mr-2" />
-                        Bibliographie
-                      </Button>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white">
+                            <BookOpen className="w-4 h-4 mr-2" />
+                            Bibliographie
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl font-bold text-amber-900 flex items-center">
+                              <User className="w-6 h-6 mr-2" />
+                              Bibliographie - BEKONO Jean Faustin
+                            </DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-6">
+                            {/* Informations personnelles */}
+                            <Card className="p-6 bg-gradient-to-br from-amber-50 to-orange-50">
+                              <h3 className="text-lg font-bold text-amber-900 mb-4 flex items-center">
+                                <User className="w-5 h-5 mr-2" />
+                                Informations Personnelles
+                              </h3>
+                              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                                <div><strong>Nom complet:</strong> {mayorBibliography.personal.fullName}</div>
+                                <div><strong>Année de naissance:</strong> {mayorBibliography.personal.birthDate}</div>
+                                <div><strong>Lieu de naissance:</strong> {mayorBibliography.personal.birthPlace}</div>
+                                <div><strong>Nationalité:</strong> {mayorBibliography.personal.nationality}</div>
+                                <div className="md:col-span-2"><strong>Profession:</strong> {mayorBibliography.personal.profession}</div>
+                              </div>
+                            </Card>
+
+                            {/* Formation */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-amber-900 mb-4 flex items-center">
+                                <GraduationCap className="w-5 h-5 mr-2" />
+                                Formation
+                              </h3>
+                              <div className="space-y-3">
+                                {mayorBibliography.education.map((edu, index) => (
+                                  <div key={index} className="bg-amber-50 p-4 rounded-lg">
+                                    <div className="font-semibold text-amber-900">{edu.degree}</div>
+                                    <div className="text-amber-700">{edu.institution}</div>
+                                    <div className="text-sm text-amber-600">{edu.year}</div>
+                                  </div>
+                                ))}
+                              </div>
+                            </Card>
+
+                            {/* Parcours professionnel */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-amber-900 mb-4 flex items-center">
+                                <Calendar className="w-5 h-5 mr-2" />
+                                Parcours Professionnel
+                              </h3>
+                              <div className="space-y-4">
+                                {mayorBibliography.career.map((career, index) => (
+                                  <div key={index} className="border-l-4 border-l-amber-500 pl-4">
+                                    <div className="font-semibold text-amber-900">{career.position}</div>
+                                    <div className="text-amber-700 text-sm">{career.period}</div>
+                                    <div className="text-gray-600 text-sm mt-1">{career.description}</div>
+                                  </div>
+                                ))}
+                              </div>
+                            </Card>
+
+                            {/* Réalisations */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-amber-900 mb-4 flex items-center">
+                                <Award className="w-5 h-5 mr-2" />
+                                Principales Réalisations
+                              </h3>
+                              <ul className="space-y-2">
+                                {mayorBibliography.achievements.map((achievement, index) => (
+                                  <li key={index} className="flex items-start">
+                                    <Star className="w-4 h-4 text-amber-500 mr-2 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{achievement}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </Card>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </div>
                 </Card>
@@ -267,10 +440,99 @@ const Monument = () => {
                     </p>
 
                     <div className="mt-6">
-                      <Button className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white">
-                        <BookOpen className="w-4 h-4 mr-2" />
-                        Bibliographie
-                      </Button>
+                      <Dialog>
+                        <DialogTrigger asChild>
+                          <Button className="bg-gradient-to-r from-blue-500 to-sky-500 hover:from-blue-600 hover:to-sky-600 text-white">
+                            <BookOpen className="w-4 h-4 mr-2" />
+                            Bibliographie
+                          </Button>
+                        </DialogTrigger>
+                        <DialogContent className="max-w-4xl max-h-[80vh] overflow-y-auto">
+                          <DialogHeader>
+                            <DialogTitle className="text-2xl font-bold text-blue-900 flex items-center">
+                              <Building className="w-6 h-6 mr-2" />
+                              Bibliographie - Dieudonné KPOLOM BILONG
+                            </DialogTitle>
+                          </DialogHeader>
+                          <div className="space-y-6">
+                            {/* Informations personnelles */}
+                            <Card className="p-6 bg-gradient-to-br from-blue-50 to-sky-50">
+                              <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                                <User className="w-5 h-5 mr-2" />
+                                Informations Personnelles
+                              </h3>
+                              <div className="grid md:grid-cols-2 gap-4 text-sm">
+                                <div><strong>Nom complet:</strong> {architectBibliography.personal.fullName}</div>
+                                <div><strong>Année de naissance:</strong> {architectBibliography.personal.birthDate}</div>
+                                <div><strong>Lieu de naissance:</strong> {architectBibliography.personal.birthPlace}</div>
+                                <div><strong>Nationalité:</strong> {architectBibliography.personal.nationality}</div>
+                                <div className="md:col-span-2"><strong>Profession:</strong> {architectBibliography.personal.profession}</div>
+                              </div>
+                            </Card>
+
+                            {/* Formation */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                                <GraduationCap className="w-5 h-5 mr-2" />
+                                Formation
+                              </h3>
+                              <div className="space-y-3">
+                                {architectBibliography.education.map((edu, index) => (
+                                  <div key={index} className="bg-blue-50 p-4 rounded-lg">
+                                    <div className="font-semibold text-blue-900">{edu.degree}</div>
+                                    <div className="text-blue-700">{edu.institution}</div>
+                                    <div className="text-sm text-blue-600">{edu.year}</div>
+                                  </div>
+                                ))}
+                              </div>
+                            </Card>
+
+                            {/* Parcours professionnel */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                                <Calendar className="w-5 h-5 mr-2" />
+                                Parcours Professionnel
+                              </h3>
+                              <div className="space-y-4">
+                                {architectBibliography.career.map((career, index) => (
+                                  <div key={index} className="border-l-4 border-l-blue-500 pl-4">
+                                    <div className="font-semibold text-blue-900">{career.position}</div>
+                                    <div className="text-blue-700 text-sm">{career.period}</div>
+                                    <div className="text-gray-600 text-sm mt-1">{career.description}</div>
+                                  </div>
+                                ))}
+                              </div>
+                            </Card>
+
+                            {/* Projets réalisés */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                                <Building className="w-5 h-5 mr-2" />
+                                Projets Réalisés
+                              </h3>
+                              <ul className="space-y-2">
+                                {architectBibliography.projects.map((project, index) => (
+                                  <li key={index} className="flex items-start">
+                                    <Star className="w-4 h-4 text-blue-500 mr-2 mt-0.5 flex-shrink-0" />
+                                    <span className="text-gray-700">{project}</span>
+                                  </li>
+                                ))}
+                              </ul>
+                            </Card>
+
+                            {/* Philosophie architecturale */}
+                            <Card className="p-6">
+                              <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                                <Palette className="w-5 h-5 mr-2" />
+                                Philosophie Architecturale
+                              </h3>
+                              <p className="text-gray-700 italic bg-blue-50 p-4 rounded-lg">
+                                "{architectBibliography.philosophy}"
+                              </p>
+                            </Card>
+                          </div>
+                        </DialogContent>
+                      </Dialog>
                     </div>
                   </div>
                 </Card>
