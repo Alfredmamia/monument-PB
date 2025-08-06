@@ -194,20 +194,22 @@ const Histoire = () => {
                 onClick={() => setSelectedAchievement(achievement)}
               >
                 <div className="h-48 relative overflow-hidden">
-                  <img 
-                    src={achievement.image} 
-                    alt={achievement.title}
-                    className="w-full h-full object-cover opacity-80 group-hover:scale-105 transition-transform duration-300"
-                  />
                   {/* Filigrane drapeau du Cameroun en arrière-plan */}
-                  <div className="absolute inset-0 opacity-60">
+                  <div className="absolute inset-0 opacity-90">
                     <img 
-                      src={cameroonFlag} 
+                      src="/lovable-uploads/a33308a9-3d16-4dfc-ab2d-91a72002bcb8.png" 
                       alt="Drapeau du Cameroun"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute inset-0 opacity-30">
+                    <img 
+                      src={achievement.image} 
+                      alt={achievement.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 text-white">
                     <Badge className="mb-2 bg-white/20">{achievement.title}</Badge>
                   </div>

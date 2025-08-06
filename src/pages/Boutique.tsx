@@ -2,31 +2,34 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ShoppingBag, Crown, Award, Star, CreditCard, Truck, Gift } from 'lucide-react';
+import { ShoppingBag, Crown, Award, Star, CreditCard, Truck, Gift, Watch, Shield, Package } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import boutiqueBanner from '@/assets/boutique-banner.jpg';
 
 const Boutique = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
       <Header />
       
-      {/* Hero Section avec thème présidentiel */}
+      {/* Hero Section avec fond boutique */}
       <section className="relative min-h-screen bg-gradient-to-br from-blue-700 via-blue-800 to-blue-900 flex items-center justify-center text-white overflow-hidden">
-        {/* Filigrane emblèmes du Cameroun */}
-        <div className="absolute inset-0 opacity-15">
-          <div className="w-full h-full bg-repeat opacity-30" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.2'%3E%3Cpath d='M20 20l10-5 10 5v15l-10 5-10-5V20z'/%3E%3Ccircle cx='55' cy='25' r='8'/%3E%3Cpath d='M15 50l15-8 15 8v20H15V50z'/%3E%3Cpath d='M50 55l8-4 8 4v15l-8 4-8-4V55z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
-          }}></div>
+        {/* Image de bannière boutique en fond */}
+        <div className="absolute inset-0 opacity-80">
+          <img 
+            src={boutiqueBanner} 
+            alt="Boutique Souvenir du Monument Paul BIYA" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-br from-blue-800/50 via-blue-900/40 to-indigo-900/50"></div>
         </div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-800/60 via-blue-900/40 to-indigo-900/60"></div>
         <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
           <Badge className="mb-4 bg-white/20 text-white border-white/30">
-            Collection Présidentielle
+            Boutique Souvenir du Monument Paul BIYA
           </Badge>
           <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Boutique Officielle</h1>
           <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
-            Découvrez la collection exclusive du Monument Paul Biya et des emblèmes présidentiels. 
+            Découvrez la collection exclusive du Monument Paul Biya et des emblèmes du Cameroun. 
             Gadgets authentiques inspirés des plus grands musées du monde.
           </p>
         </div>
@@ -92,53 +95,79 @@ const Boutique = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Portrait Officiel Paul Biya - Édition Prestige",
-                price: "45 000 FCFA",
-                category: "Collection Présidentielle",
-                description: "Portrait officiel haute qualité avec cadre présidentiel doré",
+                name: "Pin's Monument Paul Biya",
+                price: "8 500 FCFA",
+                category: "Collection Monument",
+                description: "Pin's en métal émaillé représentant le monument",
                 color: "from-blue-600 to-blue-700",
                 bestseller: true,
+                icon: <Shield className="w-8 h-8" />
+              },
+              {
+                name: "Montre Édition Paul Biya",
+                price: "75 000 FCFA",
+                category: "Collection Présidentielle",
+                description: "Montre élégante avec cadran aux couleurs du Cameroun",
+                color: "from-blue-700 to-blue-800",
+                limited: true,
+                icon: <Watch className="w-8 h-8" />
+              },
+              {
+                name: "Chapeau Officiel Cameroun",
+                price: "25 000 FCFA",
+                category: "Emblèmes Cameroun",
+                description: "Chapeau brodé aux armoiries du Cameroun",
+                color: "from-blue-800 to-blue-900",
                 icon: <Crown className="w-8 h-8" />
               },
               {
-                name: "Maquette Monument Paul Biya - Bronze",
-                price: "85 000 FCFA",
-                category: "Collection Monument",
-                description: "Réplique exacte en bronze du monument (30cm)",
-                color: "from-blue-700 to-blue-800",
-                limited: true,
-                icon: <Award className="w-8 h-8" />
-              },
-              {
-                name: "Drapeau Présidentiel Camerounais",
+                name: "Polo Monument Heritage",
                 price: "35 000 FCFA",
-                category: "Emblèmes Cameroun",
-                description: "Drapeau officiel aux dimensions protocolaires",
-                color: "from-blue-800 to-blue-900",
+                category: "Collection Monument",
+                description: "Polo de qualité premium avec logo du monument",
+                color: "from-blue-600 to-blue-700",
+                bestseller: true,
                 icon: <Star className="w-8 h-8" />
               },
               {
-                name: "Médaille Commémorative - Or",
-                price: "120 000 FCFA",
-                category: "Édition Limitée",
-                description: "Médaille en or 18K numérotée (500 exemplaires)",
-                color: "from-blue-900 to-indigo-900",
-                limited: true,
-                icon: <Award className="w-8 h-8" />
-              },
-              {
-                name: "Album Photo Présidentiel Deluxe",
-                price: "55 000 FCFA",
-                category: "Collection Présidentielle",
-                description: "Album relié cuir avec photos officielles inédites",
-                color: "from-blue-600 to-blue-700",
-                icon: <Crown className="w-8 h-8" />
+                name: "Sac Cameroun Excellence",
+                price: "45 000 FCFA",
+                category: "Emblèmes Cameroun",
+                description: "Sac en cuir véritable aux couleurs nationales",
+                color: "from-blue-700 to-blue-800",
+                icon: <Package className="w-8 h-8" />
               },
               {
                 name: "Épinglette Armoiries du Cameroun",
                 price: "15 000 FCFA",
                 category: "Emblèmes Cameroun",
                 description: "Épinglette officielle en émail et métal doré",
+                color: "from-blue-800 to-blue-900",
+                bestseller: true,
+                icon: <Shield className="w-8 h-8" />
+              },
+              {
+                name: "Maquette Monument - Or",
+                price: "120 000 FCFA",
+                category: "Édition Limitée",
+                description: "Réplique prestige en métal doré (20cm)",
+                color: "from-blue-900 to-indigo-900",
+                limited: true,
+                icon: <Award className="w-8 h-8" />
+              },
+              {
+                name: "Porte-clés Monument",
+                price: "5 500 FCFA",
+                category: "Collection Monument",
+                description: "Porte-clés miniature du monument en métal",
+                color: "from-blue-600 to-blue-700",
+                icon: <Gift className="w-8 h-8" />
+              },
+              {
+                name: "T-shirt Fierté Camerounaise",
+                price: "18 000 FCFA",
+                category: "Emblèmes Cameroun",
+                description: "T-shirt coton bio aux couleurs du drapeau",
                 color: "from-blue-700 to-blue-800",
                 bestseller: true,
                 icon: <Star className="w-8 h-8" />

@@ -14,6 +14,7 @@ import democratizationImg from '@/assets/democratization-biya.jpg';
 import economicImg from '@/assets/economic-development-biya.jpg';
 import unityImg from '@/assets/unity-biya.jpg';
 import diplomacyImg from '@/assets/diplomacy-biya.jpg';
+import boutiqueBanner from '@/assets/boutique-banner.jpg';
 
 const Index = () => {
   const { t } = useLanguage();
@@ -266,6 +267,26 @@ const Index = () => {
                 </div>
                 <CardContent className="p-6">
                   <p className="text-gray-600">Découvrez tous les partenaires du projet.</p>
+                </CardContent>
+              </Card>
+            </Link>
+
+            <Link to="/boutique">
+              <Card className="group hover:shadow-2xl transition-all duration-300 border-blue-100">
+                <div className="h-48 bg-gradient-to-br from-blue-900 to-indigo-900 relative overflow-hidden">
+                  <img 
+                    src={boutiqueBanner} 
+                    alt="Boutique souvenirs" 
+                    className="w-full h-full object-cover opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 text-white">
+                    <Badge className="mb-2 bg-white/20">Boutique</Badge>
+                    <h3 className="text-lg font-bold">Souvenirs Officiels</h3>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <p className="text-gray-600">Découvrez notre collection de souvenirs du monument.</p>
                 </CardContent>
               </Card>
             </Link>
