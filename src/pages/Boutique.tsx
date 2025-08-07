@@ -147,6 +147,64 @@ const Boutique = () => {
                 icon: <Shield className="w-8 h-8" />
               },
               {
+                name: "Agenda Officiel 2025",
+                price: "12 000 FCFA",
+                category: "Papeterie",
+                description: "Agenda avec photos du monument et calendrier officiel",
+                color: "from-blue-600 to-blue-700",
+                icon: <Package className="w-8 h-8" />
+              },
+              {
+                name: "Bloc-notes Premium",
+                price: "8 000 FCFA",
+                category: "Papeterie",
+                description: "Bloc-notes couverture cuir avec logo gravé",
+                color: "from-blue-700 to-blue-800",
+                icon: <Gift className="w-8 h-8" />
+              },
+              {
+                name: "Casquette Officielle",
+                price: "18 000 FCFA",
+                category: "Accessoires",
+                description: "Casquette brodée aux couleurs nationales",
+                color: "from-blue-800 to-blue-900",
+                bestseller: true,
+                icon: <Crown className="w-8 h-8" />
+              },
+              {
+                name: "Parapluie Souvenir",
+                price: "28 000 FCFA",
+                category: "Accessoires",
+                description: "Parapluie résistant avec motifs des aires culturelles",
+                color: "from-blue-600 to-blue-700",
+                icon: <Shield className="w-8 h-8" />
+              },
+              {
+                name: "Plaque Murale Bronze",
+                price: "65 000 FCFA",
+                category: "Édition Limitée",
+                description: "Plaque commémorative en bronze véritable",
+                color: "from-blue-900 to-indigo-900",
+                limited: true,
+                icon: <Award className="w-8 h-8" />
+              },
+              {
+                name: "Drapeau avec Hampe",
+                price: "22 000 FCFA",
+                category: "Emblèmes Cameroun",
+                description: "Drapeau officiel avec hampe dorée",
+                color: "from-blue-700 to-blue-800",
+                icon: <Star className="w-8 h-8" />
+              },
+              {
+                name: "Visière Anti-soleil",
+                price: "14 000 FCFA",
+                category: "Accessoires",
+                description: "Visière ajustable avec logo brodé",
+                color: "from-blue-800 to-blue-900",
+                icon: <Package className="w-8 h-8" />
+              },
+              {
                 name: "Maquette Monument - Or",
                 price: "120 000 FCFA",
                 category: "Édition Limitée",

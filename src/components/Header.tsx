@@ -59,21 +59,21 @@ const Header = () => {
           <Link to="/" className="flex items-center space-x-3">
             <div className="relative">
               <img 
-                src="/lovable-uploads/0f981698-f7fd-4371-9a21-73ac8361dfc3.png" 
+                src="/lovable-uploads/ebceca7c-52c3-4fde-b8ed-1b805d9b8eda.png" 
                 alt="Monument Paul Biya - Sangmelima" 
                 className="w-16 h-20 object-contain"
               />
             </div>
             <div className="hidden md:block">
               <div className="flex items-center space-x-2">
-                <h1 className="text-xl font-bold text-gray-800">{t('site.title')}</h1>
+                <h1 className="text-xl font-bold text-gray-800" style={{ fontFamily: 'serif', fontStyle: 'italic' }}>Monument Paul BIYA</h1>
                 <img 
                   src="/lovable-uploads/1c121526-a924-4856-8137-02c40c261581.png" 
                   alt="Drapeau du Cameroun" 
                   className="w-8 h-6 object-cover rounded-sm"
                 />
               </div>
-              <p className="text-xs text-gray-600">{t('site.subtitle')}</p>
+              <p className="text-xs text-gray-600" style={{ fontFamily: 'serif', fontStyle: 'italic' }}>Sangmelima</p>
             </div>
           </Link>
 

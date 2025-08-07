@@ -745,6 +745,85 @@ const Monument = () => {
         </div>
       </section>
 
+      {/* Section Conception du logo du monument */}
+      <section className="py-20 bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <Badge className="mb-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg px-6 py-2">
+                <Palette className="w-5 h-5 mr-2" />
+                Conception Créative
+              </Badge>
+              <h2 className="text-4xl font-bold text-amber-900 mb-4">Conception du logo du monument</h2>
+              <p className="text-xl text-amber-800">Par HAMAN François - Graphiste Designer</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Image du processus de conception */}
+              <div className="relative">
+                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                  <img 
+                    src="/lovable-uploads/4e80af05-8825-4de9-acc3-9bec186a3ca7.png" 
+                    alt="Processus de conception du logo" 
+                    className="w-full h-96 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <h3 className="text-2xl font-bold mb-2">Processus Créatif</h3>
+                    <p className="text-lg opacity-90">Design et Conceptualisation</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Article sur la conception */}
+              <div className="space-y-6">
+                <Card className="p-8 bg-gradient-to-br from-white to-amber-50 shadow-xl border-l-4 border-l-amber-500">
+                  <div className="space-y-6">
+                    <div className="flex items-center space-x-3 mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
+                        <Palette className="w-6 h-6 text-white" />
+                      </div>
+                      <h3 className="text-2xl font-bold text-amber-900">Conception Artistique</h3>
+                    </div>
+
+                    <p className="text-lg text-gray-700 leading-relaxed">
+                      HAMAN François a conçu le logo du Monument Paul Biya en s'inspirant de l'architecture unique 
+                      du monument et des valeurs qu'il représente. Son travail créatif reflète l'harmonie entre 
+                      tradition et modernité.
+                    </p>
+
+                    <div className="bg-amber-100 p-6 rounded-lg border-l-4 border-l-amber-500">
+                      <blockquote className="text-amber-900 italic text-lg">
+                        "Créer un logo qui capture l'essence du monument et l'héritage présidentiel dans un design moderne et intemporel."
+                      </blockquote>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6 mt-6">
+                      <img 
+                        src="/lovable-uploads/c55bbebd-1c80-4df7-a317-900752e19fe3.png" 
+                        alt="Vectorisation du logo" 
+                        className="w-full h-48 object-cover rounded-lg shadow-md"
+                      />
+                      <img 
+                        src="/lovable-uploads/02432282-71d2-48f1-8877-b3bfc2859c5e.png" 
+                        alt="Hiérarchie visuelle" 
+                        className="w-full h-48 object-cover rounded-lg shadow-md"
+                      />
+                    </div>
+
+                    <p className="text-lg text-gray-700 leading-relaxed font-medium">
+                      Le processus de conception intègre une approche méthodique alliant créativité artistique 
+                      et respect des codes visuels institutionnels, pour un résultat à la hauteur de l'importance 
+                      historique du monument.
+                    </p>
+                  </div>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
