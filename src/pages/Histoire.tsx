@@ -69,8 +69,19 @@ const Histoire = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400">
-      <Header />
+    <div 
+      className="min-h-screen bg-gradient-to-br from-sky-200 via-sky-300 to-sky-400"
+      style={{
+        backgroundImage: 'url(/lovable-uploads/fa6640b4-8ff2-4826-9864-81f629c3103b.png)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundAttachment: 'fixed'
+      }}
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-sky-200/70 via-sky-300/70 to-sky-400/70"></div>
+      <div className="relative z-10">
+        <Header />
       
       {/* Hero Section avec bleu dilué et touches de bleu nuit */}
       <section className="relative min-h-screen bg-gradient-to-br from-sky-100 via-sky-200 to-sky-400 flex items-center justify-center text-white overflow-hidden">

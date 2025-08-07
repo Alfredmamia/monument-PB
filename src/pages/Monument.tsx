@@ -746,8 +746,17 @@ const Monument = () => {
       </section>
 
       {/* Section Conception du logo du monument */}
-      <section className="py-20 bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50">
-        <div className="container mx-auto px-4">
+      <section 
+        className="py-20 relative bg-gradient-to-r from-amber-50 via-yellow-50 to-orange-50"
+        style={{
+          backgroundImage: 'url(/lovable-uploads/65df1cfc-8291-43cb-9f73-e6e3a4b5c4c0.png)',
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-50/90 via-yellow-50/90 to-orange-50/90"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <Badge className="mb-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-lg px-6 py-2">
@@ -758,64 +767,88 @@ const Monument = () => {
               <p className="text-xl text-amber-800">Par HAMAN François - Graphiste Designer</p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Image du processus de conception */}
-              <div className="relative">
-                <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                  <img 
-                    src="/lovable-uploads/4e80af05-8825-4de9-acc3-9bec186a3ca7.png" 
-                    alt="Processus de conception du logo" 
-                    className="w-full h-96 object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
-                  <div className="absolute bottom-6 left-6 text-white">
-                    <h3 className="text-2xl font-bold mb-2">Processus Créatif</h3>
-                    <p className="text-lg opacity-90">Design et Conceptualisation</p>
+            <div className="grid lg:grid-cols-2 gap-12">
+              {/* Description détaillée du logo */}
+              <div className="space-y-6">
+                <Card className="p-8 bg-white/95 backdrop-blur-sm shadow-xl">
+                  <h3 className="text-2xl font-bold text-amber-900 mb-6">Description et Déclinaison du Logo</h3>
+                  
+                  <div className="space-y-4">
+                    <div className="bg-amber-50 p-4 rounded-lg">
+                      <h4 className="font-bold text-amber-800 mb-2">1. Le nom du Monument</h4>
+                      <p className="text-amber-700">Au-dessus de la calebasse ouverte</p>
+                    </div>
+                    
+                    <div className="bg-amber-50 p-4 rounded-lg">
+                      <h4 className="font-bold text-amber-800 mb-2">2. La demi calebasse renversée</h4>
+                      <p className="text-amber-700">À la base du monument</p>
+                    </div>
+                    
+                    <div className="bg-amber-50 p-4 rounded-lg">
+                      <h4 className="font-bold text-amber-800 mb-2">3. Les ouvertures blanches</h4>
+                      <p className="text-amber-700">Représentant les fenêtres vitrées, entourent la calebasse basse et la calebasse haute</p>
+                    </div>
+                    
+                    <div className="bg-amber-50 p-4 rounded-lg">
+                      <h4 className="font-bold text-amber-800 mb-2">4. Une colonne verticale</h4>
+                      <p className="text-amber-700">D'une forme de gourde au-dessus de la calebasse renversée reliant la calebasse ouverte</p>
+                    </div>
+                    
+                    <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-l-orange-500">
+                      <h4 className="font-bold text-orange-800 mb-2">5. Inscription supérieure</h4>
+                      <p className="text-orange-700">« <em>Monument Paul BIYA Monument</em> »</p>
+                    </div>
+                    
+                    <div className="bg-orange-50 p-4 rounded-lg border-l-4 border-l-orange-500">
+                      <h4 className="font-bold text-orange-800 mb-2">6. Inscription inférieure</h4>
+                      <p className="text-orange-700">Le nom de la ville où le monument se trouve : « <em>Sangmelima</em> »</p>
+                    </div>
                   </div>
-                </div>
+                  
+                  <div className="mt-6 p-4 bg-gradient-to-r from-amber-100 to-orange-100 rounded-lg">
+                    <p className="text-amber-800 font-medium">
+                      Le logo existe en deux déclinaisons : sur fond blanc et sur fond noir, 
+                      permettant une utilisation optimale selon les supports de communication.
+                    </p>
+                  </div>
+                </Card>
               </div>
 
-              {/* Article sur la conception */}
+              {/* Visualisations du logo et concepteur */}
               <div className="space-y-6">
-                <Card className="p-8 bg-gradient-to-br from-white to-amber-50 shadow-xl border-l-4 border-l-amber-500">
-                  <div className="space-y-6">
-                    <div className="flex items-center space-x-3 mb-6">
-                      <div className="w-12 h-12 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center">
-                        <Palette className="w-6 h-6 text-white" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-amber-900">Conception Artistique</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <Card className="overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/4e80af05-8825-4de9-acc3-9bec186a3ca7.png" 
+                      alt="Design du logo - Vue 1" 
+                      className="w-full h-32 object-cover"
+                    />
+                  </Card>
+                  <Card className="overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/c55bbebd-1c80-4df7-a317-900752e19fe3.png" 
+                      alt="Design du logo - Vue 2" 
+                      className="w-full h-32 object-cover"
+                    />
+                  </Card>
+                </div>
+                
+                <Card className="overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/02432282-71d2-48f1-8877-b3bfc2859c5e.png" 
+                    alt="Design du logo - Vue 3" 
+                    className="w-full h-48 object-cover"
+                  />
+                </Card>
+                
+                <Card className="p-6 bg-white/95 backdrop-blur-sm">
+                  <div className="text-center">
+                    <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Palette className="w-8 h-8 text-white" />
                     </div>
-
-                    <p className="text-lg text-gray-700 leading-relaxed">
-                      HAMAN François a conçu le logo du Monument Paul Biya en s'inspirant de l'architecture unique 
-                      du monument et des valeurs qu'il représente. Son travail créatif reflète l'harmonie entre 
-                      tradition et modernité.
-                    </p>
-
-                    <div className="bg-amber-100 p-6 rounded-lg border-l-4 border-l-amber-500">
-                      <blockquote className="text-amber-900 italic text-lg">
-                        "Créer un logo qui capture l'essence du monument et l'héritage présidentiel dans un design moderne et intemporel."
-                      </blockquote>
-                    </div>
-
-                    <div className="grid md:grid-cols-2 gap-6 mt-6">
-                      <img 
-                        src="/lovable-uploads/c55bbebd-1c80-4df7-a317-900752e19fe3.png" 
-                        alt="Vectorisation du logo" 
-                        className="w-full h-48 object-cover rounded-lg shadow-md"
-                      />
-                      <img 
-                        src="/lovable-uploads/02432282-71d2-48f1-8877-b3bfc2859c5e.png" 
-                        alt="Hiérarchie visuelle" 
-                        className="w-full h-48 object-cover rounded-lg shadow-md"
-                      />
-                    </div>
-
-                    <p className="text-lg text-gray-700 leading-relaxed font-medium">
-                      Le processus de conception intègre une approche méthodique alliant créativité artistique 
-                      et respect des codes visuels institutionnels, pour un résultat à la hauteur de l'importance 
-                      historique du monument.
-                    </p>
+                    <h4 className="text-lg font-bold text-amber-900 mb-2">Concepteur</h4>
+                    <p className="text-amber-700 text-xl font-semibold">HAMAN François</p>
+                    <p className="text-amber-600 text-sm mt-2">Graphic Designer & Créateur du Logo</p>
                   </div>
                 </Card>
               </div>
