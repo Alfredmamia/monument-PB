@@ -303,6 +303,7 @@ const Histoire = () => {
       </section>
 
       <Footer />
+      </div>
     </div>
   );
 };
