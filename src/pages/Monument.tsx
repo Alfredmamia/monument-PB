@@ -826,9 +826,10 @@ const Monument = () => {
                   </Card>
                   <Card className="overflow-hidden">
                     <img 
-                      src="/lovable-uploads/c55bbebd-1c80-4df7-a317-900752e19fe3.png" 
-                      alt="Design du logo - Vue 2" 
+                      src="/lovable-uploads/ecd71762-b612-447b-af88-7e5750e4a0a1.png" 
+                      alt="Photo de HAMAN François" 
                       className="w-full h-32 object-cover"
+                      loading="lazy"
                     />
                   </Card>
                 </div>
@@ -843,8 +844,13 @@ const Monument = () => {
                 
                 <Card className="p-6 bg-white/95 backdrop-blur-sm">
                   <div className="text-center">
-                    <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <Palette className="w-8 h-8 text-white" />
+                    <div className="mx-auto mb-4">
+                      <img
+                        src="/lovable-uploads/ecd71762-b612-447b-af88-7e5750e4a0a1.png"
+                        alt="Photo de HAMAN François"
+                        className="w-20 h-20 object-cover rounded-full ring-2 ring-amber-300"
+                        loading="lazy"
+                      />
                     </div>
                     <h4 className="text-lg font-bold text-amber-900 mb-2">Concepteur</h4>
                     <p className="text-amber-700 text-xl font-semibold">HAMAN François</p>
