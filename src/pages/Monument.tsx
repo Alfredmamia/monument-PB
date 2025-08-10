@@ -819,14 +819,15 @@ const Monument = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <Card className="overflow-hidden">
                     <img 
-                      src="/lovable-uploads/4e80af05-8825-4de9-acc3-9bec186a3ca7.png" 
-                      alt="Design du logo - Vue 1" 
+                      src="/lovable-uploads/31b0c814-27a6-4ace-9d1c-f50992eabec8.png" 
+                      alt="Photo de HAMAN François" 
                       className="w-full h-32 object-cover"
+                      loading="lazy"
                     />
                   </Card>
                   <Card className="overflow-hidden">
                     <img 
-                      src="/lovable-uploads/ecd71762-b612-447b-af88-7e5750e4a0a1.png" 
+                      src="/lovable-uploads/31b0c814-27a6-4ace-9d1c-f50992eabec8.png" 
                       alt="Photo de HAMAN François" 
                       className="w-full h-32 object-cover"
                       loading="lazy"
@@ -846,7 +847,7 @@ const Monument = () => {
                   <div className="text-center">
                     <div className="mx-auto mb-4">
                       <img
-                        src="/lovable-uploads/ecd71762-b612-447b-af88-7e5750e4a0a1.png"
+                        src="/lovable-uploads/31b0c814-27a6-4ace-9d1c-f50992eabec8.png"
                         alt="Photo de HAMAN François"
                         className="w-20 h-20 object-cover rounded-full ring-2 ring-amber-300"
                         loading="lazy"

@@ -48,7 +48,7 @@ const AiresCulturelles = () => {
                 nationale et unit nos peuples dans leur singularité."
               </blockquote>
               <div className="mt-4 flex items-center gap-3 justify-center">
-                <img src="/lovable-uploads/ecd71762-b612-447b-af88-7e5750e4a0a1.png" alt="Photo de M. HAMAN François" className="w-10 h-10 rounded-full object-cover ring-1 ring-amber-300" loading="lazy" />
+                <img src="/lovable-uploads/31b0c814-27a6-4ace-9d1c-f50992eabec8.png" alt="Photo de M. HAMAN François" className="w-10 h-10 rounded-full object-cover ring-1 ring-amber-300" loading="lazy" />
                 <cite className="text-sm text-gray-600">- M. HAMAN, Concepteur des artefacts des aires géographiques</cite>
               </div>
             </div>
@@ -222,7 +222,7 @@ const AiresCulturelles = () => {
                 de simples vestiges du passé, mais des ponts vivants entre nos générations."
               </blockquote>
               <div className="mt-4 flex items-center gap-3 justify-center">
-                <img src="/lovable-uploads/ecd71762-b612-447b-af88-7e5750e4a0a1.png" alt="Photo de M. HAMAN François" className="w-10 h-10 rounded-full object-cover ring-1 ring-amber-300" loading="lazy" />
+                <img src="/lovable-uploads/31b0c814-27a6-4ace-9d1c-f50992eabec8.png" alt="Photo de M. HAMAN François" className="w-10 h-10 rounded-full object-cover ring-1 ring-amber-300" loading="lazy" />
                 <cite className="text-lg font-semibold text-gray-700">M. HAMAN - Concepteur des artefacts des aires géographiques</cite>
               </div>
             </div>

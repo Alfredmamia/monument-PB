@@ -122,10 +122,10 @@ const translations = {
 
     // Monument
     'monument.badge': 'Architecture Symbolique',
-    'monument.hero.description': 'Admirez l\'architecture et la symbolique du Monument Paul Biya. Un chef-d\'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.',
-    'monument.mayor.badge': 'Le Penseur du Monument',
-    'monument.mayor.title': 'Hommage au Maire de Sangmélima',
-    'monument.mayor.subtitle': 'L\'Inspiration Divine derrière cette Œuvre Majestueuse',
+    'monument.hero.description': 'Admirez l\'architecture et la symbolique du Monument Paul Biya. Un chef-d\'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques et les rêves d\'un peuple uni :Le CAMEROUN.',
+    'monument.mayor.badge': 'L\'idée du Monument',
+    'monument.mayor.title': 'Hommage au Président de la République',
+    'monument.mayor.subtitle': 'Une inspiration divine',
     'monument.mayor.name': 'Monsieur le Maire',
     'monument.mayor.position': 'Maire de Sangmélima',
     'monument.mayor.vision.title': 'Vision et Inspiration',
@@ -143,7 +143,7 @@ const translations = {
     'monument.location.google_maps': 'Ouvrir dans Google Maps',
     'monument.location.navigate': 'Cliquez pour naviguer vers le monument avec votre application de carte préférée',
     'monument.intro.title': 'Un chef-d\'œuvre architectural',
-    'monument.intro.description': 'Admirez l\'architecture et la symbolique du Monument Paul Biya. Un chef-d\'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques.',
+    'monument.intro.description': 'Admirez l\'architecture et la symbolique du Monument Paul Biya. Un chef-d\'œuvre qui célèbre les quatre grandes aires culturelles du Cameroun à travers ses formes et ses décors uniques et les rêves d\'un peuple uni :Le CAMEROUN.',
     'monument.architect.title': 'Maître d\'Œuvre Architectural',
     'monument.architect.quote': 'Cette œuvre architecturale moderne dialogue avec les traditions ancestrales du Cameroun, créant un symbole d\'unité nationale à travers la diversité culturelle.',
     'monument.architect.name': 'KPOLOM BILONG Dieudonné, Concepteur architectural du Monument et des structures connexes',
