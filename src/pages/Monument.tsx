@@ -819,7 +819,7 @@ const Monument = () => {
                 <div className="grid grid-cols-2 gap-4">
                   <Card className="overflow-hidden">
                     <img 
-                      src="/lovable-uploads/31b0c814-27a6-4ace-9d1c-f50992eabec8.png" 
+                      src="/lovable-uploads/6fc9f09c-2129-4a81-aeba-5dc1f310e56a.png" 
                       alt="Photo de HAMAN François" 
                       className="w-full h-32 object-cover"
                       loading="lazy"
