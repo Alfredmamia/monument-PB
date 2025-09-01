@@ -43,32 +43,32 @@ const Boutique = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {[
               {
-                name: "Collection Paul Biya",
+                name: "Héritage Présidentiel Paul BIYA",
                 icon: <Crown className="w-8 h-8" />,
-                color: "from-blue-600 to-blue-700",
-                count: "25+ articles",
-                description: "Portraits officiels, biographies, objets commemoratifs"
+                color: "from-yellow-600 to-yellow-700",
+                count: "42+ trésors",
+                description: "Objets d'art présidentiels, médailles d'honneur, portraits officiels dorés"
               },
               {
-                name: "Collection Monument",
+                name: "Monument des Quatre Royaumes",
                 icon: <Award className="w-8 h-8" />,
-                color: "from-blue-700 to-blue-800",
-                count: "40+ modèles",
-                description: "Répliques, maquettes, souvenirs architecturaux"
+                color: "from-emerald-600 to-emerald-700",
+                count: "65+ chefs-d'œuvre",
+                description: "Sculptures miniatures des aires culturelles, maquettes architecturales sacrées"
               },
               {
-                name: "Emblèmes du Cameroun",
+                name: "Symboles de l'Unité Nationale",
                 icon: <Star className="w-8 h-8" />,
-                color: "from-blue-800 to-blue-900",
-                count: "30+ symboles",
-                description: "Drapeaux, armoiries, insignes officiels"
+                color: "from-red-600 to-red-700",
+                count: "38+ emblèmes",
+                description: "Armoiries royales, drapeaux de prestige, insignes des traditions ancestrales"
               },
               {
-                name: "Éditions Limitées",
+                name: "Collections Millésimées d'Excellence",
                 icon: <Gift className="w-8 h-8" />,
-                color: "from-blue-900 to-indigo-900",
-                count: "15+ pièces",
-                description: "Objets de collection rares et numérotés"
+                color: "from-purple-600 to-purple-700",
+                count: "20+ raretés",
+                description: "Pièces numérotées signées, éditions anniversaires, trésors de collection"
               }
             ].map((category, index) => (
               <Card key={index} className="group text-center p-6 hover:shadow-xl transition-all duration-300 bg-white/95 backdrop-blur-sm">
@@ -95,140 +95,134 @@ const Boutique = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Pin's Monument Paul Biya",
-                price: "8 500 FCFA",
-                category: "Collection Monument",
-                description: "Pin's en métal émaillé représentant le monument",
-                color: "from-blue-600 to-blue-700",
+                name: "Médaille d'Honneur Présidentielle",
+                price: "85 000 FCFA",
+                category: "Héritage Présidentiel",
+                description: "Médaille en bronze doré gravée avec l'effigie du Président Paul BIYA, édition commémorative authentique",
+                color: "from-yellow-600 to-yellow-700",
                 bestseller: true,
+                icon: <Award className="w-8 h-8" />
+              },
+              {
+                name: "Sceptre Royal des Quatre Royaumes",
+                price: "350 000 FCFA",
+                category: "Monument des Quatre Royaumes",
+                description: "Réplique artisanale du sceptre symbolisant l'unité des quatre aires culturelles camerounaises",
+                color: "from-emerald-600 to-emerald-700",
+                limited: true,
+                icon: <Crown className="w-8 h-8" />
+              },
+              {
+                name: "Masque Traditionnel Fang Sculpté",
+                price: "125 000 FCFA",
+                category: "Symboles de l'Unité",
+                description: "Masque sacré de l'aire culturelle Fang, sculpté à la main par les maîtres artisans du Sud",
+                color: "from-red-600 to-red-700",
                 icon: <Shield className="w-8 h-8" />
               },
               {
-                name: "Montre Édition Paul Biya",
+                name: "Trône Miniature Bamoun",
+                price: "240 000 FCFA",
+                category: "Monument des Quatre Royaumes",
+                description: "Reproduction fidèle du trône royal Bamoun, symbole de l'aire culturelle de l'Ouest",
+                color: "from-emerald-600 to-emerald-700",
+                bestseller: true,
+                icon: <Crown className="w-8 h-8" />
+              },
+              {
+                name: "Collier de Perles Kotoko",
+                price: "95 000 FCFA",
+                category: "Symboles de l'Unité",
+                description: "Collier traditionnel de l'aire culturelle Soudano-Sahélienne, perles authentiques du Nord",
+                color: "from-red-600 to-red-700",
+                icon: <Star className="w-8 h-8" />
+              },
+              {
+                name: "Sculpture Bassa en Ébène",
+                price: "180 000 FCFA",
+                category: "Monument des Quatre Royaumes",
+                description: "Statuette représentant un chef Bassa, sculptée dans l'ébène précieux du Littoral",
+                color: "from-emerald-600 to-emerald-700",
+                bestseller: true,
+                icon: <Award className="w-8 h-8" />
+              },
+              {
+                name: "Plaque Commémorative Présidentielle",
+                price: "450 000 FCFA",
+                category: "Collections Millésimées",
+                description: "Plaque en or 18 carats célébrant les 42 années de leadership visionnaire du Président",
+                color: "from-purple-600 to-purple-700",
+                limited: true,
+                icon: <Gift className="w-8 h-8" />
+              },
+              {
+                name: "Tambour Talking-Drum Béti",
                 price: "75 000 FCFA",
-                category: "Collection Présidentielle",
-                description: "Montre élégante avec cadran aux couleurs du Cameroun",
-                color: "from-blue-700 to-blue-800",
+                category: "Symboles de l'Unité",
+                description: "Tambour parleur traditionnel de l'aire culturelle Béti, instrument de communication ancestrale",
+                color: "from-red-600 to-red-700",
+                icon: <Package className="w-8 h-8" />
+              },
+              {
+                name: "Livre d'Or Présidentiel Signé",
+                price: "650 000 FCFA",
+                category: "Collections Millésimées",
+                description: "Exemplaire unique du livre présidentiel avec dédicace personnalisée, couverture cuir royal",
+                color: "from-purple-600 to-purple-700",
                 limited: true,
-                icon: <Watch className="w-8 h-8" />
-              },
-              {
-                name: "Chapeau Officiel Cameroun",
-                price: "25 000 FCFA",
-                category: "Emblèmes Cameroun",
-                description: "Chapeau brodé aux armoiries du Cameroun",
-                color: "from-blue-800 to-blue-900",
-                icon: <Crown className="w-8 h-8" />
-              },
-              {
-                name: "Polo Monument Heritage",
-                price: "35 000 FCFA",
-                category: "Collection Monument",
-                description: "Polo de qualité premium avec logo du monument",
-                color: "from-blue-600 to-blue-700",
-                bestseller: true,
-                icon: <Star className="w-8 h-8" />
-              },
-              {
-                name: "Sac Cameroun Excellence",
-                price: "45 000 FCFA",
-                category: "Emblèmes Cameroun",
-                description: "Sac en cuir véritable aux couleurs nationales",
-                color: "from-blue-700 to-blue-800",
-                icon: <Package className="w-8 h-8" />
-              },
-              {
-                name: "Épinglette Armoiries du Cameroun",
-                price: "15 000 FCFA",
-                category: "Emblèmes Cameroun",
-                description: "Épinglette officielle en émail et métal doré",
-                color: "from-blue-800 to-blue-900",
-                bestseller: true,
-                icon: <Shield className="w-8 h-8" />
-              },
-              {
-                name: "Agenda Officiel 2025",
-                price: "12 000 FCFA",
-                category: "Papeterie",
-                description: "Agenda avec photos du monument et calendrier officiel",
-                color: "from-blue-600 to-blue-700",
-                icon: <Package className="w-8 h-8" />
-              },
-              {
-                name: "Bloc-notes Premium",
-                price: "8 000 FCFA",
-                category: "Papeterie",
-                description: "Bloc-notes couverture cuir avec logo gravé",
-                color: "from-blue-700 to-blue-800",
                 icon: <Gift className="w-8 h-8" />
               },
               {
-                name: "Casquette Officielle",
-                price: "18 000 FCFA",
-                category: "Accessoires",
-                description: "Casquette brodée aux couleurs nationales",
-                color: "from-blue-800 to-blue-900",
-                bestseller: true,
-                icon: <Crown className="w-8 h-8" />
-              },
-              {
-                name: "Parapluie Souvenir",
-                price: "28 000 FCFA",
-                category: "Accessoires",
-                description: "Parapluie résistant avec motifs des aires culturelles",
-                color: "from-blue-600 to-blue-700",
-                icon: <Shield className="w-8 h-8" />
-              },
-              {
-                name: "Plaque Murale Bronze",
-                price: "65 000 FCFA",
-                category: "Édition Limitée",
-                description: "Plaque commémorative en bronze véritable",
-                color: "from-blue-900 to-indigo-900",
-                limited: true,
-                icon: <Award className="w-8 h-8" />
-              },
-              {
-                name: "Drapeau avec Hampe",
-                price: "22 000 FCFA",
-                category: "Emblèmes Cameroun",
-                description: "Drapeau officiel avec hampe dorée",
-                color: "from-blue-700 to-blue-800",
+                name: "Carte du Cameroun en Relief d'Or",
+                price: "280 000 FCFA",
+                category: "Héritage Présidentiel",
+                description: "Carte topographique du Cameroun sculptée dans l'or fin, marquant les régions et leur richesse",
+                color: "from-yellow-600 to-yellow-700",
                 icon: <Star className="w-8 h-8" />
               },
               {
-                name: "Visière Anti-soleil",
-                price: "14 000 FCFA",
-                category: "Accessoires",
-                description: "Visière ajustable avec logo brodé",
-                color: "from-blue-800 to-blue-900",
-                icon: <Package className="w-8 h-8" />
-              },
-              {
-                name: "Maquette Monument - Or",
+                name: "Écharpe Royale aux Armoiries",
                 price: "120 000 FCFA",
-                category: "Édition Limitée",
-                description: "Réplique prestige en métal doré (20cm)",
-                color: "from-blue-900 to-indigo-900",
+                category: "Symboles de l'Unité",
+                description: "Écharpe ceremoniale en soie brodée des armoiries nationales, portée lors des occasions d'État",
+                color: "from-red-600 to-red-700",
+                limited: true,
+                icon: <Crown className="w-8 h-8" />
+              },
+              {
+                name: "Maquette du Palais de l'Unité",
+                price: "480 000 FCFA",
+                category: "Collections Millésimées",
+                description: "Réplique architecturale précise du Palais présidentiel, détails minutieux en bronze et cristal",
+                color: "from-purple-600 to-purple-700",
                 limited: true,
                 icon: <Award className="w-8 h-8" />
               },
               {
-                name: "Porte-clés Monument",
-                price: "5 500 FCFA",
-                category: "Collection Monument",
-                description: "Porte-clés miniature du monument en métal",
-                color: "from-blue-600 to-blue-700",
-                icon: <Gift className="w-8 h-8" />
+                name: "Coupe de l'Excellence Camerounaise",
+                price: "195 000 FCFA",
+                category: "Héritage Présidentiel",
+                description: "Coupe en cristal de Bohème gravée du lion indomptable, symbole de fierté nationale",
+                color: "from-yellow-600 to-yellow-700",
+                bestseller: true,
+                icon: <Shield className="w-8 h-8" />
               },
               {
-                name: "T-shirt Fierté Camerounaise",
-                price: "18 000 FCFA",
-                category: "Emblèmes Cameroun",
-                description: "T-shirt coton bio aux couleurs du drapeau",
-                color: "from-blue-700 to-blue-800",
-                bestseller: true,
+                name: "Bracelet des Quatre Royaumes",
+                price: "160 000 FCFA",
+                category: "Monument des Quatre Royaumes",
+                description: "Bracelet en métaux précieux représentant les symboles des quatre aires culturelles unies",
+                color: "from-emerald-600 to-emerald-700",
                 icon: <Star className="w-8 h-8" />
+              },
+              {
+                name: "Coffret Présidentiel de Collection",
+                price: "750 000 FCFA",
+                category: "Collections Millésimées",
+                description: "Coffret de luxe contenant 7 objets présidentiels authentiques, édition limitée numérotée",
+                color: "from-purple-600 to-purple-700",
+                limited: true,
+                icon: <Gift className="w-8 h-8" />
               }
             ].map((product, index) => (
               <Card key={index} className={`group overflow-hidden hover:shadow-xl transition-shadow bg-white/95 backdrop-blur-sm ${product.bestseller ? 'border-2 border-blue-500' : product.limited ? 'border-2 border-red-500' : ''}`}>
