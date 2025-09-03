@@ -8,6 +8,23 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import boutiqueBanner from '@/assets/boutique-banner-new.jpg';
 
+// Import product images
+import pinsPresidentielImage from '@/assets/products/pins-presidentiel-dore.jpg';
+import porteClesMonumentImage from '@/assets/products/porte-cles-monument.jpg';
+import braceletTricoloreImage from '@/assets/products/bracelet-tricolore.jpg';
+import medailleCommemorativeImage from '@/assets/products/medaille-commemorative.jpg';
+import masqueFangImage from '@/assets/products/masque-fang.jpg';
+import marquePagePresidentielImage from '@/assets/products/marque-page-presidentiel.jpg';
+import pendentifLionImage from '@/assets/products/pendentif-lion.jpg';
+import mugPalaisUniteImage from '@/assets/products/mug-palais-unite.jpg';
+import collierBamounImage from '@/assets/products/collier-bamoun.jpg';
+import calendrier2025Image from '@/assets/products/calendrier-2025.jpg';
+import eventailBassaImage from '@/assets/products/eventail-bassa.jpg';
+import badgeUniteNationaleImage from '@/assets/products/badge-unite-nationale.jpg';
+import cahierPresidentielImage from '@/assets/products/cahier-presidentiel.jpg';
+import tambourinKotokoImage from '@/assets/products/tambourin-kotoko.jpg';
+import coffretVipImage from '@/assets/products/coffret-vip.jpg';
+
 const Boutique = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
@@ -20,7 +37,8 @@ const Boutique = () => {
       tooltip: "Insigne de prestige porté lors des cérémonies officielles, symbole de respect et d'honneur",
       color: "from-yellow-600 to-yellow-700",
       bestseller: true,
-      icon: <Crown className="w-8 h-8" />
+      icon: <Crown className="w-8 h-8" />,
+      image: pinsPresidentielImage
     },
     {
       name: "Porte-clés Monument",
@@ -29,7 +47,8 @@ const Boutique = () => {
       description: "Miniature du Monument Paul BIYA en métal précieux",
       tooltip: "Réplique détaillée du Monument, parfaite pour emporter un morceau d'histoire avec soi",
       color: "from-emerald-600 to-emerald-700",
-      icon: <Award className="w-8 h-8" />
+      icon: <Award className="w-8 h-8" />,
+      image: porteClesMonumentImage
     },
     {
       name: "Bracelet Tricolore",
@@ -38,7 +57,8 @@ const Boutique = () => {
       description: "Bracelet aux couleurs du drapeau camerounais",
       tooltip: "Symbole d'unité nationale porté fièrement par les citoyens patriotes",
       color: "from-red-600 to-red-700",
-      icon: <Star className="w-8 h-8" />
+      icon: <Star className="w-8 h-8" />,
+      image: braceletTricoloreImage
     },
     {
       name: "Médaille Commémorative",
@@ -48,7 +68,8 @@ const Boutique = () => {
       tooltip: "Pièce collector gravée commemorant les réalisations exceptionnelles du Président",
       color: "from-purple-600 to-purple-700",
       limited: true,
-      icon: <Gift className="w-8 h-8" />
+      icon: <Gift className="w-8 h-8" />,
+      image: medailleCommemorativeImage
     },
     {
       name: "Masque Miniature Fang",
@@ -58,7 +79,8 @@ const Boutique = () => {
       tooltip: "Art sacré de l'aire culturelle forestière, symbole de sagesse ancestrale",
       color: "from-emerald-600 to-emerald-700",
       bestseller: true,
-      icon: <Shield className="w-8 h-8" />
+      icon: <Shield className="w-8 h-8" />,
+      image: masqueFangImage
     },
     {
       name: "Marque-page Présidentiel",
@@ -67,7 +89,8 @@ const Boutique = () => {
       description: "Marque-page élégant avec citation présidentielle",
       tooltip: "Accompagne vos lectures avec les paroles inspirantes du Chef de l'État",
       color: "from-yellow-600 to-yellow-700",
-      icon: <Award className="w-8 h-8" />
+      icon: <Award className="w-8 h-8" />,
+      image: marquePagePresidentielImage
     },
     {
       name: "Pendentif Lion Indomptable",
@@ -77,7 +100,8 @@ const Boutique = () => {
       tooltip: "Symbole de courage et de détermination du peuple camerounais",
       color: "from-red-600 to-red-700",
       limited: true,
-      icon: <Crown className="w-8 h-8" />
+      icon: <Crown className="w-8 h-8" />,
+      image: pendentifLionImage
     },
     {
       name: "Mug Palais de l'Unité",
@@ -87,7 +111,8 @@ const Boutique = () => {
       tooltip: "Commencez vos matinées avec l'élégance présidentielle",
       color: "from-yellow-600 to-yellow-700",
       bestseller: true,
-      icon: <Star className="w-8 h-8" />
+      icon: <Star className="w-8 h-8" />,
+      image: mugPalaisUniteImage
     },
     {
       name: "Collier Perles Bamoun",
@@ -96,7 +121,8 @@ const Boutique = () => {
       description: "Collier traditionnel de l'aire culturelle de l'Ouest",
       tooltip: "Bijou royal inspiré des parures des reines Bamoun",
       color: "from-emerald-600 to-emerald-700",
-      icon: <Crown className="w-8 h-8" />
+      icon: <Crown className="w-8 h-8" />,
+      image: collierBamounImage
     },
     {
       name: "Calendrier Présidentiel 2025",
@@ -105,7 +131,8 @@ const Boutique = () => {
       description: "Calendrier officiel avec photos présidentielles",
       tooltip: "Calendrier de luxe avec les moments marquants de la présidence",
       color: "from-purple-600 to-purple-700",
-      icon: <Gift className="w-8 h-8" />
+      icon: <Gift className="w-8 h-8" />,
+      image: calendrier2025Image
     },
     {
       name: "Éventail Royal Bassa",
@@ -115,7 +142,8 @@ const Boutique = () => {
       tooltip: "Accessoire traditionnel utilisé lors des danses royales Bassa",
       color: "from-emerald-600 to-emerald-700",
       bestseller: true,
-      icon: <Star className="w-8 h-8" />
+      icon: <Star className="w-8 h-8" />,
+      image: eventailBassaImage
     },
     {
       name: "Badge Unité Nationale",
@@ -124,7 +152,8 @@ const Boutique = () => {
       description: "Badge officiel de l'unité camerounaise",
       tooltip: "Porté avec fierté par les citoyens attachés à l'unité nationale",
       color: "from-red-600 to-red-700",
-      icon: <Shield className="w-8 h-8" />
+      icon: <Shield className="w-8 h-8" />,
+      image: badgeUniteNationaleImage
     },
     {
       name: "Cahier Présidentiel",
@@ -133,7 +162,8 @@ const Boutique = () => {
       description: "Carnet de notes couverture présidentielle",
       tooltip: "Consignez vos pensées dans un carnet digne du Palais de l'Unité",
       color: "from-yellow-600 to-yellow-700",
-      icon: <Award className="w-8 h-8" />
+      icon: <Award className="w-8 h-8" />,
+      image: cahierPresidentielImage
     },
     {
       name: "Tambourin Kotoko",
@@ -143,7 +173,8 @@ const Boutique = () => {
       tooltip: "Instrument de musique sacrée de l'aire culturelle Soudano-Sahélienne",
       color: "from-emerald-600 to-emerald-700",
       limited: true,
-      icon: <Package className="w-8 h-8" />
+      icon: <Package className="w-8 h-8" />,
+      image: tambourinKotokoImage
     },
     {
       name: "Coffret Cadeau VIP",
@@ -153,7 +184,8 @@ const Boutique = () => {
       tooltip: "Ensemble prestige contenant les plus beaux souvenirs du Monument",
       color: "from-purple-600 to-purple-700",
       limited: true,
-      icon: <Gift className="w-8 h-8" />
+      icon: <Gift className="w-8 h-8" />,
+      image: coffretVipImage
     }
   ];
 
@@ -299,16 +331,18 @@ const Boutique = () => {
                           🔥 Édition limitée
                         </Badge>
                       )}
-                      <div className={`h-48 bg-gradient-to-br ${product.color} relative group-hover:scale-105 transition-transform`}>
-                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
+                      <div className="h-48 relative group-hover:scale-105 transition-transform overflow-hidden rounded-t-lg">
+                        <img 
+                          src={product.image} 
+                          alt={product.name}
+                          className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-colors"></div>
                         <div className="absolute top-2 right-2">
-                          <Badge variant="outline" className="bg-white/90 text-blue-700 text-xs">{product.category}</Badge>
-                        </div>
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="text-white opacity-80 group-hover:scale-110 transition-transform">{product.icon}</div>
+                          <Badge variant="outline" className="bg-white/95 text-blue-700 text-xs backdrop-blur-sm">{product.category}</Badge>
                         </div>
                         <div className="absolute bottom-2 left-2">
-                          <Badge className="bg-green-600 text-white font-bold">
+                          <Badge className="bg-green-600 text-white font-bold shadow-lg">
                             {product.price}
                           </Badge>
                         </div>
