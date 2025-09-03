@@ -9,21 +9,21 @@ import Footer from '@/components/Footer';
 import boutiqueBanner from '@/assets/boutique-banner-new.jpg';
 
 // Import product images
-import pinsPresidentielImage from '@/assets/products/pins-presidentiel-dore.jpg';
+import pinsPresidentielImage from '@/assets/products/pins-paul-biya.jpg';
 import porteClesMonumentImage from '@/assets/products/porte-cles-monument.jpg';
 import braceletTricoloreImage from '@/assets/products/bracelet-tricolore.jpg';
-import medailleCommemorativeImage from '@/assets/products/medaille-commemorative.jpg';
+import medailleCommemorativeImage from '@/assets/products/medaille-paul-biya.jpg';
 import masqueFangImage from '@/assets/products/masque-fang.jpg';
-import marquePagePresidentielImage from '@/assets/products/marque-page-presidentiel.jpg';
+import marquePagePresidentielImage from '@/assets/products/marque-page-paul-biya.jpg';
 import pendentifLionImage from '@/assets/products/pendentif-lion.jpg';
 import mugPalaisUniteImage from '@/assets/products/mug-palais-unite.jpg';
 import collierBamounImage from '@/assets/products/collier-bamoun.jpg';
-import calendrier2025Image from '@/assets/products/calendrier-2025.jpg';
+import calendrier2025Image from '@/assets/products/calendrier-paul-biya.jpg';
 import eventailBassaImage from '@/assets/products/eventail-bassa.jpg';
 import badgeUniteNationaleImage from '@/assets/products/badge-unite-nationale.jpg';
 import cahierPresidentielImage from '@/assets/products/cahier-presidentiel.jpg';
 import tambourinKotokoImage from '@/assets/products/tambourin-kotoko.jpg';
-import coffretVipImage from '@/assets/products/coffret-vip.jpg';
+import coffretVipImage from '@/assets/products/coffret-paul-biya.jpg';
 
 const Boutique = () => {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
