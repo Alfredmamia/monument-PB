@@ -82,6 +82,34 @@ const Footer = () => {
                 className="h-12 w-auto object-contain"
               />
             </div>
+            <div className="bg-white p-3 rounded-lg">
+              <img 
+                src="/lovable-uploads/b5f2bd7e-d4a6-4425-b70d-b6e27162fe1d.png" 
+                alt="MINFOF" 
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+            <div className="bg-white p-3 rounded-lg">
+              <img 
+                src="/lovable-uploads/6ffdb104-4794-4406-ad21-04b6931fa882.png" 
+                alt="KP AFRICA" 
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+            <div className="bg-white p-3 rounded-lg">
+              <img 
+                src="/lovable-uploads/5d240f06-7ffe-4ae2-8ab2-6a7a6c4c56bc.png" 
+                alt="SONDY" 
+                className="h-12 w-auto object-contain"
+              />
+            </div>
+            <div className="bg-white p-3 rounded-lg">
+              <img 
+                src="/lovable-uploads/f95a3ba7-5d16-4446-83a2-a195b008333c.png" 
+                alt="CABINET CEBR" 
+                className="h-12 w-auto object-contain"
+              />
+            </div>
           </div>
         </div>
       </div>
