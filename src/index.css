@@ -1,0 +1,162 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  /*
+    CHARTE OFFICIELLE — Monument Paul Biya
+    Fondée sur les couleurs du drapeau de la République du Cameroun.
+    --national-green  : bandes du drapeau, couleur institutionnelle primaire
+    --national-red    : bande centrale, réservée aux accents forts / urgence protocolaire
+    --national-gold   : étoile unitaire, couleur de prestige (CTA, bordures d'honneur)
+    Ces trois tokens NE DOIVENT PAS être redéfinis localement dans les pages :
+    toute page doit consommer bg-primary / bg-accent / text-national-red, etc.
+  */
+  :root {
+    --background: 40 33% 98%;
+    --foreground: 145 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 145 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 145 30% 10%;
+
+    --primary: 201 96% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 353 85% 44%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 145 15% 95%;
+    --muted-foreground: 145 10% 40%;
+
+    --accent: 46 68% 47%;
+    --accent-foreground: 145 30% 10%;
+
+    --destructive: 353 85% 44%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 15% 88%;
+    --input: 145 15% 88%;
+    --ring: 201 96% 32%;
+
+    --radius: 0.5rem;
+
+    --national-green: 201 96% 32%;
+    --national-red: 353 85% 44%;
+    --national-yellow: 49 97% 54%;
+    --national-gold: 46 68% 47%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 145 10% 26%;
+    --sidebar-primary: 201 96% 32%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 46 68% 95%;
+    --sidebar-accent-foreground: 145 30% 10%;
+    --sidebar-border: 145 15% 88%;
+    --sidebar-ring: 201 96% 32%;
+  }
+
+  .dark {
+    --background: 145 30% 6%;
+    --foreground: 40 20% 96%;
+
+    --card: 145 25% 9%;
+    --card-foreground: 40 20% 96%;
+
+    --popover: 145 25% 9%;
+    --popover-foreground: 40 20% 96%;
+
+    --primary: 199 89% 48%;
+    --primary-foreground: 145 30% 6%;
+
+    --secondary: 353 70% 50%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 145 15% 16%;
+    --muted-foreground: 145 10% 65%;
+
+    --accent: 46 80% 55%;
+    --accent-foreground: 145 30% 6%;
+
+    --destructive: 353 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 145 15% 18%;
+    --input: 145 15% 18%;
+    --ring: 46 80% 55%;
+
+    --national-green: 199 89% 48%;
+    --national-red: 353 70% 50%;
+    --national-yellow: 49 90% 58%;
+    --national-gold: 46 80% 55%;
+
+    --sidebar-background: 145 30% 8%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 46 80% 55%;
+    --sidebar-primary-foreground: 145 30% 6%;
+    --sidebar-accent: 145 20% 14%;
+    --sidebar-accent-foreground: 40 20% 90%;
+    --sidebar-border: 145 15% 18%;
+    --sidebar-ring: 46 80% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  /*
+    SYSTÈME TYPOGRAPHIQUE INSTITUTIONNEL
+    Tous les titres (h1-h3) basculent automatiquement en serif d'autorité (Fraunces),
+    sans qu'aucune page n'ait besoin d'ajouter la classe manuellement.
+    h4-h6 restent en sans-serif pour les intitulés de carte/section secondaires.
+  */
+  h1, h2, h3 {
+    @apply font-serif;
+    letter-spacing: -0.01em;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Motif institutionnel — remplace le hachurage générique utilisé précédemment.
+     Inspiré de la géométrie triangulaire présente dans plusieurs traditions textiles
+     camerounaises (à affiner avec la DA une fois les vraies références obtenues). */
+  .pattern-institutional {
+    background-image:
+      repeating-linear-gradient(60deg, rgba(252,209,22,0.10) 0px, rgba(252,209,22,0.10) 2px, transparent 2px, transparent 26px),
+      repeating-linear-gradient(-60deg, rgba(206,17,38,0.08) 0px, rgba(206,17,38,0.08) 2px, transparent 2px, transparent 26px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.05) 0px, rgba(255,255,255,0.05) 1px, transparent 1px, transparent 52px);
+    background-size: 52px 52px, 52px 52px, 100% 52px;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

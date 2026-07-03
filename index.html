@@ -1,0 +1,43 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Monument Paul Biya - Visite Virtuelle 360° | Patrimoine National du Cameroun</title>
+    <meta name="description" content="Visitez virtuellement le Monument Paul Biya à Sangmélima : visite immersive 360°, histoire, aires culturelles et boutique officielle. Le patrimoine républicain du Cameroun accessible au monde entier." />
+    <meta name="author" content="Monument Paul Biya" />
+    <meta name="keywords" content="Monument Paul Biya, Cameroun, patrimoine, histoire, architecture, président" />
+
+    <meta property="og:title" content="Monument Paul Biya - Patrimoine National du Cameroun" />
+    <meta property="og:description" content="Découvrez le Monument Paul Biya, symbole de leadership et patrimoine national du Cameroun" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@monument_biya" />
+    <meta name="twitter:image" content="/og-image.jpg" />
+    
+    <!-- Sécurité : Content-Security-Policy calibrée strictement sur les domaines effectivement utilisés
+         par le site (Google Fonts, Pannellum via jsDelivr, images Unsplash temporaires).
+         LIMITE CONNUE : les directives frame-ancestors et X-Frame-Options ne sont PAS appliquables
+         via balise <meta> (restriction du spec W3C) — elles nécessitent une configuration au niveau
+         du serveur/CDN d'hébergement. À faire valoir auprès du support Lovable ou lors d'une migration
+         vers un hébergement offrant un contrôle des en-têtes HTTP (Vercel, Netlify, Nginx). -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://pannellum.org https://api.qrserver.com https://etusenfzdaoghusrmuxy.supabase.co; connect-src 'self' https://cdn.jsdelivr.net https://etusenfzdaoghusrmuxy.supabase.co; media-src 'self' https://etusenfzdaoghusrmuxy.supabase.co; object-src 'none'; base-uri 'self'; form-action 'self' mailto:;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Pannellum : visionneuse panoramique 360° (chargée en CDN pour ne pas alourdir le bundle applicatif) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

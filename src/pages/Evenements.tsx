@@ -1,0 +1,714 @@
+import React, { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Calendar, Users, Music, Award, Clock, MapPin, Ticket, Bell, Camera, Heart, TreePine, Loader2 } from 'lucide-react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { supabase } from '@/integrations/supabase/client';
+
+interface Actualite {
+  id: string;
+  title: string;
+  content: string;
+  event_date: string | null;
+  created_at: string;
+}
+
+const Evenements = () => {
+  const [actualites, setActualites] = useState<Actualite[]>([]);
+  const [loadingActualites, setLoadingActualites] = useState(true);
+
+  useEffect(() => {
+    supabase
+      .from('actualites')
+      .select('*')
+      .eq('published', true)
+      .order('created_at', { ascending: false })
+      .then(({ data, error }) => {
+        if (!error && data) setActualites(data);
+        setLoadingActualites(false);
+      });
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      <Header />
+      
+      {/* Hero Section avec bleu électrique */}
+      <section className="relative h-96 bg-gradient-to-br from-slate-900 via-sky-950 to-national-green flex items-center justify-center text-white overflow-hidden pattern-institutional">
+        {/* Filigrane dynamique en haut */}
+        <div className="absolute top-0 left-0 right-0 h-32 opacity-20">
+          <img 
+            src="/lovable-uploads/3931792a-536b-4c2c-846d-82a4fdc31a7d.png" 
+            alt="Aire Culturelle Grassfield" 
+            className="w-full h-full object-cover opacity-40"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-sky-500/60 via-sky-400/40 to-transparent"></div>
+        </div>
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-4">
+          <Badge className="mb-4 bg-white/20 text-white border-white/30">
+            Agenda Culturel
+          </Badge>
+          <h1 className="text-5xl md:text-6xl font-bold mb-4 drop-shadow-2xl">Événements</h1>
+          <p className="text-xl md:text-2xl opacity-90 drop-shadow-lg">
+            Restez informé des événements, expositions et actualités du Monument Paul Biya. 
+            Inscrivez-vous à nos prochaines activités et ne manquez rien !
+          </p>
+        </div>
+      </section>
+
+      {/* Introduction avec bleu électrique */}
+      <section className="py-20 bg-gradient-to-r from-stone-50 via-sky-50/50 to-stone-100">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-sky-900 mb-8">Ne manquez rien !</h2>
+            <p className="text-xl text-sky-800 leading-relaxed mb-8">
+              Restez informé des événements, expositions et actualités du Monument Paul Biya. 
+              Inscrivez-vous à nos prochaines activités et ne manquez rien !
+            </p>
+            <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white shadow-xl">
+              <Bell className="w-5 h-5 mr-2" />
+              S'abonner aux Notifications
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Actualités publiées par l'administrateur — dynamique, via /admin, sans redéploiement */}
+      {(loadingActualites || actualites.length > 0) && (
+        <section className="py-16 bg-sky-50">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <Badge className="mb-4 bg-national-green text-white">Dernières actualités</Badge>
+              {loadingActualites ? (
+                <Loader2 className="w-6 h-6 animate-spin text-national-green" />
+              ) : (
+                <div className="space-y-4">
+                  {actualites.map((news) => (
+                    <Card key={news.id} className="p-6 border-l-4 border-national-green">
+                      <div className="flex justify-between items-start flex-wrap gap-2 mb-2">
+                        <h3 className="text-xl font-bold text-sky-900">{news.title}</h3>
+                        {news.event_date && (
+                          <Badge variant="outline" className="text-xs">
+                            {new Date(news.event_date).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })}
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="text-gray-700 whitespace-pre-line">{news.content}</p>
+                    </Card>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Actualité nationale — Réélection présidentielle (traitement factuel et daté) */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="mb-4 bg-national-red text-white">Actualité Nationale</Badge>
+            <h2 className="text-3xl font-bold text-sky-900 mb-4">Réélection et Investiture du Président de la République</h2>
+            <Card className="p-8 border-l-4 border-national-red">
+              <p className="text-gray-700 text-lg leading-relaxed mb-4">
+                À l'issue du scrutin présidentiel du 12 octobre 2025, les résultats officiels proclamés le
+                27 octobre 2025 ont confirmé la réélection du Président Paul Biya avec 53,66% des suffrages
+                exprimés, pour un huitième mandat à la tête de l'État. L'investiture s'est tenue le
+                6 novembre 2025.
+              </p>
+              <p className="text-sm text-gray-500">
+                Source : résultats officiels de la proclamation, octobre 2025. Pour le détail complet du
+                scrutin et son contexte, se référer aux communiqués officiels de la Présidence de la
+                République et du Conseil Constitutionnel.
+              </p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Visite du DG FEICOM */}
+      <section className="py-20 bg-gradient-to-br from-green-50 via-sky-50 to-teal-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-gradient-to-r from-green-500 to-sky-500 text-white">
+              Visite Officielle
+            </Badge>
+            <h2 className="text-4xl font-bold text-sky-900 mb-4">Visite du DG FEICOM</h2>
+            <p className="text-xl text-sky-800">Inspection et évaluation de l'avancement des travaux</p>
+          </div>
+
+          <Card className="max-w-6xl mx-auto overflow-hidden shadow-2xl border-2 border-sky-200 mb-16">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Galerie d'images */}
+              <div className="bg-gradient-to-br from-stone-50 to-sky-50/40 p-8">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/ef7703e5-d40e-4b22-b61a-3fd3a37e8dde.png" 
+                      alt="Accueil du DG FEICOM" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/83c88ec0-df3d-4008-8c9a-633354caf460.png" 
+                      alt="Présentation officielle" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/d4befd1b-15d6-42df-927c-5c7585ff5a0d.png" 
+                      alt="Visite des installations" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/44269114-b3eb-43ef-aaa0-96a7130f10ae.png" 
+                      alt="Réunion de travail" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/5d2c25a1-a4f2-45e6-924d-9fff8c505f73.png" 
+                      alt="Échanges techniques" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/908d95bb-401b-4e75-a3ee-ff21b69c36ff.png" 
+                      alt="Salle de réunion" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Contenu informatif */}
+              <div className="bg-white p-8 flex flex-col justify-center">
+                <div className="mb-6">
+                  <Badge variant="outline" className="mb-4 border-sky-300 text-sky-600">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Mai 2025
+                  </Badge>
+                  <h3 className="text-3xl font-bold text-sky-900 mb-4">
+                    Visite du Directeur Général du FEICOM
+                  </h3>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    Visite officielle du Directeur Général du Fonds d'Équipement et d'Intervention pour le Développement 
+                    Communal (FEICOM) pour l'inspection et l'évaluation de l'avancement des travaux du Monument Paul Biya.
+                  </p>
+                </div>
+
+                <div className="bg-sky-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-sky-900 mb-3">Objectifs de la Visite</h4>
+                  <p className="text-sky-800 mb-4">
+                    Cette inspection avait pour but d'évaluer l'état d'avancement des travaux, de s'assurer de la 
+                    conformité aux standards de qualité, et de valider les étapes finales avant l'inauguration officielle.
+                  </p>
+                  <div className="flex items-center text-sky-700 text-sm">
+                    <Award className="w-4 h-4 mr-2" />
+                    <span>Validation Institutionnelle</span>
+                  </div>
+                </div>
+
+                <div className="bg-sky-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-sky-900 mb-3">Points Clés de l'Inspection</h4>
+                  <p className="text-sky-800 mb-4">
+                    La visite a permis de constater l'excellence des finitions, la conformité architecturale, 
+                    et la préparation optimale des espaces d'exposition et d'accueil des visiteurs.
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-sky-700">
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      <span>Équipe FEICOM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Button className="flex-1 bg-gradient-to-r from-sky-500 to-green-500 hover:from-sky-600 hover:to-green-600 text-white">
+                    <Camera className="w-4 h-4 mr-2" />
+                    Voir Plus
+                  </Button>
+                  <Button variant="outline" className="border-sky-300 text-sky-600 hover:bg-sky-50">
+                    <Heart className="w-4 h-4 mr-2" />
+                    Partager
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Images supplémentaires */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/bf1198ac-6cd2-43b4-9e36-7d616a882922.png" 
+                alt="Inspection technique" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Inspection des espaces intérieurs</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/d8516330-678c-4d98-8d49-3eaca9dc7b3e.png" 
+                alt="Visite panoramique" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Vue panoramique depuis l'étage</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/ed76fdfc-0dec-4669-8b4d-13bb4c478513.png" 
+                alt="Échanges avec l'équipe" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Échanges avec l'équipe de construction</p>
+              </CardContent>
+            </Card>
+            
+            <Card className="overflow-hidden shadow-lg">
+              <img 
+                src="/lovable-uploads/cba89e71-52da-46f7-a11c-cc36fc23429e.png" 
+                alt="Réunion finale" 
+                className="w-full h-48 object-cover"
+              />
+              <CardContent className="p-4">
+                <p className="text-sm text-gray-600">Réunion de clôture de la visite</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Visite du MINFOF */}
+      <section className="py-20 bg-gradient-to-br from-green-50 via-lime-50 to-sky-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-gradient-to-r from-green-600 to-sky-600 text-white">
+              Visite Officielle
+            </Badge>
+            <h2 className="text-4xl font-bold text-green-900 mb-4">Visite du MINFOF</h2>
+            <p className="text-xl text-green-800">Visite du Ministre des Forêts et de la Faune</p>
+          </div>
+
+          <Card className="max-w-6xl mx-auto overflow-hidden shadow-2xl border-2 border-green-200 mb-16">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Galerie d'images */}
+              <div className="bg-gradient-to-br from-green-100 to-lime-100 p-8">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/4c7838b8-f3d2-4168-867e-34f7590f2eb1.png" 
+                      alt="Accueil du Ministre MINFOF" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/7f47087c-ffb9-4826-951f-f880f2cfd254.png" 
+                      alt="Visite intérieure du monument" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/62440500-dc94-493d-acee-33a85d5adc28.png" 
+                      alt="Présentation au Ministre" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/9f697b80-bbd8-4cc4-bd39-3548d0883eca.png" 
+                      alt="Visite guidée" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+                
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/74cdf44c-48ab-471f-b614-2b191c87d4eb.png" 
+                      alt="Échanges avec l'équipe" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/b4f1a9ab-11a6-4176-8e10-6ee22a96d71c.png" 
+                      alt="Descente de l'escalier" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Contenu informatif */}
+              <div className="bg-white p-8 flex flex-col justify-center">
+                <div className="mb-6">
+                  <Badge variant="outline" className="mb-4 border-green-300 text-green-600">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Juin 2025
+                  </Badge>
+                  <h3 className="text-3xl font-bold text-green-900 mb-4">
+                    Visite du Ministre des Forêts et de la Faune
+                  </h3>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    Visite officielle du Ministre des Forêts et de la Faune (MINFOF) au Monument Paul Biya 
+                    pour l'inspection des installations et l'évaluation de l'intégration environnementale du projet.
+                  </p>
+                </div>
+
+                <div className="bg-green-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-green-900 mb-3">Focus Environnemental</h4>
+                  <p className="text-green-800 mb-4">
+                    La visite a permis d'évaluer l'impact environnemental du monument et de valider les mesures 
+                    de préservation de la biodiversité locale mises en place durant la construction.
+                  </p>
+                  <div className="flex items-center text-green-700 text-sm">
+                    <TreePine className="w-4 h-4 mr-2" />
+                    <span>Préservation de l'Environnement</span>
+                  </div>
+                </div>
+
+                <div className="bg-sky-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-sky-900 mb-3">Recommandations</h4>
+                  <p className="text-sky-800 mb-4">
+                    Le Ministre a salué les efforts de préservation environnementale et a donné des recommandations 
+                    pour l'aménagement paysager et la protection de la faune locale.
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-sky-700">
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      <span>Équipe MINFOF</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Button className="flex-1 bg-gradient-to-r from-green-600 to-sky-600 hover:from-green-700 hover:to-sky-700 text-white">
+                    <Camera className="w-4 h-4 mr-2" />
+                    Voir Plus
+                  </Button>
+                  <Button variant="outline" className="border-green-300 text-green-600 hover:bg-green-50">
+                    <Heart className="w-4 h-4 mr-2" />
+                    Partager
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Événement Spécial - Visite des Chefs Traditionnels */}
+      <section className="py-20 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 bg-gradient-to-r from-yellow-500 to-amber-500 text-white">
+              Événement Culturel Exceptionnel
+            </Badge>
+            <h2 className="text-4xl font-bold text-amber-900 mb-4">Visite des Chefs Traditionnels</h2>
+            <p className="text-xl text-amber-800">Une exposition photographique documentant cet événement historique</p>
+          </div>
+
+          <Card className="max-w-6xl mx-auto overflow-hidden shadow-2xl border-2 border-amber-200">
+            <div className="grid lg:grid-cols-2 gap-0">
+              {/* Galerie d'images */}
+              <div className="bg-gradient-to-br from-amber-100 to-yellow-100 p-8">
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/16f35b76-d4b5-49c9-874a-6c6aa83538d6.png" 
+                      alt="Accueil des chefs traditionnels" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/3fa147f3-e324-430e-9377-4ffb2feb2813.png" 
+                      alt="Salutations traditionnelles" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/4b14ce52-0a67-4ef2-b5e4-a448fc9ccff8.png" 
+                      alt="Rencontre officielle" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/79466c99-5a02-4b47-8907-b029efd8d8b5.png" 
+                      alt="Équipe du monument" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                </div>
+                
+                {/* Images des cérémonies */}
+                <div className="grid grid-cols-1 gap-4">
+                  <div className="aspect-video overflow-hidden rounded-lg shadow-lg">
+                    <img 
+                      src="/lovable-uploads/a677acf3-7aa9-4c0b-9d38-31e76d31a559.png" 
+                      alt="Cérémonie dans la grande salle" 
+                      className="w-full h-full object-cover hover:scale-105 transition-transform"
+                    />
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                      <img 
+                        src="/lovable-uploads/e7c5722c-d426-4043-becd-fcc683bc3020.png" 
+                        alt="Cérémonie traditionnelle" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform"
+                      />
+                    </div>
+                    <div className="aspect-square overflow-hidden rounded-lg shadow-lg">
+                      <img 
+                        src="/lovable-uploads/fea9840e-0ab1-4455-a349-e4c67ca96ed9.png" 
+                        alt="Bénédiction traditionnelle" 
+                        className="w-full h-full object-cover hover:scale-105 transition-transform"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Contenu informatif */}
+              <div className="bg-white p-8 flex flex-col justify-center">
+                <div className="mb-6">
+                  <Badge variant="outline" className="mb-4 border-amber-300 text-amber-600">
+                    <Calendar className="w-4 h-4 mr-2" />
+                    Juin 2025
+                  </Badge>
+                  <h3 className="text-3xl font-bold text-amber-900 mb-4">
+                    Visite des Chefs Traditionnels au Monument Paul Biya
+                  </h3>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                    Une exposition photographique exceptionnelle documentant la visite historique des chefs traditionnels au Monument Paul Biya. Ces images témoignent de l'importance culturelle et de la reconnaissance traditionnelle de ce lieu par les gardiens des traditions camerounaises.
+                  </p>
+                </div>
+
+                <div className="bg-amber-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-amber-900 mb-3">Signification de l'Événement</h4>
+                  <p className="text-amber-800 mb-4">
+                    Cette descente des Chefs traditionnels sur le site du Monument avait pour objectif d'y apporter leur onction et leurs bénédictions sacrées, marquant ainsi la reconnaissance spirituelle et culturelle de ce lieu par les gardiens des traditions camerounaises.
+                  </p>
+                  <div className="flex items-center text-amber-700 text-sm">
+                    <Heart className="w-4 h-4 mr-2" />
+                    <span>Reconnaissance Traditionnelle</span>
+                  </div>
+                </div>
+
+                <div className="bg-sky-50 p-6 rounded-lg mb-6">
+                  <h4 className="text-xl font-semibold text-sky-900 mb-3">Offrandes Culturelles</h4>
+                  <p className="text-sky-800 mb-4">
+                    Les chefs traditionnels ont offert des objets précieux représentant chaque aire culturelle du Cameroun pour exhibition permanente au sein du monument, enrichissant ainsi le patrimoine culturel du site.
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-sky-700">
+                    <div className="flex items-center">
+                      <Users className="w-4 h-4 mr-2" />
+                      <span>Chefs Traditionnels du Cameroun</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="flex space-x-4">
+                  <Button className="flex-1 bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600 text-white">
+                    <Camera className="w-4 h-4 mr-2" />
+                    Voir la Galerie
+                  </Button>
+                  <Button variant="outline" className="border-amber-300 text-amber-600 hover:bg-amber-50">
+                    <Heart className="w-4 h-4 mr-2" />
+                    Partager
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+      </section>
+
+      {/* Événements à Venir avec nuances de bleu */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-sky-900 mb-16">Événements à Venir</h2>
+          
+          <div className="space-y-8">
+            {[
+              {
+                title: "Inauguration Officielle du Monument",
+                date: "22 août 2025",
+                time: "10h00 - 18h00",
+                type: "Cérémonie Officielle",
+                description: "Cérémonie d'inauguration en présence des plus hautes autorités de l'État et des dignitaires internationaux.",
+                color: "from-sky-500 to-sky-600",
+                featured: true
+              },
+              {
+                title: "Festival des Arts Camerounais",
+                date: "25-27 Août 2025",
+                time: "09h00 - 22h00",
+                type: "Festival Culturel",
+                description: "Trois jours de célébration des arts traditionnels et contemporains du Cameroun avec spectacles, expositions et ateliers.",
+                color: "from-sky-600 to-sky-700"
+              },
+              {
+                title: "Conférence : L'Architecture Monumentale Africaine",
+                date: "15 Septembre 2025",
+                time: "14h00 - 17h00",
+                type: "Conférence",
+                description: "Conférence internationale sur l'architecture monumentale en Afrique avec des experts reconnus.",
+                color: "from-sky-700 to-sky-800"
+              },
+              {
+                title: "Exposition : Quatre Aires, Une Nation",
+                date: "1er Octobre - 30 Novembre 2025",
+                time: "08h00 - 18h00",
+                type: "Exposition",
+                description: "Exposition permanente présentant la richesse des quatre aires culturelles du Cameroun.",
+                color: "from-sky-800 to-sky-900"
+              }
+            ].map((event, index) => (
+              <Card key={index} className={`overflow-hidden hover:shadow-xl transition-shadow border-sky-200 ${event.featured ? 'border-2 border-sky-500' : ''}`}>
+                <div className="grid lg:grid-cols-4 gap-0">
+                  <div className={`bg-gradient-to-br ${event.color} p-6 text-white relative`}>
+                    {event.featured && (
+                      <Badge className="absolute top-2 right-2 bg-white text-sky-600">
+                        À ne pas manquer
+                      </Badge>
+                    )}
+                    <div className="text-center">
+                      <Calendar className="w-8 h-8 mx-auto mb-2" />
+                      <div className="text-lg font-bold">{event.date}</div>
+                      <div className="text-sm opacity-90">{event.time}</div>
+                    </div>
+                  </div>
+                  <div className="lg:col-span-3 p-6">
+                    <div className="flex justify-between items-start mb-4">
+                      <div>
+                        <Badge variant="outline" className="mb-2 border-sky-300 text-sky-600">{event.type}</Badge>
+                        <h3 className="text-2xl font-bold text-sky-900 mb-2">{event.title}</h3>
+                      </div>
+                      <Button className="bg-sky-600 hover:bg-sky-700 text-white">
+                        <Ticket className="w-4 h-4 mr-2" />
+                        Réserver
+                      </Button>
+                    </div>
+                    <p className="text-gray-600 mb-4">{event.description}</p>
+                    <div className="flex items-center space-x-4 text-sm text-gray-500">
+                      <div className="flex items-center space-x-1">
+                        <MapPin className="w-4 h-4" />
+                        <span>Monument Paul Biya</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Users className="w-4 h-4" />
+                        <span>Places limitées</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Types d'Événements */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-4xl font-bold text-center text-sky-900 mb-16">Types d'Événements</h2>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Cérémonies Officielles",
+                icon: <Award className="w-8 h-8" />,
+                color: "from-sky-500 to-sky-600",
+                description: "Événements protocolaires et commémorations nationales"
+              },
+              {
+                title: "Festivals Culturels",
+                icon: <Music className="w-8 h-8" />,
+                color: "from-sky-600 to-sky-700",
+                description: "Célébrations des traditions et arts camerounais"
+              },
+              {
+                title: "Conférences",
+                icon: <Users className="w-8 h-8" />,
+                color: "from-sky-700 to-sky-800",
+                description: "Débats et échanges sur des sujets d'actualité"
+              },
+              {
+                title: "Expositions",
+                icon: <Calendar className="w-8 h-8" />,
+                color: "from-sky-800 to-sky-900",
+                description: "Présentations d'œuvres et collections temporaires"
+              }
+            ].map((type, index) => (
+              <Card key={index} className="group text-center p-6 hover:shadow-lg transition-shadow border-sky-200">
+                <div className={`w-16 h-16 bg-gradient-to-br ${type.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform`}>
+                  <div className="text-white">{type.icon}</div>
+                </div>
+                <h3 className="text-lg font-bold mb-3 text-sky-900">{type.title}</h3>
+                <p className="text-gray-600 text-sm">{type.description}</p>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter et Notifications */}
+      <section className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-4xl font-bold text-sky-900 mb-8">Restez Informé</h2>
+            <p className="text-xl text-gray-600 mb-12">
+              Inscrivez-vous à notre newsletter pour ne manquer aucun événement
+            </p>
+            
+            <div className="bg-gradient-to-r from-stone-50 to-sky-50/50 p-8 rounded-lg">
+              <div className="flex flex-col md:flex-row gap-4 justify-center items-center max-w-md mx-auto">
+                <input 
+                  type="email" 
+                  placeholder="Votre adresse email"
+                  className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-sky-500"
+                />
+                <Button className="bg-sky-600 hover:bg-sky-700 text-white px-6 py-3">
+                  <Bell className="w-4 h-4 mr-2" />
+                  S'abonner
+                </Button>
+              </div>
+              <p className="text-sm text-gray-600 mt-4">
+                Recevez les dernières actualités et invitations en avant-première
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default Evenements;
